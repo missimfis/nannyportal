@@ -1,0 +1,43 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% load i18n %} 
+{% block navigation %} {% include "web/index_navigation.html" %} {% endblock %} 
+{% block content %}
+<br />
+
+<div class="titel-gross">Registrieren</div>
+
+<div class="Furfamilien"> Für Familien</div>
+
+<div class="registrieren1">
+  <a href="{% url 'web:create-user' group_id=4 %}"
+    ><img
+      src="/media/web/images/baby-buggy.png"
+      style="width: 25px"
+      alt="buggy"
+    />
+    <br />
+    {% translate 'Kinderbetreuung' %}</a
+  >
+</div>
+
+
+<div class="Furfamilien">Nannies/Tagesmutter</div>
+
+
+<div class="betreuungsart-row">
+  <div class="registrieren1">
+    <a href="{% url 'web:create-user' group_id=1 %}"
+      ><img
+        src="/media/web/images/babysitter.png"
+        style="width: 25px"
+        alt="buggy"
+      />
+      <br />
+      {% translate 'Jobs' %}</a
+    >
+  </div>
+
+  {% endblock %}
+</div>
+{% block scripts %}<script src="{% static 'web/js/helperfunctions.js' %}"></script>{% endblock scripts %}

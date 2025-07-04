@@ -1,0 +1,30 @@
+{% extends 'web/base.html' %}
+{% load i18n %}
+{% block navigation %}
+    {% include "web/index_navigation.html" %}
+{% endblock %}
+{% block content %}
+<br>
+    <h5>{% translate "Im welchen Bereich Suchen Sie einen Job?" %}</h5>
+    <br>
+    <br>
+    <div class="betreuungsart-col">
+        <a href="{% url 'web:create-user' group_id=1 %}">{% translate "Kinderbetreuung" %}</a>
+    </div>
+
+    <div class="betreuungsart-col">
+        <a href="{% url 'web:create-user' group_id=3 %}">{% translate "Haustierbetreuung" %}</a>
+    </div>
+
+    <div class="betreuungsart-col">
+        <a href="{% url 'web:create-user' group_id=2 %}">{% translate "Seniorbetreuung" %}</a>
+    </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+{% endblock %}

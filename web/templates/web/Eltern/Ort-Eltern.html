@@ -1,0 +1,35 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block navigation %}
+    {% include "web/index_navigation.html" %}
+{% endblock %}
+{% block content %}
+    <div class="registrationschrift">{% translate 'Wo findet der Arbeitsort statt?' %}</div> 
+    <small> 1 von 6 </small>
+    <br>
+    <br>
+    <form action="" method="Post">
+        {% csrf_token %}
+        <div class="Personalien-box">
+            {% include "web/form_snippet.html" %}
+        </div>
+        <br>
+        <small>
+            <br>
+            <br>
+            {% translate 'Sie wird auch in Ihren Stellenausschreibung angezeigt, um Kinderbetreuer' %}
+            <br>
+            {% translate 'Orientierung bei der Jobsuche zu geben.' %}</small>
+        <br>
+        <br>
+        <br>
+        <input class="input_send" type="submit" value="{% translate 'Weiter' %}"/>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+</form>{% endblock %}

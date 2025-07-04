@@ -1,0 +1,45 @@
+{% extends 'web/base.html' %}
+{% load i18n %}
+{% block navigation %}
+    {% include "web/index_navigation.html" %}
+{% endblock %}
+{% block content %}
+
+    <div class="registrationschrift">{% translate 'Ihre Angaben und Stundenlohn' %}</div>
+    <small> 1 von 6 </small>
+    <br>
+    <br>
+    <form action="" method="Post">
+        {% csrf_token %}
+        <div class="Personalien-box">
+            {% for field in form.visible_fields|slice:":3" %}
+                <div class="form-group">
+                    {{ field.errors }}
+                    {{ field }}
+                </div>
+            {% endfor %}
+            {% for field in form.visible_fields|slice:"3:" %}
+                <div class="form-group">
+                    <h5>{{ field.label }}</h5>
+                    <br>
+                    {{ field.errors }}
+                    {{ field }}
+                </div>
+            {% endfor %}
+            <br>
+
+            <small>
+                <br>
+                <br>
+                {% translate 'PLZ, Ort, Stundenlohn und Alter wird auch in Ihren Jobausschreibung angezeigt, um Arbeitnehmer' %}
+                <br>
+                {% translate 'Orientierung bei der Suche zu geben.' %}</small>
+
+            <br>
+            <br>
+
+            <input class="input_send" type="submit" value="{% translate 'Weiter' %}"/>
+
+        </div>
+    </form>
+{% endblock %}

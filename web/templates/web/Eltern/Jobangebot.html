@@ -1,0 +1,39 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block navigation %}
+    {% include "web/index_navigation.html" %}
+{% endblock %}
+{% block content %}
+<br>    
+    <h5>{% translate 'Auf der Suche nach einer' %}</h5>
+    <small> 3 von 8 </small>
+<br>
+    <form method="POST">
+        {% csrf_token %}
+        {% for hidden in form.hidden_fields %}
+            <label for="{{hidden.auto_id}}" id="{{hidden.name}}" class="betreuungsart-button" onclick="changeCheckedClass('{{hidden.name}}')">{{hidden.label}}</label>
+            {{ hidden }}
+        {% endfor %}
+        {% for field in form.visible_fields|slice:":4" %}
+            <div class="form-group">
+                <label for="{{field.auto_id}}" id="{{field.name}}" class="betreuungsart-button" onclick="changeCheckedClass('{{field.name}}')">{{field.label}}</label>
+                {{ field.errors }}
+                {{ field }}
+            </div>
+        {% endfor %}
+<br>
+<br>
+        <input class="input_send" type="submit" value="{% translate 'Weiter' %}"/>
+         <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+       
+
+    </form>
+
+    <script src="{% static 'web/js/helperfunctions.js' %}"></script>
+{% endblock %}

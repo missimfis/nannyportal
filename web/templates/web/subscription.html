@@ -1,0 +1,49 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block navigation %}
+        {% include "web/Eltern.Profilseite/eltern_navigation.html" %}
+{% endblock %}
+{% block stylesheet %} <link href="{% static 'web/css/Mitglied-Premium.css' %}" rel="stylesheet" type="text/css">{% endblock %}
+{% block content %}
+        <div class="hintergrund-premium">
+            <br>    
+            <div class="nachrichtenaktivieren">{% translate 'Nachrichten aktivieren' %}</div><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-envelope-check" viewBox="0 0 16 16">
+                <path d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2H2Zm3.708 6.208L1 11.105V5.383l4.708 2.825ZM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2-7-4.2Z"/>
+                <path d="M16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Zm-1.993-1.679a.5.5 0 0 0-.686.172l-1.17 1.95-.547-.547a.5.5 0 0 0-.708.708l.774.773a.75.75 0 0 0 1.174-.144l1.335-2.226a.5.5 0 0 0-.172-.686Z"/>
+              </svg>
+            <div>
+                <div class="verschicken"> {% translate 'Unbegrenzte Nachrichten verschicken' %}</div>
+                    <br>
+            </div>
+        </div>
+
+        <div class="container-fluid container-premium">
+             <div class="row">
+                {% for price in prices %}
+                <div class="col-sm box-premium">
+                    <a href={% url 'web:create-checkout-session' price.id %}>
+                        <div class="premium-inside">
+                            {% if price.id == 1 %}
+                                <h2> {% translate '1 Monat' %}</h2>
+                                {% elif price.id == 2 %}
+                                <h2> {% translate '3 Monate' %}</h2>
+                                {% elif price.id == 3 %}
+                                <h2> {% translate '6 Monate' %}</h2>
+                                {% endif %}
+                        </div>
+                        <div class="premium-inside">
+                                <h3>{{ price.get_display_price }}<small class="small">CHF</small></h3>
+                                <span class="btn betreuungsart-col2"> {% translate 'Wählen' %}</span>
+                        </div>
+                    </a>
+                </div>
+
+                {% endfor %}
+                    <div class="dankebeitrag"> 
+                        {% translate 'Dank Ihren Beitrag können wir die Kosten für die Website aufrecht erhalten.' %} 
+                    </div>
+
+
+{% endblock %}
+{% block scripts %}<script src="{% static 'web/js/premium.js' %}"></script>{% endblock scripts %}

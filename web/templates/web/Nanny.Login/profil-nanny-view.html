@@ -1,0 +1,167 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block navigation %}
+    {% if nanny %}
+        {% include "web/Nanny.Login/nanny_navigation.html" %}
+    {% else %}
+        {% include "web/Eltern.Profilseite/eltern_navigation.html" %}
+    {% endif %}
+{% endblock %}
+{% block stylesheet %}
+<link href="{% static 'web/css/Profil.css' %}" rel="stylesheet" type="text/css">
+{% endblock %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm">
+            <img id="profilbild" src="/media/{{ profilbild.bild.url|slice:" 7:" }}">
+            <div class="nameprofil">{{ user.first_name }} {{ user.last_name|slice:":1"}}. </div>
+
+            <div class="title">
+                <div class="Schriftmeinprofil"> <small> von </small> {{ profil.ort }}</div>
+            </div>
+            {% if nanny == False %}
+            <a class="Nachrichtenbutton"
+                href="{% url "web:nachrichten" empfaenger_id=user.id %}?message=true">{% translate 'Nachricht' %}</a>
+            {% else %}
+            <a class="Nachrichtenbutton" href="{% url 'web:bearbeitungnanny' %}">{% translate 'Bearbeiten' %}</a>
+            {% endif %}
+        </div>
+        <div class="col-sm">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm box specialbox">
+                        <div class="title">
+
+                            <div class="text10"> {% translate 'Alter' %} </div>
+                            <div class="Schriftmeinprofil">{{ profil.calculate_age }}</div>
+                        </div>
+                    </div>
+                    <div class="col-sm box">
+                        <div class="text10">{% translate 'Führeschein' %}</div>
+                        <span class="Schriftmeinprofil">
+                            {% if additionalskillschild.drivers_licence %}{% translate 'Ja' %}{% else %}{% translate 'Nein' %}{% endif %}
+                        </span>
+                    </div>
+                    <div class="col-sm box speciallbox">
+                        <div class="text10">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-cash-coin" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0z" />
+                                <path
+                                    d="M9.438 11.944c.047.596.518 1.06 1.363 1.116v.44h.375v-.443c.875-.061 1.386-.529 1.386-1.207 0-.618-.39-.936-1.09-1.1l-.296-.07v-1.2c.376.043.614.248.671.532h.658c-.047-.575-.54-1.024-1.329-1.073V8.5h-.375v.45c-.747.073-1.255.522-1.255 1.158 0 .562.378.92 1.007 1.066l.248.061v1.272c-.384-.058-.639-.27-.696-.563h-.668zm1.36-1.354c-.369-.085-.569-.26-.569-.522 0-.294.216-.514.572-.578v1.1h-.003zm.432.746c.449.104.655.272.655.569 0 .339-.257.571-.709.614v-1.195l.054.012z" />
+                                <path
+                                    d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083c.058-.344.145-.678.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1H1z" />
+                                <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 5.982 5.982 0 0 1 3.13-1.567z" />
+                            </svg>
+                        </div>
+                        <span class="Schriftmeinprofil">
+                            {{ profil.salary }}<small> </small></span>
+                    </div>
+
+
+                </div>
+                <br>
+                <div class="row">
+                    <div class="persönlichebeschreibung">{% translate 'Beschreibung' %}</div>
+                    <p class="text-left">
+                        {{ description.description }}
+                    </p>
+                </div>
+                <div class="row">
+                    <hr>
+                    <br>
+                    <h3 class="Altersklasseschrift">{% translate 'Erfahrung mit' %}</h3>
+                    <ul>
+                        {% if experiencechild.newborn_child_experience %}
+                        <li>
+                            <span>{% translate 'Neugeborenen' %}</span>
+                        </li>
+                        {% endif %}
+                        {% if experiencechild.infants_child_experience %}
+                        <li>
+                            <span>{% translate 'Kleinkind' %}</span>
+                        </li>
+                        {% endif %}
+                        {% if experiencechild.kindergarden_school_child_experience %}
+                        <li>
+                            <span>{% translate 'Kindergarten- und Schulalter' %}</span>
+                        </li>
+                        {% endif %}
+                    </ul>
+                    <br>
+                    <br>
+
+                    <h3 class="Altersklasseschrift">{% translate 'Qualifikationen' %}
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-bank2" viewBox="0 0 16 16">
+                            <path
+                                d="M8.277.084a.5.5 0 0 0-.554 0l-7.5 5A.5.5 0 0 0 .5 6h1.875v7H1.5a.5.5 0 0 0 0 1h13a.5.5 0 1 0 0-1h-.875V6H15.5a.5.5 0 0 0 .277-.916l-7.5-5zM12.375 6v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zM8 4a1 1 0 1 1 0-2 1 1 0 0 1 0 2zM.5 15a.5.5 0 0 0 0 1h15a.5.5 0 1 0 0-1H.5z" />
+                        </svg>
+                    </h3>
+                    <ul>
+                        {% if additionalskillschild.fachfrau_course %}
+                        <li>
+                            <span>{% translate 'Betreuung EFZ' %}</span>
+                        </li>
+                        {% endif %}
+                        {% if additionalskillschild.sitting_course %}
+                        <li>
+                            <span>{% translate 'Babysitting-Kurs' %}</span>
+                        </li>
+                        {% endif %}
+                        {% if additionalskillschild.study %}
+                        <li>
+                            <span>{% translate 'Studium' %}</span>
+                        </li>
+                        {% endif %}
+                        {% if additionalskillschild.ausbildung %}
+                        <li>
+                            <span>{% translate 'Ausbildung' %}</span>
+                        </li>
+                        {% endif %}
+                        {% if additionalskillschild.praktikum %}
+                        <li>
+                            <span>{% translate 'Praktikum' %}</span>
+                        </li>
+                        {% endif %}
+                        {% if additionalskillschild.arbeitserfahrung %}
+                        <li>
+                            <span>{% translate 'Arbeitserfahrung' %}</span>
+                        </li>
+                        {% endif %}
+
+                    </ul>
+                    <br>
+                    <br>
+                    <br>
+
+                    <h3 class="Altersklasseschrift">{% translate 'Auf Anfrage' %}</h3>
+                    <ul>
+                        <li>{% translate 'Lebenslauf' %}</li>
+                        <li>{% translate 'Arbeitszeugnisse' %}</li>
+                        <li>{% translate 'Referenzen' %}</li>
+                    </ul>
+                </div>
+                <hr>
+                <div class="row">
+                    <ul>
+                        <li>
+
+                            <small>{% translate 'Mitglied seit:' %}
+                                {{ user.date_joined|date:'M. y' }}
+                            </small>
+                        </li>
+                        <li>
+                            <small>
+
+                                {% translate 'Zuletzt Online:' %}
+                                {{ user.last_login|date:'d. M' }}</small>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            {% endblock %}
+            {% block scripts %}<script src="{% static 'web/js/helperfunctions.js' %}"></script>{% endblock scripts %}

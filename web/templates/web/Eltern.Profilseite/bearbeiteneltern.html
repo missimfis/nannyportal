@@ -1,0 +1,169 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block navigation %}
+        {% include "web/Eltern.Profilseite/eltern_navigation.html" %}
+{% endblock %}
+{% block content %}
+    <h5>{% translate 'Profil bearbeiten' %}</h5> 
+    <p>{% translate 'Profilbild bearbeiten*' %}</p>
+ 
+        <form action="" method="POST"  enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="Fotohochaden edit">
+                <div class="form-input">
+                    <div class="preview"> 
+                        <img id="file-ip-1-preview"  src="/media/{{bild.bild.url|slice:"7:"}}">
+                    </div>
+                        <label for="file-ip-1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                    <path d="M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z"/>
+                    </svg>
+                    </label>
+                        <input type="file" id="file-ip-1" accept="image/*" name="bild" onchange="showPreview(event);">
+                    </div>
+            </div>
+    
+                <input class="input_bearbeiten" type="submit" name="image_upload" value="{% translate 'Bild speichern' %}" />
+        </form>
+    <br>
+
+
+
+    <p>{% translate 'Angaben bearbeiten*' %}</p>
+    <br>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="Personalien-box">
+                <div class="berarbeitugtext">
+            {% include "web/form_snippet.html" with form=profilElternForm %}
+        </div>
+            <input class="input_bearbeiten" type="submit" name="orteltern" value="{% translate 'Angabe speichern' %}"  />
+    </form>
+        <br>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {% for field in angabeForm.visible_fields|slice:"4:" %}
+        <div class="form-group">
+            <label for="{{field.auto_id}}"  id="{{field.name}}" class="betreuungsart-button" onclick="changeCheckedClass('{{field.name}}')">{{field.label}}</label>
+            {{ field.errors }} {{ field }}
+        </div>
+        {% endfor %}
+    </form>
+      
+
+      
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <br>
+        <p>{% translate 'Beschreibung bearbeiten*' %}</p>
+        <div class="berarbeitugtext">
+        {% include "web/form_snippet.html" with form=descriptionElternForm %}
+        </div>
+        <input class="input_bearbeiten" type="submit" name="texteltern" value="{% translate 'Text speichern' %}"  />
+    </form>
+        <br>
+<br>
+        <form action="" method="POST">
+            {% csrf_token %}
+        <p>{% translate 'Anzahl Kinder bearbeiten*' %}</p>
+           {% for field in anzahlKinderForm.visible_fields|slice:":4" %}
+            <div class="form-group">
+                <div class="berarbeitugklick">
+                    <label for="{{field.auto_id}}"  id="{{field.name}}" class="betreuungsart-button" onclick="changeCheckedClass('{{field.name}}')">{{field.label}}</label>
+                    {{ field.errors }} {{ field }}
+                </div>
+            </div>
+            {% endfor %}
+            <h5>{% translate 'In welcher Altersgruppe?' %}</h5>
+            {% for field in anzahlKinderForm.visible_fields|slice:"4:" %}
+            <div class="form-group">
+                <div class="berarbeitugklick">
+                    <label for="{{field.auto_id}}"  id="{{field.name}}" class="betreuungsart-button" onclick="changeCheckedClass('{{field.name}}')">{{field.label}}</label>
+                    {{ field.errors }} {{ field }}
+                </div>
+            </div>
+            {% endfor %}
+        <input class="input_bearbeiten" type="submit" name="anzahlkinder" value="{% translate 'speichern' %}"  />
+        </form>
+        <br>
+        <br>
+
+
+
+        <form action="" method="POST">
+        {% csrf_token %}
+        <p{% translate 'Aufgaben bearbeiten' %}</p>
+        {% for field in anforderungElternForm.visible_fields|slice:":5" %}
+        <div class="form-group">
+        <label for="{{field.auto_id}}"  id="{{field.name}}" class="betreuungsart-button" onclick="changeCheckedClass('{{field.name}}')">{{field.label}}</label>
+        {{ field.errors }} {{ field }}
+        </div>
+        {% endfor %}
+        <input class="input_bearbeiten" type="submit" name="anfoderungeltern" value="{% translate 'Aufgaben ' %}"  />
+        </form>
+    
+        <form action="" method="POST">
+        {% csrf_token %}
+            <p>{% translate 'Daten bearbeiten*' %}</p>
+        <div class="Kalender-box">
+            <table class="table">
+                <thead class="table-light">
+                    <tr>
+                        <th>&nbsp;</th>
+                        <th>{% translate 'Mo' %}</th>
+                        <th>{% translate 'Di' %}</th>
+                        <th>{% translate 'Mi' %}</th>
+                        <th>{% translate 'Do' %}</th>
+                        <th>{% translate 'Fr' %}</th>
+                        <th>{% translate 'Sa' %}</th>
+                        <th>{% translate 'So' %}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{% translate 'Vormittag' %}</td>
+                        {% for field in betreuungszeitElternForm.visible_fields|slice:":7" %}
+                        <td>{{ field.errors }} {{ field }}</td>
+                        {% endfor %}
+                    </tr>
+
+                    <tr>
+                        <td>{% translate 'Nachmittag' %}</td>
+                        {% for field in betreuungszeitElternForm.visible_fields|slice:"7:14" %}
+                        <td>{{ field.errors }} {{ field }}</td>
+                        {% endfor %}
+                    </tr>
+
+                    <tr>
+                        <td>{% translate 'Abend' %}</td>
+                        {% for field in betreuungszeitElternForm.visible_fields|slice:"14:21" %}
+                        <td>{{ field.errors }} {{ field }}</td>
+                        {% endfor %}
+                    </tr>
+
+                    <tr>
+                        <td>{% translate 'Übernachtung' %}</td>
+                        {% for field in betreuungszeitElternForm.visible_fields|slice:"21:" %}
+                        <td>{{ field.errors }} {{ field }}</td>
+                        {% endfor %}
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <input class="input_bearbeiten" type="submit" name="zeiteltern" value="{% translate 'Daten speichern' %}"  />
+        </form>
+        <br>
+<br>
+* {% translate 'Pflichtfeld' %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<script src="{% static 'web/js/helperfunctions.js' %}"></script>
+<script src="{% static 'web/js/foto.js' %}"></script>
+
+{% endblock %}

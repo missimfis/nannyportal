@@ -1,0 +1,90 @@
+
+<html>
+<head>
+{% load i18n %}
+   
+</head>
+<body>
+<style>
+
+ .nachrichterhalten {
+        width: 50%;
+        margin: 0 auto;
+}
+body {
+    background-color: rgb(255, 255, 255);
+    text-align: left;
+    font-family: sans-serif;
+    margin: 10px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #696b6d;
+    background-color: #fff;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+a {
+    background-color: rgb(233, 226, 236);
+    border-radius: 4px;
+    color: rgb(126, 102, 134);
+    font-size: 19px;
+    border: 0.01px solid rgb(234, 240, 248);
+    width: 300px;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 16px 25px;
+    text-align: center;
+}
+
+.titlenachrichterhalten {
+    color: rgb(126, 102, 134);
+    font-size: 30px;
+    text-align: center;
+    margin: 0px;
+    font-family: sans-serif;
+    font-weight: 500;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+    </style>
+    <div class="nachrichterhalten">
+    <br>
+    <h1 class="titlenachrichterhalten">{% translate "nanny25.ch" %}</h1>
+    <br>
+    <hr>
+    <br>
+    {% translate "Hallo " %}{{to_user.first_name}},
+
+    <br>  
+    <br>
+    {% translate "Sie haben eine neue Nachricht von " %}{{from_user.first_name}}{% translate " erhalten." %}
+    <br> 
+    <br>
+  
+    <br>
+    <div class="betreuungsart-col">
+    <a href="https://nanny25.ch/accounts/login/">{% translate "Nachricht von " %}{{from_user.first_name}}{% translate " anschauen" %}</a> 
+    </div>
+    <br> 
+    <br>
+    {% translate "Liebe Grüsse" %}<br>
+    {% translate "Ihr nanny25.ch Team" %}
+    <br>
+    <br>
+    <small>{% translate "Dies ist eine automatisierte E-Mail." %} 
+    {% translate "Bitte antworten Sie nicht darauf." %}
+    <br>
+    {% translate "Bei Fragen oder Unklarheiten nehmen Sie auf" %}
+    <br>
+    {% translate "unserer Webseite mit uns Kontakt auf." %}<br/>
+    {% translate "Den Link dazu finden Sie in der Fusszeile der Seite." %}
+    <br>
+    </small>
+    <hr>
+    <br>
+   <small>©2021 {% translate "Betreuungsart." %}</small>
+    </div>
+</body>
+</html>
+

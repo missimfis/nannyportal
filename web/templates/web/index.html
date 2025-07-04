@@ -1,0 +1,218 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block navigation %}
+    {% include "web/index_navigation.html" %}
+{% endblock %}
+{% block stylesheet %}
+    <link href='{% static 'web/css/hauptseite_Foto.css' %}' rel='stylesheet' type='text/css'>
+    <link href='{% static 'web/css/front.css' %}' rel='stylesheet' type='text/css'>
+{% endblock %}
+{% block head %}
+<script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3543124857947085"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      async
+      custom-element="amp-auto-ads"
+      src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"
+    ></script>
+    {% endblock %}
+
+    {% block amp %}
+    <amp-auto-ads type="adsense" data-ad-client="ca-pub-3543124857947085">
+    </amp-auto-ads>
+    {%endblock%}
+    
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+        
+     
+            <div class="col-sm background"></div>
+            <div class="col-sm">
+                <br>
+                <p class="Fürfamlien"> {% translate 'Für Familien' %} </p>
+                <h4 class="titel-gross">{% translate 'Kinderbetreuung Angebot' %}</h4>
+                <br>
+                <div class="betreuungsart-col">
+                    <a href="{% url 'web:create-user' group_id=4 %}"><img src="/media/web/images/baby-buggy.png" style="width:40px; padding:3px;" alt="buggy"> 
+                    <h5 class="titel-suche1">{% translate "Kinderbetreuung" %}</h5></a>
+                </div>
+              
+
+                
+                <br>
+                <br>
+                <p class="Fürfamlien"> {% translate 'Für Nannys' %} </p>
+                <h4 class="titel-gross">{% translate 'Job suchen' %}</h4>
+
+                <div class="betreuungsart-row">
+                    <div class="betreuungsart-col">
+                    <a href="{% url 'web:create-user' group_id=1 %}"><img src="/media/web/images/babysitter.png" style="width:40px; padding:3px;" alt="Babysitter">
+                    <br>
+                 
+                    <h5 class="titel-suche1">{% translate "Jobs" %}</h5>
+
+    {% translate " " %}</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="container-fluid boxAussenBitteSOnstnichtanrührenDanke"><!-- Dasist die grossse Box um alles herum, welches die einzelnen Rows einhält, oder deine Spalte, falls das besser verständliche ist für dich -->
+        <div class="dreivon"> 3 von 300 Nannys </div>  
+
+        {% for item in nanny_list %}
+        <div class="row breiteRow"> <!-- Das ist deine Zeile diese wird wiederholt-->
+            <div class="ansicht">
+                <p class="ansichtarbeit">{% if item.angabejob.angabe_job_nanny%}{% translate 'Nanny' %}{% endif %}</p>
+
+                 <img class="nannyvorschau" src="/media/{{item.bild.bild.url|slice:"7:" }}" alt="Nanny" />  
+   
+             </div>
+             <div class="inhaltBoxKathrin">
+                <div class="ansichtname">  {{item.nanny.first_name}} <small> {% translate 'von' %} {{item.profil.ort}} </small></div>
+                <div class="ansichttext"> {{item.description.description|slice:":60"}}...</div>       
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <br>
+    <hr>
+    <br>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm pinkbox">
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="55" fill="currentColor" class="bi bi-layout-text-window-reverse" viewbox="0 0 16 16">
+                    <path d="M13 6.5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 .5-.5zm0 3a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 .5-.5zm-.5 2.5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1h5z"/>
+                    <path d="M14 0a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12zM2 1a1 1 0 0 0-1 1v1h14V2a1 1 0 0 0-1-1H2zM1 4v10a1 1 0 0 0 1 1h2V4H1zm4 0v11h9a1 1 0 0 0 1-1V4H5z"/>
+                </svg>
+                <br>
+                <h5 class="funktion"> {% translate "Inserat erstellen" %}</h5>
+                <br>
+               
+                <p class="funktion1">{% translate "Erstellen Sie Ihr persönliches Inserat nach Ihren Anfoderungen und Wünschen." %}</p>
+                
+            </div>
+<br>
+            <div class="col-sm pinkbox">
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="55" fill="currentColor" class="bi bi-search" viewbox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                </svg>
+                <br>
+
+                <h5 class="funktion"> {% translate "Profile durchsuchen" %}</h5>
+                <br>
+            
+                <p class="funktion1"> {% translate "Sehen Sie sich die Kandidaten an, und wählen Sie die Kanditaten die zu Ihnen passt." %}</p>
+            </div>
+<br>
+            <div class="col-sm pinkbox">
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="55" fill="currentColor" class="bi bi-telephone-inbound" viewbox="0 0 16 16">
+                    <path d="M15.854.146a.5.5 0 0 1 0 .708L11.707 5H14.5a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 1 0v2.793L15.146.146a.5.5 0 0 1 .708 0zm-12.2 1.182a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                </svg>
+                <br>
+                <h5 class="funktion"> {% translate "Kontakt aufnehmen" %}</h5>
+                <br>
+           
+                <p class="funktion1"> {% translate "Nehmen Sie Kontakt mit den Kanditaten auf und setzten sie einen Arbeitsvetrag auf." %}</p>
+            </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm Bild">
+            <img class="nanny-bild" src="/media/web/images/IMG_NANNY.jpeg" alt="nanny holding child">
+            <br>
+            <br>
+            <div class="col-sm box2">
+                <h3 class="gefunden1"> {% translate "Die Nanny" %} </h3>
+                <div class="gefunden">
+                {% translate "Die Kinderbetreuung bei einer Nanny bringt viele Vorteile. In Persönlich geht die Nanny genau auf die Bedürfnisse Ihres Kindes ein. Durch individuell vereinbarte Betreuungszeiten können Familie und Beruf perfekt vereinbaren. Sie erfahren persönlich von der Nanny regelmäßig von den Fortschritten Ihres Kindes." %}
+                </div>
+                <br/>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<hr>
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm Bild">
+            <img class="nanny-bild" src="/media/web/images/Tagesmutter.png" alt="child care">
+            <br>
+            <br>
+            <div class="col-sm box2">
+            <h3 class="gefunden1"> {% translate "Die Tagesmutter" %} </h3>
+            <div class="gefunden">
+                {% translate "Die Kinderbetreuung bei einer Tagesmutter bringt viele Vorteile. In kleinen Gruppen geht die Tagesmutter genau auf die Bedürfnisse Ihres Kindes ein. Durch individuell vereinbarte Betreuungszeiten können Familie und Beruf perfekt vereinbaren. Sie erfahren von der Tagesmutter regelmäßig von den Fortschritten Ihres Kindes." %}
+            </div>
+        </div>
+        <br>
+        <br>
+        <hr>
+        <br>
+        </div>  
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm Bild">
+            <img class="nanny-bild" src="/media/web/images/vertrag.jpg" alt="drawing">
+            <br>
+            <br>   
+            <div class="col-sm box2">
+            <h3 class="gefunden1"> {% translate "Nanny gefunden?" %} </h3>
+            <div class="gefunden">
+            {% translate "Jemand Privat bei sich Zuhause ist ein sehr persönliches Arbeitsverhältnis, darum sollte man grundsätzlich alle Vereinbarungen schriftlich festhalten. Sichern Sie Ihrer Haushaltangestellte mit den rechtlich notwendigen Versicherungen." %} <small> * </small>
+        </div>
+    </div>
+<br>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<br>
+<h3 class="gefunden1"> {% translate "Babysitter/Nanny oder Tagesmutter?" %}</h3>
+<br>
+<br>
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm Bild">
+            <img src="/media/web/images/IMG_wer.png" alt="happy nanny">
+            <br>
+            <br>
+ 
+            <div class="col-sm box2">
+                <div class="gefunden">
+                    {% translate "nanny25.ch bietet Familien die für Ihre Kinder eine Nanny/Tagesmutter benötigen die Möglichkeit einen Inserat zu erstellen um die passende Person zu finden. Falls du auf der Job-Suche bist und Interesse hast, kannst du dich gerne bei uns registrieren und dein Profil anlegen." %}
+                    <br>
+                    <small>{% translate "Dein Betreuungsart Team" %}</small>
+                </div>
+                    <br/>
+               
+            </div>
+        </div>
+    </div>
+   
+</div>
+
+{%endblock%}
+{% block scripts %}
+<script src="{% static 'web/js/helperfunctions.js' %}"></script>{% endblock scripts %}

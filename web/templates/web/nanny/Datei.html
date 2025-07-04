@@ -1,0 +1,45 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block navigation %}
+    {% include "web/index_navigation.html" %}
+{% endblock %}
+{% block content %}
+
+    <div class="registrationschrift">{% translate 'Bitte Lächeln' %}
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-emoji-smile" viewbox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+            <path d="M4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683zM7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5z"/>
+        </svg>
+        {% translate 'Laden Sie zum Schluss noch Ihr Profilbild hoch!' %}</div>
+        
+
+    <p>
+       
+
+
+    <form method="POST" action="" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="Fotohochaden">
+            <div class="form-input">
+                <div class="preview">
+                    <img id="file-ip-1-preview">
+                </div>
+                <label for="file-ip-1">{% translate 'Foto auswählen' %}</label>
+                <input type="file" id="file-ip-1" accept="image/*" name="bild" onchange="showPreview(event);">
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <small>{% translate 'Sie möchten überspringen? Klicken Sie auf "Weiter"' %}</small>
+        <input class="input_send" type="submit" value="{% translate 'Weiter' %}"/>
+
+        <br>
+        <br>
+        <small>{% translate 'Ihr Profilbild wird auch in den Suchresultaten angezeigt.' %}</small>
+    </p>
+    </form>
+    <script src="{% static 'web/js/foto.js' %}"></script>
+{% endblock %}

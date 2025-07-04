@@ -1,0 +1,36 @@
+{% load i18n %}
+{% with request.resolver_match.url_name as url_name %}
+<li class="nav-item" aria-current="true">
+    <a href="{% url 'web:startseitenanny' %}" class="nav-link  {% if url_name == 'startseitenanny' %}active{% endif %}" aria-current="page">{% translate 'Startseite' %}</a>
+</li>
+<li class="nav-item">
+    <a href="{% url 'web:nachrichten' %}" class="nav-link {% if url_name == 'nachrichten' %}active{% endif %}">{% translate 'Nachrichten' %}{% if anz_neue_nachrichten > 0 %}
+            <small class="badge bg-color">{{anz_neue_nachrichten}}</small>
+        {% endif %}
+    </a>
+</li>
+<li class="nav-item">
+    <a href="{% url 'web:profilnanny' %}" class="nav-link {% if url_name == 'profilnanny' %}active{% endif %}">{% translate 'Mein Profil' %}</a>
+</li>
+<li class="nav-item">
+    <a href="{% url 'web:premiumnanny' %}" class="nav-link {% if url_name == 'premiumnanny' %}active{% endif %}">{% translate 'Premium Mitgliedschaft' %}</a>
+</li>
+<li class="nav-item">
+    <a href="{% url 'web:einstellungen' %}" class="nav-link {% if url_name == 'einstellungen' %}active{% endif %}">{% translate 'Einstellungen' %}</a>
+</li>
+<li class="nav-item">
+    <a href="{% url 'web:logout_view' %}" class="nav-link">{% translate 'Ausloggen' %}</a>
+</li>
+<li class="nav-item">
+    <form action="{% url 'set_language' %}" id="language-form" method="post">{% csrf_token %}
+        <input name="next" type="hidden" value="{{ redirect_to }}">
+        <input name="language" id="language" type="hidden" value="">
+            {% get_current_language as LANGUAGE_CODE %}
+            {% get_available_languages as LANGUAGES %}
+            {% get_language_info_list for LANGUAGES as languages %}
+        {% for language in languages %}
+        <a class="nav-link sprache" onClick="document.getElementById('language').value ='{{language.code}}'; document.getElementById('language-form').submit();"> {{ language.code| title }}</a> 
+        {% endfor %}
+    </form>
+</li>
+{% endwith %}

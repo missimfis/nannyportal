@@ -1,0 +1,2460 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-24 11:03+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: mysite/settings.py:143
+msgid "German"
+msgstr ""
+
+#: mysite/settings.py:144
+msgid "English"
+msgstr ""
+
+#: web/templates/registration/login.html:11
+msgid "Login"
+msgstr ""
+
+#: web/templates/registration/login.html:36
+msgid "E-Mail"
+msgstr ""
+
+#: web/templates/registration/login.html:41
+#: web/templates/registration/password_reset_form.html:9
+msgid "Passwort vergessen?"
+msgstr "Forgot your password?"
+
+#: web/templates/registration/login.html:45
+#: web/templates/web/index_navigation.html:7
+msgid "Anmelden"
+msgstr "Log in"
+
+#: web/templates/registration/login.html:52
+msgid "Noch kein Benutzerkonto?"
+msgstr "Don't have an account yet?"
+
+#: web/templates/registration/login.html:53
+msgid "Jetzt registrieren"
+msgstr "Register now"
+
+#: web/templates/registration/password_reset_complete.html:9
+msgid "Passwort zurücksetzen abgeschlossen"
+msgstr "Reset password completed"
+
+#: web/templates/registration/password_reset_complete.html:10
+msgid ""
+"Ihr Passwort wurde zurückgesetzt. Sie können sich nun mit dem neuen Passwort "
+"einloggen."
+msgstr "Your password has been reset. You can now log in with the new password"
+
+#: web/templates/registration/password_reset_complete.html:11
+msgid "Log in"
+msgstr ""
+
+#: web/templates/registration/password_reset_confirm.html:9
+msgid "Passwort zurücksetzen bestätigen"
+msgstr "Reset password confirm"
+
+#: web/templates/registration/password_reset_confirm.html:10
+msgid "Bitte geben Sie Ihr neues Passwort ein."
+msgstr "Please enter your new password."
+
+#: web/templates/registration/password_reset_confirm.html:32
+msgid "Passwort zurücksetzen"
+msgstr "Reset password"
+
+#: web/templates/registration/password_reset_done.html:9
+msgid "Bitte schauen Sie in Ihren E-Mail"
+msgstr "Please check your email"
+
+#: web/templates/registration/password_reset_done.html:11
+msgid ""
+"Wir haben Ihnen eine E-Mail mit einem Link zum Zurücksetzen des Passworts "
+"gesendet. \n"
+"\t  Bitte öffnen Sie die E-Mail und klicken Sie auf den Link."
+msgstr ""
+"We have sent you an email with a link to reset your password. Please open "
+"the email and click on the link."
+
+#: web/templates/registration/password_reset_done.html:16
+msgid ""
+"Können Sie die E-Mail nicht sehen?\n"
+"\t\tÜberprüfen Sie Ihren Spam Ordner.\n"
+"\t\t<br>Ansonsten Kontaktieren Sie uns."
+msgstr ""
+"Can't see the email? Check your spam folder.\n"
+"\t\t<br>Otherwise contact us."
+
+#: web/templates/registration/password_reset_email.html:2
+#, python-format
+msgid ""
+"You're receiving this email because you requested a password reset for your "
+"user account at %(site_name)s."
+msgstr ""
+"You're receiving this email because you requested a password reset for your "
+"user account at %(site_name)s."
+
+#: web/templates/registration/password_reset_email.html:4
+msgid "Please go to the following page and choose a new password:"
+msgstr "Please go to the following page and choose a new password:"
+
+#: web/templates/registration/password_reset_email.html:8
+msgid "Your username, in case you’ve forgotten:"
+msgstr "Your username, in case you’ve forgotten:"
+
+#: web/templates/registration/password_reset_email.html:10
+msgid "Thanks for using our site!"
+msgstr "Thanks for using our site!"
+
+#: web/templates/registration/password_reset_email.html:12
+#, python-format
+msgid "The %(site_name)s team"
+msgstr "The %(site_name)s team"
+
+#: web/templates/registration/password_reset_form.html:11
+msgid ""
+"Geben Sie Ihre E-Mail-Adresse ein und wir senden Ihnen eine Anleitung, um "
+"Ihr Passwort zurückzusetzen."
+msgstr ""
+"Enter your email address and we will send you instructions to reset your "
+"password."
+
+#: web/templates/registration/password_reset_form.html:31
+msgid "E-Mail-Adresse"
+msgstr ""
+
+#: web/templates/registration/password_reset_form.html:34
+#: web/templates/web/Eltern/Anfoderung_eltern.html:26
+#: web/templates/web/Eltern/Anzahl-Kinder.html:40
+#: web/templates/web/Eltern/Betreuungszeit.html:62
+#: web/templates/web/Eltern/Datei.html:37
+#: web/templates/web/Eltern/Jobangebot.html:27
+#: web/templates/web/Eltern/Ort-Eltern.html:30
+#: web/templates/web/Eltern/descriptioneltern.html:16
+#: web/templates/web/Senior.job.registrieren/Datei.html:34
+#: web/templates/web/Senior.job.registrieren/angaben.html:35
+#: web/templates/web/Senior.job.registrieren/bewerbungschreiben.html:14
+#: web/templates/web/Senior.job.registrieren/skills.html:23
+#: web/templates/web/Senior.registrieren/anfoderdung-senior.html:26
+#: web/templates/web/Senior.registrieren/betreuungszeitsenior.html:64
+#: web/templates/web/Senior.registrieren/datei.html:39
+#: web/templates/web/Senior.registrieren/description-senior.html:14
+#: web/templates/web/Senior.registrieren/e-mail.html:28
+#: web/templates/web/Tier.registieren/Anzahl-Haustier.html:25
+#: web/templates/web/Tier.registieren/Dateitier.html:39
+#: web/templates/web/Tier.registieren/Dateitierbetreuer.html:41
+#: web/templates/web/Tier.registieren/E-Mail.tier.html:33
+#: web/templates/web/Tier.registieren/anfoderung-tier.html:27
+#: web/templates/web/Tier.registieren/betreuer-description.html:12
+#: web/templates/web/Tier.registieren/betreuungszeittier.html:65
+#: web/templates/web/Tier.registieren/experiencetier.html:23
+#: web/templates/web/Tier.registieren/furerschein.html:23
+#: web/templates/web/Tier.registieren/texttier.html:12
+#: web/templates/web/Tier.registieren/tierbetreuer-e-mail.html:42
+#: web/templates/web/nanny/Datei.html:39
+#: web/templates/web/nanny/additionalskillschild.html:30
+#: web/templates/web/nanny/angabejob.html:24
+#: web/templates/web/nanny/description.html:14
+#: web/templates/web/nanny/experiencechild.html:25
+#: web/templates/web/nanny/profil.html:39
+msgid "Weiter"
+msgstr "next"
+
+#: web/templates/web/E-Mail/Nachricht.html:53
+#: web/templates/web/E-Mail/Nachricht.txt:2
+#, fuzzy
+#| msgid "Betreuungsart."
+msgid "nanny25.ch"
+msgstr "Type Of Care"
+
+#: web/templates/web/E-Mail/Nachricht.html:57
+#: web/templates/web/E-Mail/Nachricht.txt:4
+msgid "Hallo "
+msgstr "Hello "
+
+#: web/templates/web/E-Mail/Nachricht.html:61
+msgid "Sie haben eine neue Nachricht von "
+msgstr "You have a new message from"
+
+#: web/templates/web/E-Mail/Nachricht.html:61
+msgid " erhalten."
+msgstr " recieved."
+
+#: web/templates/web/E-Mail/Nachricht.html:67
+#: web/templates/web/E-Mail/Nachricht.txt:7
+msgid "Nachricht von "
+msgstr "Message from"
+
+#: web/templates/web/E-Mail/Nachricht.html:67
+#, fuzzy
+#| msgid "Jobs anschauen"
+msgid " anschauen"
+msgstr "view jobs"
+
+#: web/templates/web/E-Mail/Nachricht.html:71
+msgid "Liebe Grüsse"
+msgstr "Kind regards"
+
+#: web/templates/web/E-Mail/Nachricht.html:72
+#, fuzzy
+#| msgid "Dein Betreuungsart Team"
+msgid "Ihr nanny25.ch Team"
+msgstr "Your type of care Team"
+
+#: web/templates/web/E-Mail/Nachricht.html:75
+msgid "Dies ist eine automatisierte E-Mail."
+msgstr ""
+
+#: web/templates/web/E-Mail/Nachricht.html:76
+msgid "Bitte antworten Sie nicht darauf."
+msgstr ""
+
+#: web/templates/web/E-Mail/Nachricht.html:78
+msgid "Bei Fragen oder Unklarheiten nehmen Sie auf"
+msgstr ""
+
+#: web/templates/web/E-Mail/Nachricht.html:80
+msgid "unserer Webseite mit uns Kontakt auf."
+msgstr ""
+
+#: web/templates/web/E-Mail/Nachricht.html:81
+msgid "Den Link dazu finden Sie in der Fusszeile der Seite."
+msgstr ""
+
+#: web/templates/web/E-Mail/Nachricht.html:86 web/templates/web/base.html:60
+msgid "Betreuungsart."
+msgstr "Type Of Care"
+
+#: web/templates/web/E-Mail/Nachricht.txt:5
+msgid "Sie haben eine neue Nachricht von"
+msgstr ""
+
+#: web/templates/web/E-Mail/Nachricht.txt:5
+msgid "erhalten."
+msgstr "recieved."
+
+#: web/templates/web/E-Mail/Nachricht.txt:6
+msgid "Schauen Sie nach wer Ihnen geschrieben hat."
+msgstr "Look up who wrote to you."
+
+#: web/templates/web/E-Mail/Nachricht.txt:7
+#, fuzzy
+#| msgid "Jobs anschauen"
+msgid " anschauen: "
+msgstr "view jobs"
+
+#: web/templates/web/E-Mail/Nachricht.txt:13
+msgid ""
+"Dies ist eine automatisierte E-Mail. \n"
+"Bitte antworten Sie nicht darauf.\n"
+"Bei Fragen oder Unklarheiten nehmen Sie auf \n"
+"unserer Webseite mit uns Kontakt auf.\n"
+"Den Link dazu finden Sie in der Fusszeile der Seite.\n"
+"©2021 nanny25.ch"
+msgstr ""
+
+#: web/templates/web/Eltern.Profilseite/Premium-Eltern.html:11
+msgid "Nachrichten aktivieren"
+msgstr "Activate messages"
+
+#: web/templates/web/Eltern.Profilseite/Premium-Eltern.html:16
+#: web/templates/web/Tier.inserat/tier_premium.html:20
+msgid "Unbegrenzte Nachrichten verschicken"
+msgstr "Send unlimited messages"
+
+#: web/templates/web/Eltern.Profilseite/Premium-Eltern.html:26
+#: web/templates/web/Nanny.Login/premium.html:30
+#: web/templates/web/Tier.job-inserat/tiersitter_premium.html:39
+msgid "1 Monat"
+msgstr "1 month"
+
+#: web/templates/web/Eltern.Profilseite/Premium-Eltern.html:29
+#: web/templates/web/Nanny.Login/premium.html:33
+msgid "19.00"
+msgstr "19.00"
+
+#: web/templates/web/Eltern.Profilseite/Premium-Eltern.html:30
+#: web/templates/web/Eltern.Profilseite/Premium-Eltern.html:42
+#: web/templates/web/Eltern.Profilseite/Premium-Eltern.html:54
+#: web/templates/web/Nanny.Login/premium.html:34
+#: web/templates/web/Nanny.Login/premium.html:46
+#: web/templates/web/Nanny.Login/premium.html:58
+#: web/templates/web/Senior.job-inserat/senhelferin_premium.html:45
+#: web/templates/web/Senior.job-inserat/senhelferin_premium.html:55
+#: web/templates/web/Senior.job-inserat/senhelferin_premium.html:63
+#: web/templates/web/Tier.inserat/tier_premium.html:48
+#: web/templates/web/Tier.inserat/tier_premium.html:58
+#: web/templates/web/Tier.inserat/tier_premium.html:69
+#: web/templates/web/Tier.job-inserat/tiersitter_premium.html:45
+#: web/templates/web/Tier.job-inserat/tiersitter_premium.html:55
+#: web/templates/web/Tier.job-inserat/tiersitter_premium.html:66
+#: web/templates/web/senior.inserat/senior_premium.html:43
+#: web/templates/web/senior.inserat/senior_premium.html:52
+#: web/templates/web/senior.inserat/senior_premium.html:60
+msgid "Wählen"
+msgstr "Choose"
+
+#: web/templates/web/Eltern.Profilseite/Premium-Eltern.html:38
+#: web/templates/web/Nanny.Login/premium.html:42
+#: web/templates/web/Tier.job-inserat/tiersitter_premium.html:49
+msgid "3 Monate"
+msgstr "3 months"
+
+#: web/templates/web/Eltern.Profilseite/Premium-Eltern.html:41
+#: web/templates/web/Nanny.Login/premium.html:45
+msgid "29.00"
+msgstr "29.00"
+
+#: web/templates/web/Eltern.Profilseite/Premium-Eltern.html:50
+#: web/templates/web/Nanny.Login/premium.html:54
+msgid "6 Monate"
+msgstr "6 months"
+
+#: web/templates/web/Eltern.Profilseite/Premium-Eltern.html:53
+#: web/templates/web/Nanny.Login/premium.html:57
+msgid "59.00"
+msgstr ""
+
+#: web/templates/web/Eltern.Profilseite/Premium-Eltern.html:59
+msgid ""
+"Dank Ihren Beitrag können wir die Kosten für die Website aufrecht erhalten."
+msgstr "Thanks to your contribution we can maintain the cost of the website."
+
+#: web/templates/web/Eltern.Profilseite/Profil-Eltern.html:24
+#: web/templates/web/Nanny.Login/profil-nanny-view.html:27
+#: web/templates/web/Senior.job-inserat/senhelferin_profil.html:24
+#: web/templates/web/Tier.inserat/tier_profil.html:26
+msgid "Nachricht"
+msgstr "message"
+
+#: web/templates/web/Eltern.Profilseite/Profil-Eltern.html:26
+#: web/templates/web/Eltern.Profilseite/bearbeiteneltern.html:8
+#: web/templates/web/Nanny.Login/bearbeitungnanny.html:8
+#: web/templates/web/Nanny.Login/profil-nanny-view.html:30
+#: web/templates/web/Senior.job-inserat/senhelferin_bearbeitung.html:8
+#: web/templates/web/Tier.inserat/tier_bearbeitung.html:10
+#: web/templates/web/Tier.inserat/tier_profil.html:28
+#: web/templates/web/Tier.job-inserat/tiersitter_bearbeitung.html:10
+#: web/templates/web/Tier.job-inserat/tiersitter_profil.html:28
+#: web/templates/web/einstellungen.html:34
+#: web/templates/web/senior.inserat/senior_bearbeitung.html:10
+msgid "Profil bearbeiten"
+msgstr "edit profile"
+
+#: web/templates/web/Eltern.Profilseite/Profil-Eltern.html:34
+#: web/templates/web/Eltern.Profilseite/Startseite-Eltern.html:67
+#: web/templates/web/Nanny.Login/Startseite-nanny.html:64
+#: web/templates/web/Senior.job-inserat/senhelferin_profil.html:33
+#: web/templates/web/Senior.job-inserat/senhelferin_startseite.html:58
+#: web/templates/web/Tier.inserat/tier_profil.html:35
+#: web/templates/web/Tier.job-inserat/tiersitter_profil.html:35
+#: web/templates/web/Tier.job-inserat/tiersitter_startseite.html:63
+#: web/templates/web/schnuppern.html:52
+msgid "Name"
+msgstr "name"
+
+#: web/templates/web/Eltern.Profilseite/Profil-Eltern.html:51
+msgid "Anzahl Kinder"
+msgstr "Amount of children"
+
+#: web/templates/web/Eltern.Profilseite/Profil-Eltern.html:55
+msgid "Kind"
+msgstr "child"
+
+#: web/templates/web/Eltern.Profilseite/Profil-Eltern.html:59
+#: web/templates/web/Eltern.Profilseite/Profil-Eltern.html:62
+#: web/templates/web/Eltern.Profilseite/Profil-Eltern.html:65
+#, fuzzy
+#| msgid "Kinderbetreuung"
+msgid "Kinder"
+msgstr "childcare"
+
+#: web/templates/web/Eltern.Profilseite/Profil-Eltern.html:75
+#: web/templates/web/Tier.inserat/tier_profil.html:80
+msgid "Stellen Beschreibung"
+msgstr "Jobs description"
+
+#: web/templates/web/Eltern.Profilseite/Profil-Eltern.html:87
+#: web/templates/web/Tier.inserat/tier_profil.html:92
+msgid "Gewünschte Daten"
+msgstr "Desired data"
+
+#: web/templates/web/Eltern.Profilseite/Profil-Eltern.html:89
+#: web/templates/web/Eltern.Profilseite/bearbeiteneltern.html:114
+#: web/templates/web/Eltern/Betreuungszeit.html:21
+#: web/templates/web/Senior.registrieren/betreuungszeitsenior.html:19
+#: web/templates/web/Tier.inserat/tier_bearbeitung.html:117
+#: web/templates/web/Tier.inserat/tier_profil.html:94
+#: web/templates/web/Tier.registieren/betreuungszeittier.html:20
+#: web/templates/web/senior.inserat/senior_bearbeitung.html:79
+msgid "Mo"
+msgstr "Mo"
+
+#: web/templates/web/Eltern.Profilseite/Profil-Eltern.html:90
+#: web/templates/web/Eltern.Profilseite/bearbeiteneltern.html:115
+#: web/templates/web/Eltern/Betreuungszeit.html:22
+#: web/templates/web/Senior.registrieren/betreuungszeitsenior.html:20
+#: web/templates/web/Tier.inserat/tier_bearbeitung.html:118
+#: web/templates/web/Tier.inserat/tier_profil.html:95
+#: web/templates/web/Tier.registieren/betreuungszeittier.html:21
+#: web/templates/web/senior.inserat/senior_bearbeitung.html:80
+msgid "Di"
+msgstr "Tues"
+
+#: web/templates/web/Eltern.Profilseite/Profil-Eltern.html:91
+#: web/templates/web/Eltern.Profilseite/bearbeiteneltern.html:116
+#: web/templates/web/Eltern/Betreuungszeit.html:23
+#: web/templates/web/Senior.registrieren/betreuungszeitsenior.html:21
+#: web/templates/web/Tier.inserat/tier_bearbeitung.html:119
+#: web/templates/web/Tier.inserat/tier_profil.html:96
+#: web/templates/web/Tier.registieren/betreuungszeittier.html:22
+#: web/templates/web/senior.inserat/senior_bearbeitung.html:81
+msgid "Mi"
+msgstr "We"
+
+#: web/templates/web/Eltern.Profilseite/Profil-Eltern.html:92
+#: web/templates/web/Eltern.Profilseite/bearbeiteneltern.html:117
+#: web/templates/web/Eltern/Betreuungszeit.html:24
+#: web/templates/web/Senior.registrieren/betreuungszeitsenior.html:22
+#: web/templates/web/Tier.inserat/tier_bearbeitung.html:120
+#: web/templates/web/Tier.inserat/tier_profil.html:97
+#: web/templates/web/Tier.registieren/betreuungszeittier.html:23
+#: web/templates/web/senior.inserat/senior_bearbeitung.html:82
+msgid "Do"
+msgstr "Thur"
+
+#: web/templates/web/Eltern.Profilseite/Profil-Eltern.html:93
+#: web/templates/web/Eltern.Profilseite/bearbeiteneltern.html:118
+#: web/templates/web/Eltern/Betreuungszeit.html:25
+#: web/templates/web/Senior.registrieren/betreuungszeitsenior.html:23
+#: web/templates/web/Tier.inserat/tier_bearbeitung.html:121
+#: web/templates/web/Tier.inserat/tier_profil.html:98
+#: web/templates/web/Tier.registieren/betreuungszeittier.html:24
+#: web/templates/web/senior.inserat/senior_bearbeitung.html:83
+msgid "Fr"
+msgstr "Fr"
+
+#: web/templates/web/Eltern.Profilseite/Profil-Eltern.html:94
+#: web/templates/web/Eltern.Profilseite/bearbeiteneltern.html:119
+#: web/templates/web/Eltern/Betreuungszeit.html:26
+#: web/templates/web/Senior.registrieren/betreuungszeitsenior.html:24
+#: web/templates/web/Tier.inserat/tier_bearbeitung.html:122
+#: web/templates/web/Tier.inserat/tier_profil.html:99
+#: web/templates/web/Tier.registieren/betreuungszeittier.html:25
+#: web/templates/web/senior.inserat/senior_bearbeitung.html:84
+msgid "Sa"
+msgstr "Sa"
+
+#: web/templates/web/Eltern.Profilseite/Profil-Eltern.html:95
+#: web/templates/web/Eltern.Profilseite/bearbeiteneltern.html:120
+#: web/templates/web/Eltern/Betreuungszeit.html:27
+#: web/templates/web/Senior.registrieren/betreuungszeitsenior.html:25
+#: web/templates/web/Tier.inserat/tier_bearbeitung.html:123
+#: web/templates/web/Tier.inserat/tier_profil.html:100
+#: web/templates/web/Tier.registieren/betreuungszeittier.html:26
+#: web/templates/web/senior.inserat/senior_bearbeitung.html:85
+msgid "So"
+msgstr "Su"
+
+#: web/templates/web/Eltern.Profilseite/Profil-Eltern.html:100
+#: web/templates/web/Eltern.Profilseite/bearbeiteneltern.html:125
+#: web/templates/web/Eltern/Betreuungszeit.html:32
+#: web/templates/web/Senior.registrieren/betreuungszeitsenior.html:30
+#: web/templates/web/Tier.inserat/tier_bearbeitung.html:128
+#: web/templates/web/Tier.inserat/tier_profil.html:105
+#: web/templates/web/Tier.registieren/betreuungszeittier.html:31
+#: web/templates/web/senior.inserat/senior_bearbeitung.html:90
+msgid "Vormittag"
+msgstr "Morning"
+
+#: web/templates/web/Eltern.Profilseite/Profil-Eltern.html:153
+#: web/templates/web/Eltern.Profilseite/bearbeiteneltern.html:132
+#: web/templates/web/Eltern/Betreuungszeit.html:39
+#: web/templates/web/Senior.registrieren/betreuungszeitsenior.html:38
+#: web/templates/web/Tier.inserat/tier_bearbeitung.html:135
+#: web/templates/web/Tier.inserat/tier_profil.html:158
+#: web/templates/web/Tier.registieren/betreuungszeittier.html:39
+#: web/templates/web/senior.inserat/senior_bearbeitung.html:97
+msgid "Nachmittag"
+msgstr "Afternoon"
+
+#: web/templates/web/Eltern.Profilseite/Profil-Eltern.html:207
+#: web/templates/web/Eltern.Profilseite/bearbeiteneltern.html:139
+#: web/templates/web/Eltern/Betreuungszeit.html:46
+#: web/templates/web/Senior.registrieren/betreuungszeitsenior.html:46
+#: web/templates/web/Tier.inserat/tier_bearbeitung.html:142
+#: web/templates/web/Tier.inserat/tier_profil.html:212
+#: web/templates/web/Tier.registieren/betreuungszeittier.html:47
+#: web/templates/web/senior.inserat/senior_bearbeitung.html:104
+msgid "Abend"
+msgstr "Evening"
+
+#: web/templates/web/Eltern.Profilseite/Profil-Eltern.html:260
+#: web/templates/web/Eltern.Profilseite/bearbeiteneltern.html:146
+#: web/templates/web/Eltern/Betreuungszeit.html:53
+#: web/templates/web/Senior.registrieren/betreuungszeitsenior.html:54
+#: web/templates/web/Tier.inserat/tier_bearbeitung.html:149
+#: web/templates/web/Tier.inserat/tier_profil.html:265
+#: web/templates/web/Tier.registieren/betreuungszeittier.html:55
+#: web/templates/web/senior.inserat/senior_bearbeitung.html:111
+msgid "Übernachtung"
+msgstr "Overnight stay"
+
+#: web/templates/web/Eltern.Profilseite/Profil-Eltern.html:318
+msgid "Altersklasse Kinder"
+msgstr "Age group children"
+
+#: web/templates/web/Eltern.Profilseite/Profil-Eltern.html:322
+msgid "Neugeborenes Baby"
+msgstr "Newborn baby"
+
+#: web/templates/web/Eltern.Profilseite/Profil-Eltern.html:325
+#: web/templates/web/Nanny.Login/profil-nanny-view.html:116
+msgid "Kleinkind"
+msgstr "Infant"
+
+#: web/templates/web/Eltern.Profilseite/Profil-Eltern.html:328
+#, fuzzy
+#| msgid "Kinderbetreuung"
+msgid "Kindergartenalter"
+msgstr "childcare"
+
+#: web/templates/web/Eltern.Profilseite/Profil-Eltern.html:331
+msgid "Schulater"
+msgstr "School Age"
+
+#: web/templates/web/Eltern.Profilseite/Profil-Eltern.html:334
+msgid "Teenager"
+msgstr "Teenager"
+
+#: web/templates/web/Eltern.Profilseite/Profil-Eltern.html:338
+#: web/templates/web/Senior.registrieren/anfoderdung-senior.html:8
+msgid "Aufgaben"
+msgstr "Tasks"
+
+#: web/templates/web/Eltern.Profilseite/Profil-Eltern.html:342
+msgid "Essenzubereitung"
+msgstr "Food preparation"
+
+#: web/templates/web/Eltern.Profilseite/Profil-Eltern.html:345
+msgid "Unterstützung bei Hausaufgaben"
+msgstr "Homework support"
+
+#: web/templates/web/Eltern.Profilseite/Profil-Eltern.html:348
+msgid "Bring- und Abholservice"
+msgstr "Bring and pick up service"
+
+#: web/templates/web/Eltern.Profilseite/Profil-Eltern.html:351
+msgid "Leichte Haushaltarbeiten"
+msgstr "Light household chores"
+
+#: web/templates/web/Eltern.Profilseite/Profil-Eltern.html:354
+msgid "Kind Sprache beibringen"
+msgstr "Teach child language"
+
+#: web/templates/web/Eltern.Profilseite/Profil-Eltern.html:367
+#: web/templates/web/Nanny.Login/profil-nanny-view.html:185
+#: web/templates/web/Senior.job-inserat/senhelferin_profil.html:100
+#: web/templates/web/Tier.job-inserat/tiersitter_profil.html:146
+#: web/templates/web/einstellungen.html:29
+msgid "Mitglied seit:"
+msgstr "Member since:"
+
+#: web/templates/web/Eltern.Profilseite/Profil-Eltern.html:378
+#: web/templates/web/Nanny.Login/profil-nanny-view.html:196
+#: web/templates/web/Senior.job-inserat/senhelferin_profil.html:110
+#: web/templates/web/Tier.inserat/tier_profil.html:364
+#: web/templates/web/Tier.job-inserat/tiersitter_profil.html:156
+msgid "Zuletzt Online:"
+msgstr "Last Online:"
+
+#: web/templates/web/Eltern.Profilseite/Startseite-Eltern.html:21
+#: web/templates/web/Nanny.Login/Startseite-nanny.html:21
+msgid "Willkommen"
+msgstr "Welcome"
+
+#: web/templates/web/Eltern.Profilseite/Startseite-Eltern.html:23
+msgid "Kinderbetreuer finden"
+msgstr "Finde a childminder"
+
+#: web/templates/web/Eltern.Profilseite/Startseite-Eltern.html:28
+#: web/templates/web/Nanny.Login/Startseite-nanny.html:28
+#: web/templates/web/schnuppern.html:23
+msgid "Ort und Umkreis eingeben"
+msgstr "Enter city and radius"
+
+#: web/templates/web/Eltern.Profilseite/Startseite-Eltern.html:47
+#: web/templates/web/Nanny.Login/Startseite-nanny.html:45
+#: web/templates/web/Senior.job-inserat/senhelferin_startseite.html:38
+#: web/templates/web/Tier.inserat/tier-startseite.html:43
+#: web/templates/web/Tier.job-inserat/tiersitter_startseite.html:43
+#: web/templates/web/schnuppern.html:37
+msgid "Suchen"
+msgstr "search"
+
+#: web/templates/web/Eltern.Profilseite/Startseite-Eltern.html:56
+msgid "Vorgeschlagene Kinderbetreuer:"
+msgstr "proposed childcare"
+
+#: web/templates/web/Eltern.Profilseite/Startseite-Eltern.html:74
+#: web/templates/web/Nanny.Login/Startseite-nanny.html:71
+#: web/templates/web/Nanny.Login/Startseite-nanny.html:77
+#: web/templates/web/Nanny.Login/profil-nanny-view.html:58
+#: web/templates/web/Senior.job-inserat/senhelferin_startseite.html:65
+#: web/templates/web/Tier.job-inserat/tiersitter_startseite.html:70
+#: web/templates/web/schnuppern.html:59
+msgid "Nanny"
+msgstr "Nanny"
+
+#: web/templates/web/Eltern.Profilseite/Startseite-Eltern.html:74
+#: web/templates/web/Nanny.Login/Startseite-nanny.html:71
+#: web/templates/web/Nanny.Login/Startseite-nanny.html:77
+#: web/templates/web/Nanny.Login/profil-nanny-view.html:61
+#: web/templates/web/Senior.job-inserat/senhelferin_startseite.html:65
+#: web/templates/web/Tier.job-inserat/tiersitter_startseite.html:70
+#: web/templates/web/schnuppern.html:59
+msgid "Tagesmutter"
+msgstr "Childminder"
+
+#: web/templates/web/Eltern.Profilseite/Startseite-Eltern.html:78
+#: web/templates/web/Tier.inserat/tier-startseite.html:76
+#: web/templates/web/schnuppern.html:63
+msgid "Alter:"
+msgstr "Age:"
+
+#: web/templates/web/Eltern.Profilseite/Startseite-Eltern.html:90
+#: web/templates/web/Nanny.Login/Startseite-nanny.html:87
+#: web/templates/web/Senior.job-inserat/senhelferin_startseite.html:81
+#: web/templates/web/Tier.inserat/tier-startseite.html:88
+#: web/templates/web/Tier.job-inserat/tiersitter_startseite.html:87
+#: web/templates/web/schnuppern.html:75
+msgid "Beschreibung"
+msgstr "Description"
+
+#: web/templates/web/Eltern.Profilseite/Startseite-Eltern.html:119
+#: web/templates/web/Eltern.Profilseite/eltern_navigation.html:5
+#: web/templates/web/Nanny.Login/Startseite-nanny.html:121
+#: web/templates/web/Nanny.Login/nanny_navigation.html:13
+#: web/templates/web/Senior.job-inserat/senhelferin_navigation.html:5
+#: web/templates/web/Senior.job-inserat/senhelferin_startseite.html:114
+#: web/templates/web/Tier.inserat/tier-startseite.html:120
+#: web/templates/web/Tier.inserat/tier_navigation.html:5
+#: web/templates/web/Tier.job-inserat/tiersitter_navigation.html:5
+#: web/templates/web/Tier.job-inserat/tiersitter_startseite.html:120
+#: web/templates/web/senior.inserat/senior_navigation.html:5
+msgid "Mein Profil"
+msgstr "My Profile"
+
+#: web/templates/web/Eltern.Profilseite/bearbeiteneltern.html:9
+#: web/templates/web/Nanny.Login/bearbeitungnanny.html:9
+#: web/templates/web/Senior.job-inserat/senhelferin_bearbeitung.html:9
+#: web/templates/web/Tier.inserat/tier_bearbeitung.html:12
+#: web/templates/web/Tier.job-inserat/tiersitter_bearbeitung.html:12
+#: web/templates/web/senior.inserat/senior_bearbeitung.html:12
+msgid "Profilbild bearbeiten*"
+msgstr "Edit profile picture*"
+
+#: web/templates/web/Eltern.Profilseite/bearbeiteneltern.html:26
+#: web/templates/web/Nanny.Login/bearbeitungnanny.html:25
+#: web/templates/web/Senior.job-inserat/senhelferin_bearbeitung.html:22
+#: web/templates/web/Tier.inserat/tier_bearbeitung.html:29
+#: web/templates/web/Tier.job-inserat/tiersitter_bearbeitung.html:26
+#: web/templates/web/senior.inserat/senior_bearbeitung.html:29
+msgid "Bild speichern"
+msgstr "Save image"
+
+#: web/templates/web/Eltern.Profilseite/bearbeiteneltern.html:32
+#: web/templates/web/Nanny.Login/bearbeitungnanny.html:29
+#: web/templates/web/Senior.job-inserat/senhelferin_bearbeitung.html:26
+#: web/templates/web/Tier.inserat/tier_bearbeitung.html:33
+#: web/templates/web/Tier.job-inserat/tiersitter_bearbeitung.html:31
+#: web/templates/web/senior.inserat/senior_bearbeitung.html:33
+msgid "Angaben bearbeiten*"
+msgstr "Edit details*"
+
+#: web/templates/web/Eltern.Profilseite/bearbeiteneltern.html:40
+#: web/templates/web/Nanny.Login/bearbeitungnanny.html:38
+#: web/templates/web/Nanny.Login/bearbeitungnanny.html:49
+#: web/templates/web/Tier.job-inserat/tiersitter_bearbeitung.html:40
+#: web/templates/web/Tier.job-inserat/tiersitter_bearbeitung.html:93
+#: web/templates/web/senior.inserat/senior_bearbeitung.html:43
+msgid "Angabe speichern"
+msgstr "Save specification"
+
+#: web/templates/web/Eltern.Profilseite/bearbeiteneltern.html:59
+#: web/templates/web/Nanny.Login/bearbeitungnanny.html:56
+#: web/templates/web/Tier.inserat/tier_bearbeitung.html:65
+#: web/templates/web/Tier.job-inserat/tiersitter_bearbeitung.html:60
+#: web/templates/web/senior.inserat/senior_bearbeitung.html:49
+msgid "Beschreibung bearbeiten*"
+msgstr "Edit description*"
+
+#: web/templates/web/Eltern.Profilseite/bearbeiteneltern.html:63
+#: web/templates/web/Nanny.Login/bearbeitungnanny.html:60
+#: web/templates/web/Tier.inserat/tier_bearbeitung.html:69
+#: web/templates/web/Tier.job-inserat/tiersitter_bearbeitung.html:65
+#: web/templates/web/senior.inserat/senior_bearbeitung.html:53
+msgid "Text speichern"
+msgstr "Save text"
+
+#: web/templates/web/Eltern.Profilseite/bearbeiteneltern.html:69
+msgid "Anzahl Kinder bearbeiten*"
+msgstr "Edit number of children*"
+
+#: web/templates/web/Eltern.Profilseite/bearbeiteneltern.html:78
+#: web/templates/web/Eltern/Anzahl-Kinder.html:26
+msgid "In welcher Altersgruppe?"
+msgstr "In which age group?"
+
+#: web/templates/web/Eltern.Profilseite/bearbeiteneltern.html:87
+msgid "speichern"
+msgstr "save"
+
+#: web/templates/web/Eltern.Profilseite/bearbeiteneltern.html:96
+#: web/templates/web/senior.inserat/senior_bearbeitung.html:59
+msgid "Aufgaben bearbeiten"
+msgstr "Edit tasks"
+
+#: web/templates/web/Eltern.Profilseite/bearbeiteneltern.html:103
+msgid "Aufgaben "
+msgstr "Tasks "
+
+#: web/templates/web/Eltern.Profilseite/bearbeiteneltern.html:108
+#: web/templates/web/Tier.inserat/tier_bearbeitung.html:111
+#: web/templates/web/senior.inserat/senior_bearbeitung.html:73
+msgid "Daten bearbeiten*"
+msgstr "Edit data*"
+
+#: web/templates/web/Eltern.Profilseite/bearbeiteneltern.html:155
+#: web/templates/web/Tier.inserat/tier_bearbeitung.html:159
+#: web/templates/web/senior.inserat/senior_bearbeitung.html:120
+msgid "Daten speichern"
+msgstr "Save data"
+
+#: web/templates/web/Eltern.Profilseite/bearbeiteneltern.html:159
+#: web/templates/web/Nanny.Login/bearbeitungnanny.html:107
+#: web/templates/web/Tier.inserat/tier_bearbeitung.html:164
+#: web/templates/web/Tier.job-inserat/tiersitter_bearbeitung.html:103
+#: web/templates/web/senior.inserat/senior_bearbeitung.html:124
+msgid "Pflichtfeld"
+msgstr "Mandatory field"
+
+#: web/templates/web/Eltern.Profilseite/eltern_navigation.html:3
+#: web/templates/web/Nanny.Login/nanny_navigation.html:4
+#: web/templates/web/Senior.job-inserat/senhelferin_navigation.html:3
+#: web/templates/web/Tier.inserat/tier_navigation.html:3
+#: web/templates/web/Tier.job-inserat/tiersitter_navigation.html:3
+#: web/templates/web/index_navigation.html:4
+#: web/templates/web/senior.inserat/senior_navigation.html:3
+msgid "Startseite"
+msgstr "Homepage"
+
+#: web/templates/web/Eltern.Profilseite/eltern_navigation.html:4
+#: web/templates/web/Nanny.Login/nanny_navigation.html:7
+#: web/templates/web/Senior.job-inserat/senhelferin_navigation.html:4
+#: web/templates/web/Tier.inserat/tier_navigation.html:4
+#: web/templates/web/Tier.job-inserat/tiersitter_navigation.html:4
+#: web/templates/web/Tier.job-inserat/tiersitter_profil.html:26
+#: web/templates/web/senior.inserat/senior_navigation.html:4
+msgid "Nachrichten"
+msgstr "Messages"
+
+#: web/templates/web/Eltern.Profilseite/eltern_navigation.html:6
+#: web/templates/web/Nanny.Login/nanny_navigation.html:16
+#: web/templates/web/Senior.job-inserat/senhelferin_navigation.html:6
+#: web/templates/web/Tier.inserat/tier_navigation.html:6
+#: web/templates/web/Tier.job-inserat/tiersitter_navigation.html:6
+#: web/templates/web/senior.inserat/senior_navigation.html:6
+msgid "Premium Mitgliedschaft"
+msgstr "Premium membership"
+
+#: web/templates/web/Eltern.Profilseite/eltern_navigation.html:7
+#: web/templates/web/Nanny.Login/nanny_navigation.html:19
+#: web/templates/web/Senior.job-inserat/senhelferin_navigation.html:7
+#: web/templates/web/Tier.inserat/tier_navigation.html:7
+#: web/templates/web/Tier.job-inserat/tiersitter_navigation.html:7
+#: web/templates/web/einstellungen.html:22
+#: web/templates/web/senior.inserat/senior_navigation.html:7
+msgid "Einstellungen"
+msgstr "Settings"
+
+#: web/templates/web/Eltern.Profilseite/eltern_navigation.html:8
+#: web/templates/web/Nanny.Login/nanny_navigation.html:22
+#: web/templates/web/Senior.job-inserat/senhelferin_navigation.html:8
+#: web/templates/web/Tier.inserat/tier_navigation.html:8
+#: web/templates/web/Tier.job-inserat/tiersitter_navigation.html:8
+#: web/templates/web/senior.inserat/senior_navigation.html:8
+msgid "Ausloggen"
+msgstr "Log out"
+
+#: web/templates/web/Eltern.Profilseite/kasse.html:13
+msgid "Warenkorb"
+msgstr ""
+
+#: web/templates/web/Eltern.Profilseite/kasse.html:18
+#, fuzzy
+#| msgid "Unbegrenzte Nachrichten verschicken"
+msgid "Für unbegrenzte Nachrichten schreiben und empfangen."
+msgstr "Send unlimited messages"
+
+#: web/templates/web/Eltern.Profilseite/kasse.html:30
+msgid "Zahlungsmethoden "
+msgstr ""
+
+#: web/templates/web/Eltern.Profilseite/kasse.html:40
+msgid "Kredikarte"
+msgstr ""
+
+#: web/templates/web/Eltern.Profilseite/kasse.html:52
+msgid "Paypal"
+msgstr ""
+
+#: web/templates/web/Eltern.Profilseite/kasse.html:58
+msgid ""
+"*Premium-Mitgliedschaften verlängern sich automatisch, bis sie gekündigt "
+"werden. Alle Preise inklusive Mehrwertsteuer."
+msgstr ""
+
+#: web/templates/web/Eltern/Anfoderung_eltern.html:10
+msgid "Besondere Wünsche?"
+msgstr "Special wishes?"
+
+#: web/templates/web/Eltern/Anzahl-Kinder.html:9
+msgid "Wie viele Kinder sollen betreut werden?"
+msgstr "How many children are to be cared for?"
+
+#: web/templates/web/Eltern/Betreuungszeit.html:8
+#: web/templates/web/Senior.registrieren/betreuungszeitsenior.html:8
+#: web/templates/web/Tier.registieren/betreuungszeittier.html:8
+msgid "An welchen Tagen benötigen Sie eine Betreuung"
+msgstr "On which days do you need care"
+
+#: web/templates/web/Eltern/Betreuungszeit.html:13
+#: web/templates/web/Senior.registrieren/betreuungszeitsenior.html:9
+#: web/templates/web/Tier.registieren/betreuungszeittier.html:10
+msgid "Klicken Sie im Feld ein"
+msgstr "Click in the field a"
+
+#: web/templates/web/Eltern/Datei.html:9
+#: web/templates/web/Senior.job.registrieren/Datei.html:9
+#: web/templates/web/Senior.registrieren/datei.html:9
+#: web/templates/web/Tier.registieren/Dateitier.html:9
+#: web/templates/web/Tier.registieren/Dateitierbetreuer.html:10
+#: web/templates/web/nanny/Datei.html:9
+msgid "Bitte Lächeln"
+msgstr "Please smile"
+
+#: web/templates/web/Eltern/Datei.html:15
+#: web/templates/web/Senior.job.registrieren/Datei.html:14
+#: web/templates/web/Tier.registieren/Dateitier.html:14
+#: web/templates/web/nanny/Datei.html:14
+msgid "Laden Sie zum Schluss noch Ihr Profilbild hoch!"
+msgstr "Finally, upload your profile picture!"
+
+#: web/templates/web/Eltern/Datei.html:17
+#, fuzzy
+#| msgid "Nannys und Tagesmütter sind Ihnen Dankbar,"
+msgid "Nannys und Tagesmütter würden sich freuen"
+msgstr "Nannies and childminders are grateful to you,"
+
+#: web/templates/web/Eltern/Datei.html:30
+#: web/templates/web/Senior.job.registrieren/Datei.html:27
+#: web/templates/web/Senior.registrieren/datei.html:30
+#: web/templates/web/Tier.job-inserat/tiersitter_bearbeitung.html:22
+#: web/templates/web/Tier.registieren/Dateitier.html:30
+#: web/templates/web/Tier.registieren/Dateitierbetreuer.html:32
+#: web/templates/web/nanny/Datei.html:31
+msgid "Foto auswählen"
+msgstr "Select photo"
+
+#: web/templates/web/Eltern/Datei.html:36
+#, fuzzy
+#| msgid "Klicken Sie im Feld ein"
+msgid "Klicken Sie auf \"Weiter\""
+msgstr "Click in the field a"
+
+#: web/templates/web/Eltern/Datei.html:44
+#, fuzzy
+#| msgid "es wird in den Suchresultaten angezeigt."
+msgid "Ihr Profilbild wird in den Suchresultaten angezeigt."
+msgstr "it will be displayed in the search results."
+
+#: web/templates/web/Eltern/Jobangebot.html:9
+msgid "Auf der Suche nach einer"
+msgstr "In search of a"
+
+#: web/templates/web/Eltern/Ort-Eltern.html:11
+#: web/templates/web/Senior.registrieren/e-mail.html:8
+msgid "Wo findet der Arbeitsort statt?"
+msgstr "Where does the place of work take place?"
+
+#: web/templates/web/Eltern/Ort-Eltern.html:24
+msgid ""
+"Sie wird auch in Ihren Stellenausschreibung angezeigt, um Kinderbetreuer"
+msgstr ""
+"It will also be displayed in your job postings to include childcare workers"
+
+#: web/templates/web/Eltern/Ort-Eltern.html:26
+#: web/templates/web/Senior.registrieren/e-mail.html:24
+#: web/templates/web/Tier.registieren/E-Mail.tier.html:27
+msgid "Orientierung bei der Jobsuche zu geben."
+msgstr "Provide guidance in the job search."
+
+#: web/templates/web/Eltern/descriptioneltern.html:9
+#, fuzzy
+#| msgid "Schreiben Sie hier Ihren Job Anzeige für die Bewerbende"
+msgid "Ihre Job Anzeige für die Bewerbende"
+msgstr "Write your job ad for the applicant here"
+
+#: web/templates/web/Nanny.Login/Startseite-nanny.html:23
+#: web/templates/web/index.html:33
+msgid "Job suchen"
+msgstr "job portal"
+
+#: web/templates/web/Nanny.Login/Startseite-nanny.html:53
+#: web/templates/web/Senior.job-inserat/senhelferin_startseite.html:46
+#: web/templates/web/Tier.job-inserat/tiersitter_startseite.html:51
+msgid "Vorgeschlagene Jobs"
+msgstr "Proposed jobs"
+
+#: web/templates/web/Nanny.Login/Startseite-nanny.html:75
+#: web/templates/web/Senior.job-inserat/senhelferin_startseite.html:69
+msgid "Job:"
+msgstr "Job:"
+
+#: web/templates/web/Nanny.Login/Startseite-nanny.html:77
+msgid " oder"
+msgstr " or"
+
+#: web/templates/web/Nanny.Login/bearbeitungnanny.html:65
+msgid "Jobtitel bearbeiten*"
+msgstr "Edit job title"
+
+#: web/templates/web/Nanny.Login/bearbeitungnanny.html:74
+msgid "Jobtitel speichern"
+msgstr "Save job title"
+
+#: web/templates/web/Nanny.Login/bearbeitungnanny.html:80
+msgid "Erfahrung mit Kinder bearbeiten*"
+msgstr "Edit experience with children*"
+
+#: web/templates/web/Nanny.Login/bearbeitungnanny.html:89
+#: web/templates/web/Tier.job-inserat/tiersitter_bearbeitung.html:80
+msgid "Erfahrung speichern"
+msgstr "save experience"
+
+#: web/templates/web/Nanny.Login/bearbeitungnanny.html:94
+msgid "Skills bearbeiten*"
+msgstr "edit skills*"
+
+#: web/templates/web/Nanny.Login/bearbeitungnanny.html:103
+msgid "Skills speichern"
+msgstr "save skills"
+
+#: web/templates/web/Nanny.Login/bearbeitungnanny.html:112
+#: web/templates/web/einstellungen.html:38
+#, fuzzy
+#| msgid "Profile durchsuchen"
+msgid "Profil löschen"
+msgstr "Search profiles"
+
+#: web/templates/web/Nanny.Login/premium.html:11
+#: web/templates/web/Senior.job-inserat/senhelferin_premium.html:14
+#: web/templates/web/Tier.inserat/tier_premium.html:14
+#: web/templates/web/Tier.job-inserat/tiersitter_premium.html:14
+#: web/templates/web/senior.inserat/senior_premium.html:14
+msgid "Premium-Mitglied werden"
+msgstr "Become a Premium Member"
+
+#: web/templates/web/Nanny.Login/premium.html:16
+#: web/templates/web/Senior.job-inserat/senhelferin_premium.html:20
+#: web/templates/web/Tier.inserat/tier_premium.html:25
+#: web/templates/web/Tier.job-inserat/tiersitter_premium.html:20
+#: web/templates/web/senior.inserat/senior_premium.html:20
+msgid "Ihr Profil wird herrovgehoben"
+msgstr "Your profile is highlighted"
+
+#: web/templates/web/Nanny.Login/premium.html:20
+#: web/templates/web/Senior.job-inserat/senhelferin_premium.html:24
+#: web/templates/web/Tier.job-inserat/tiersitter_premium.html:24
+#: web/templates/web/senior.inserat/senior_premium.html:24
+msgid "Sie werden häufiger gesehen"
+msgstr "You are seen more often"
+
+#: web/templates/web/Nanny.Login/profil-nanny-view.html:38
+#: web/templates/web/Senior.job-inserat/senhelferin_profil.html:49
+#: web/templates/web/Tier.job-inserat/tiersitter_profil.html:55
+msgid "Alter"
+msgstr "Age"
+
+#: web/templates/web/Nanny.Login/profil-nanny-view.html:85
+#: web/templates/web/Tier.job-inserat/tiersitter_profil.html:88
+msgid "Führeschein"
+msgstr "Driving license"
+
+#: web/templates/web/Nanny.Login/profil-nanny-view.html:87
+#: web/templates/web/Tier.job-inserat/tiersitter_profil.html:90
+msgid "Ja"
+msgstr "Yes"
+
+#: web/templates/web/Nanny.Login/profil-nanny-view.html:87
+#: web/templates/web/Tier.job-inserat/tiersitter_profil.html:91
+msgid "Nein"
+msgstr "No"
+
+#: web/templates/web/Nanny.Login/profil-nanny-view.html:99
+#: web/templates/web/Senior.job-inserat/senhelferin_profil.html:64
+#: web/templates/web/Tier.job-inserat/tiersitter_profil.html:99
+msgid "Persönliche Beschreibung"
+msgstr "Personal description"
+
+#: web/templates/web/Nanny.Login/profil-nanny-view.html:107
+#: web/templates/web/Tier.job-inserat/tiersitter_profil.html:106
+#: web/templates/web/Tier.registieren/experiencetier.html:10
+#: web/templates/web/nanny/experiencechild.html:10
+msgid "Erfahrung mit"
+msgstr "Experience with"
+
+#: web/templates/web/Nanny.Login/profil-nanny-view.html:111
+msgid "Neugeborenen"
+msgstr "Newborn"
+
+#: web/templates/web/Nanny.Login/profil-nanny-view.html:121
+msgid "Kindergarten- und Schulalter"
+msgstr "Kindergarten and school age"
+
+#: web/templates/web/Nanny.Login/profil-nanny-view.html:128
+msgid "Qualifikationen"
+msgstr "Qualifications"
+
+#: web/templates/web/Nanny.Login/profil-nanny-view.html:136
+#, fuzzy
+#| msgid "Betreuungsart."
+msgid "Betreuung EFZ"
+msgstr "Type Of Care"
+
+#: web/templates/web/Nanny.Login/profil-nanny-view.html:141
+msgid "Babysitting-Kurs"
+msgstr "Babysitting course"
+
+#: web/templates/web/Nanny.Login/profil-nanny-view.html:146
+msgid "Studium"
+msgstr "Study"
+
+#: web/templates/web/Nanny.Login/profil-nanny-view.html:151
+msgid "Ausbildung"
+msgstr "Education"
+
+#: web/templates/web/Nanny.Login/profil-nanny-view.html:156
+msgid "Praktikum"
+msgstr "Internship"
+
+#: web/templates/web/Nanny.Login/profil-nanny-view.html:161
+msgid "Arbeitserfahrung"
+msgstr "Work experience"
+
+#: web/templates/web/Nanny.Login/profil-nanny-view.html:170
+msgid "Auf Anfrage"
+msgstr "Upon request"
+
+#: web/templates/web/Nanny.Login/profil-nanny-view.html:172
+#: web/templates/web/Senior.job-inserat/senhelferin_profil.html:87
+#: web/templates/web/Tier.job-inserat/tiersitter_profil.html:133
+msgid "Lebenslauf"
+msgstr "Resume"
+
+#: web/templates/web/Nanny.Login/profil-nanny-view.html:173
+msgid "Arbeitszeugnisse"
+msgstr "Job references"
+
+#: web/templates/web/Nanny.Login/profil-nanny-view.html:174
+msgid "Referenzen"
+msgstr "References"
+
+#: web/templates/web/Senior.job-inserat/senhelferin_bearbeitung.html:45
+#: web/templates/web/Tier.inserat/tier_bearbeitung.html:43
+msgid "Angaben speichern"
+msgstr "Save data"
+
+#: web/templates/web/Senior.job-inserat/senhelferin_premium.html:30
+#: web/templates/web/Tier.inserat/tier_premium.html:31
+#: web/templates/web/Tier.job-inserat/tiersitter_premium.html:30
+#: web/templates/web/senior.inserat/senior_premium.html:30
+#, fuzzy
+#| msgid "Profile durchsuchen"
+msgid "Profil besucher sehen"
+msgstr "Search profiles"
+
+#: web/templates/web/Senior.job-inserat/senhelferin_premium.html:39
+#: web/templates/web/Tier.inserat/tier_premium.html:42
+#: web/templates/web/senior.inserat/senior_premium.html:37
+msgid "Monat"
+msgstr "month"
+
+#: web/templates/web/Senior.job-inserat/senhelferin_premium.html:42
+#: web/templates/web/Senior.job-inserat/senhelferin_premium.html:60
+#: web/templates/web/Tier.inserat/tier_premium.html:45
+#: web/templates/web/Tier.inserat/tier_premium.html:65
+#: web/templates/web/Tier.job-inserat/tiersitter_premium.html:62
+#: web/templates/web/senior.inserat/senior_premium.html:40
+#: web/templates/web/senior.inserat/senior_premium.html:57
+msgid "Für"
+msgstr "For"
+
+#: web/templates/web/Senior.job-inserat/senhelferin_premium.html:49
+#: web/templates/web/Senior.job-inserat/senhelferin_premium.html:58
+#: web/templates/web/Tier.inserat/tier_premium.html:52
+#: web/templates/web/Tier.inserat/tier_premium.html:62
+#: web/templates/web/Tier.job-inserat/tiersitter_premium.html:59
+#: web/templates/web/senior.inserat/senior_premium.html:46
+#: web/templates/web/senior.inserat/senior_premium.html:55
+msgid "Monate"
+msgstr "Months"
+
+#: web/templates/web/Senior.job-inserat/senhelferin_premium.html:51
+#: web/templates/web/Tier.inserat/tier_premium.html:54
+#: web/templates/web/senior.inserat/senior_premium.html:48
+msgid "Monat Geschenkt"
+msgstr "month for free"
+
+#: web/templates/web/Senior.job-inserat/senhelferin_premium.html:51
+#: web/templates/web/Tier.job-inserat/tiersitter_premium.html:51
+#: web/templates/web/senior.inserat/senior_premium.html:48
+msgid "für"
+msgstr "for"
+
+#: web/templates/web/Senior.job-inserat/senhelferin_profil.html:52
+#: web/templates/web/Tier.job-inserat/tiersitter_profil.html:58
+msgid "Jahre"
+msgstr "years"
+
+#: web/templates/web/Senior.job-inserat/senhelferin_profil.html:71
+msgid "Skills"
+msgstr "Skills"
+
+#: web/templates/web/Senior.job-inserat/senhelferin_profil.html:74
+msgid "SRK Kurs Altenpflegerin"
+msgstr "SRK course geriatric nurse"
+
+#: web/templates/web/Senior.job-inserat/senhelferin_profil.html:77
+msgid "Ausbilund zur Altenpfleger"
+msgstr "Training as a geriatric nurse"
+
+#: web/templates/web/Senior.job-inserat/senhelferin_profil.html:80
+msgid "Führerschein"
+msgstr "Driving license"
+
+#: web/templates/web/Senior.job-inserat/senhelferin_profil.html:84
+#: web/templates/web/Tier.job-inserat/tiersitter_profil.html:130
+msgid "Bewerbungsunterlagen"
+msgstr "Application documents"
+
+#: web/templates/web/Senior.job-inserat/senhelferin_profil.html:88
+#: web/templates/web/Tier.job-inserat/tiersitter_profil.html:134
+msgid "Arbeitszeugnis"
+msgstr "Job reference"
+
+#: web/templates/web/Senior.job-inserat/senhelferin_startseite.html:19
+#: web/templates/web/Tier.inserat/tier-startseite.html:19
+#: web/templates/web/Tier.job-inserat/tiersitter_startseite.html:19
+msgid "Willkommen "
+msgstr "Welcome "
+
+#: web/templates/web/Senior.job-inserat/senhelferin_startseite.html:21
+#: web/templates/web/Tier.job-inserat/tiersitter_startseite.html:21
+msgid "Finden Sie Ihren Job"
+msgstr "Find your job"
+
+#: web/templates/web/Senior.job-inserat/senhelferin_startseite.html:26
+msgid "Postleizahl eingeben und Umkreis Km"
+msgstr "Enter postal code and radius km"
+
+#: web/templates/web/Senior.job-inserat/senhelferin_startseite.html:71
+#, fuzzy
+#| msgid "Kinderbetreuung"
+msgid "Betreuer"
+msgstr "childcare"
+
+#: web/templates/web/Senior.job.registrieren/Datei.html:15
+#: web/templates/web/Tier.registieren/Dateitierbetreuer.html:18
+#: web/templates/web/nanny/Datei.html:17
+msgid "Laden Sie ein Profilbild hoch,"
+msgstr "Upload a profile picture,"
+
+#: web/templates/web/Senior.job.registrieren/Datei.html:17
+#: web/templates/web/nanny/Datei.html:19
+msgid "es wird für den Arbeitgeber und auch in den Suchresultaten angezeigt."
+msgstr "it is displayed for the employer and also in the search results."
+
+#: web/templates/web/Senior.job.registrieren/Datei.html:33
+#: web/templates/web/Senior.registrieren/datei.html:38
+#: web/templates/web/Tier.registieren/Dateitier.html:38
+#: web/templates/web/Tier.registieren/Dateitierbetreuer.html:40
+#: web/templates/web/nanny/Datei.html:38
+msgid "Sie möchten überspringen? Klicken Sie auf \"Weiter\""
+msgstr "You want to skip? Click on \"Next\""
+
+#: web/templates/web/Senior.job.registrieren/angaben.html:8
+msgid "Angaben"
+msgstr "Details"
+
+#: web/templates/web/Senior.job.registrieren/angaben.html:30
+#: web/templates/web/Tier.registieren/tierbetreuer-e-mail.html:34
+#: web/templates/web/nanny/profil.html:32
+msgid ""
+"PLZ, Ort, Stundenlohn und Alter wird auch in Ihren Jobausschreibung "
+"angezeigt, um Arbeitnehmer"
+msgstr ""
+"Zip code, city, hourly wage and age will also be displayed in your job "
+"posting  displayed to workers"
+
+#: web/templates/web/Senior.job.registrieren/angaben.html:32
+#: web/templates/web/Tier.registieren/tierbetreuer-e-mail.html:36
+#: web/templates/web/nanny/profil.html:34
+msgid "Orientierung bei der Suche zu geben."
+msgstr "To provide orientation in the search."
+
+#: web/templates/web/Senior.job.registrieren/bewerbungschreiben.html:9
+#: web/templates/web/Tier.registieren/texttier.html:8
+msgid "Schreiben Sie hier Ihre Bewerbung für den Arbeitgeber"
+msgstr "Write your application for the employer here"
+
+#: web/templates/web/Senior.job.registrieren/skills.html:10
+msgid "Ich habe"
+msgstr "I have"
+
+#: web/templates/web/Senior.registrieren/anfoderdung-senior.html:9
+msgid "Gibt es Besondere Wünsche die Sie brauchen?"
+msgstr "Are there any special requests you need?"
+
+#: web/templates/web/Senior.registrieren/datei.html:14
+#: web/templates/web/Tier.registieren/Dateitierbetreuer.html:15
+msgid "Laden Sie zum Schluss noch Ihr Profilbild hoch"
+msgstr "Finally upload your profile picture"
+
+#: web/templates/web/Senior.registrieren/datei.html:17
+msgid "Seniorbetreuer sind Ihnen Dankbar"
+msgstr "Senior caregivers are grateful to you"
+
+#: web/templates/web/Senior.registrieren/datei.html:19
+#: web/templates/web/Tier.registieren/Dateitier.html:19
+msgid "es wird auch in den Suchresultaten angezeigt."
+msgstr "it is also displayed in the search results."
+
+#: web/templates/web/Senior.registrieren/description-senior.html:8
+#: web/templates/web/Tier.registieren/description-tier.html:8
+msgid "Schreiben Sie hier Ihren Job Anzeige für die Bewerbende"
+msgstr "Write your job ad for the applicant here"
+
+#: web/templates/web/Senior.registrieren/e-mail.html:22
+msgid "Sie wird auch in Ihren Stellenausschreibungen angezeigt, um Pfleger"
+msgstr "It will also be displayed in your job postings to help nurses"
+
+#: web/templates/web/Tier.inserat/tier-startseite.html:21
+msgid "Finden Sie Ihre passende Tierbetreuer"
+msgstr "Find your suitable pet sitter"
+
+#: web/templates/web/Tier.inserat/tier-startseite.html:26
+#: web/templates/web/Tier.job-inserat/tiersitter_startseite.html:26
+msgid "Ort und Umkreis eingeben."
+msgstr "Enter city and radius."
+
+#: web/templates/web/Tier.inserat/tier-startseite.html:52
+msgid "Vorgeschlagene Tierbetreuer"
+msgstr "Proposed animal caretakers"
+
+#: web/templates/web/Tier.inserat/tier-startseite.html:71
+#: web/templates/web/Tier.job-inserat/tiersitter_profil.html:71
+#, fuzzy
+#| msgid "Kinderbetreuung"
+msgid "Tierbetreuer"
+msgstr "childcare"
+
+#: web/templates/web/Tier.inserat/tier_bearbeitung.html:79
+msgid "Tierart ändern"
+msgstr "Change animal type"
+
+#: web/templates/web/Tier.inserat/tier_bearbeitung.html:88
+msgid "Tierart speichern"
+msgstr "Save animal type"
+
+#: web/templates/web/Tier.inserat/tier_bearbeitung.html:96
+msgid "Aufagben bearbeiten"
+msgstr "Edit tasks"
+
+#: web/templates/web/Tier.inserat/tier_bearbeitung.html:105
+#: web/templates/web/senior.inserat/senior_bearbeitung.html:66
+msgid "Aufgaben speichern"
+msgstr "Save tasks"
+
+#: web/templates/web/Tier.inserat/tier_premium.html:35
+#: web/templates/web/Tier.job-inserat/tiersitter_premium.html:31
+msgid "Zurzeit profitieren alle Benutzer kostenlos von unserer Plattform! :)"
+msgstr "Currently all users benefit from our platform for free! :)"
+
+#: web/templates/web/Tier.inserat/tier_profil.html:52
+msgid "Tierart"
+msgstr "Animal species"
+
+#: web/templates/web/Tier.inserat/tier_profil.html:55
+#: web/templates/web/Tier.job-inserat/tiersitter_startseite.html:77
+msgid "Hund"
+msgstr "Dog"
+
+#: web/templates/web/Tier.inserat/tier_profil.html:58
+msgid "Katze"
+msgstr "Cat"
+
+#: web/templates/web/Tier.inserat/tier_profil.html:61
+#: web/templates/web/Tier.job-inserat/tiersitter_startseite.html:77
+msgid "Nagetier"
+msgstr "Rodent"
+
+#: web/templates/web/Tier.inserat/tier_profil.html:64
+#: web/templates/web/Tier.job-inserat/tiersitter_profil.html:119
+msgid "Reptilien"
+msgstr "Reptiles"
+
+#: web/templates/web/Tier.inserat/tier_profil.html:67
+msgid "Vogel"
+msgstr "Bird"
+
+#: web/templates/web/Tier.inserat/tier_profil.html:70
+#: web/templates/web/Tier.job-inserat/tiersitter_startseite.html:77
+msgid "Pferde"
+msgstr "Horses"
+
+#: web/templates/web/Tier.inserat/tier_profil.html:327
+#, fuzzy
+#| msgid "Haustierbetreuung"
+msgid "Tagesbetreuung"
+msgstr "petting service"
+
+#: web/templates/web/Tier.inserat/tier_profil.html:330
+#, fuzzy
+#| msgid "Seniorenbetreuung"
+msgid "Ferienbetreuung"
+msgstr "elderly care"
+
+#: web/templates/web/Tier.inserat/tier_profil.html:333
+msgid "Auslauf/Spaziergang"
+msgstr "Exercise/walk"
+
+#: web/templates/web/Tier.inserat/tier_profil.html:336
+msgid "Tiertraining"
+msgstr "Animal training"
+
+#: web/templates/web/Tier.inserat/tier_profil.html:339
+msgid "Tiertransport"
+msgstr "Animal transport"
+
+#: web/templates/web/Tier.inserat/tier_profil.html:354
+msgid "Mitglied Seit:"
+msgstr "Member since:"
+
+#: web/templates/web/Tier.job-inserat/tiersitter_bearbeitung.html:70
+msgid "Erfahrung mit Tieren bearbeiten*"
+msgstr "Edit experience with animals*"
+
+#: web/templates/web/Tier.job-inserat/tiersitter_bearbeitung.html:84
+msgid "Angabe Führerschein bearbeiten*"
+msgstr "Edit driver's license indication*"
+
+#: web/templates/web/Tier.job-inserat/tiersitter_premium.html:42
+msgid "Für "
+msgstr "For "
+
+#: web/templates/web/Tier.job-inserat/tiersitter_premium.html:51
+msgid "+1 Monat Geschenkt"
+msgstr "+1 month fro free"
+
+#: web/templates/web/Tier.job-inserat/tiersitter_profil.html:68
+msgid "Bewirbt sich als"
+msgstr "Applies as"
+
+#: web/templates/web/Tier.job-inserat/tiersitter_profil.html:110
+msgid "Hunde"
+msgstr "Dog"
+
+#: web/templates/web/Tier.job-inserat/tiersitter_profil.html:113
+#: web/templates/web/Tier.job-inserat/tiersitter_startseite.html:77
+msgid "Katzen"
+msgstr "Cat"
+
+#: web/templates/web/Tier.job-inserat/tiersitter_profil.html:116
+#, fuzzy
+#| msgid "Registrieren"
+msgid "Nagetieren"
+msgstr "Register"
+
+#: web/templates/web/Tier.job-inserat/tiersitter_profil.html:122
+msgid "Vögel"
+msgstr "Birds"
+
+#: web/templates/web/Tier.job-inserat/tiersitter_profil.html:125
+msgid "Pferden"
+msgstr "horses"
+
+#: web/templates/web/Tier.job-inserat/tiersitter_startseite.html:75
+msgid "Tierart:"
+msgstr "Animal species:"
+
+#: web/templates/web/Tier.job-inserat/tiersitter_startseite.html:77
+msgid "Reptilien "
+msgstr "Reptiles "
+
+#: web/templates/web/Tier.job-inserat/tiersitter_startseite.html:77
+msgid "Vogel "
+msgstr "Bird "
+
+#: web/templates/web/Tier.job-inserat/tiersitter_startseite.html:77
+msgid "Sonstige"
+msgstr "Others"
+
+#: web/templates/web/Tier.registieren/Anzahl-Haustier.html:11
+msgid "Welche Tierart soll betreut werden?"
+msgstr "What type of animal will be cared for?"
+
+#: web/templates/web/Tier.registieren/Dateitier.html:17
+msgid "Hundesitter sind Ihnen Dankbar,"
+msgstr "Dog sitters are grateful to you,"
+
+#: web/templates/web/Tier.registieren/Dateitierbetreuer.html:20
+msgid "es wird für den Arbeitgeber und auch in den Suchresultaten angezeigt!"
+msgstr "it is displayed for the employer and also in the search results!"
+
+#: web/templates/web/Tier.registieren/E-Mail.tier.html:11
+msgid "Wohnort"
+msgstr "Residence"
+
+#: web/templates/web/Tier.registieren/E-Mail.tier.html:25
+msgid "Sie wird auch in Ihren Stellenausschreibung angezeigt, um Tierbetreuer"
+msgstr ""
+"It will also be displayed in your job postings to include animal caretakers"
+
+#: web/templates/web/Tier.registieren/anfoderung-tier.html:10
+msgid "Besondere wünsche"
+msgstr "Special wishes"
+
+#: web/templates/web/Tier.registieren/betreuer-description.html:9
+msgid "Schreiben Sie hier Ihren Job Anzeige"
+msgstr "Write your job ad here"
+
+#: web/templates/web/Tier.registieren/furerschein.html:10
+msgid "Besitzen Sie den Führerschein?"
+msgstr "Do you have the driver's license?"
+
+#: web/templates/web/Tier.registieren/tierbetreuer-e-mail.html:8
+#: web/templates/web/nanny/profil.html:8
+msgid "Ihre Angaben und Stundenlohn"
+msgstr "Your information and hourly wage"
+
+#: web/templates/web/agb.html:8
+msgid "Allgemeine Geschäftsbedingungen"
+msgstr "General terms and conditions"
+
+#: web/templates/web/agb.html:12
+msgid ""
+"Allgemeine Geschäftsbedingungen\n"
+"            Die nachstehenden Allgemeinen Geschäftsbedingungen regeln das "
+"Vertragsverhältnis zwischen www.nanny25.ch \n"
+"            und den Verbrauchern, die das Internetangebot von www.nanny25.ch "
+"als registrierte Personen oder Firmen nutzen \n"
+"            (nachfolgend „Mitglieder“).\n"
+"            \n"
+"            \n"
+"            Die “Mitglieder” unterscheiden sich in solche die eine Service-"
+"Leistung suchen (nachfolgend “Service-Suchende”)\n"
+"            und solche die einen Service anbieten (nachfolgend \"Service-"
+"Anbieter”)."
+msgstr ""
+
+#: web/templates/web/agb.html:23
+msgid "Vertragsabschluss"
+msgstr "Conclusion of contract"
+
+#: web/templates/web/agb.html:26
+msgid ""
+"Der Zugang zur Nutzung setzt eine kostenlose Registrierung voraus.\n"
+"            Alle Nutzer erklären mit ihrer Registrierung, dass sie das 15. "
+"Altersjahr vollendet haben.\n"
+"            Unsere Plattform erlaubt ausschliesslich die Vermittlung von "
+"Arbeitskräften mit Wohnsitz in der \n"
+"            Schweiz an Arbeitsplätze in der ganzen Schweiz, sowie die "
+"Vermittlung von Grenzgängern (ausgenommen Lichtenstein), die in der Schweiz "
+"arbeiten möchten.\n"
+"            Mit der Registrierung erkennt das Mitglied die vorliegenden "
+"Allgemeinen Geschäftsbedingungen an, und es entsteht ein Vertragsverhältnis "
+"zwischen www.nanny25.ch und dem registrierten Mitglied."
+msgstr ""
+
+#: web/templates/web/agb.html:36
+msgid "Leistungsumfang"
+msgstr "Scope of services"
+
+#: web/templates/web/agb.html:42
+msgid ""
+"Nach der kostenlosen Registrierung auf der Webseite können Service-Suchende "
+"und Service-Anbietende ein Profil \n"
+"                anlegen, andere Profile anschauen und nach einem Job oder "
+"nach Service-Anbietern suchen."
+msgstr ""
+
+#: web/templates/web/agb.html:45
+msgid ""
+"Private Service-Anbieter haben nach der Registrierung die Möglichkeit, "
+"kostenlos Service-Suchende über ein Kontaktformular zu kontaktieren."
+msgstr ""
+"After registration, private service providers have the possibility to  to "
+"contact service seekers free of charge via a contact form."
+
+#: web/templates/web/agb.html:51
+msgid "Deaktivierung, Kündigung"
+msgstr "Deactivation, termination"
+
+#: web/templates/web/agb.html:56
+msgid ""
+"Eine Deaktivierung des Profils ist jederzeit möglich. Das Profil ist nach "
+"der Deaktivierung für andere Mitglieder nicht mehr sichtbar."
+msgstr ""
+"Deactivation of the profile is possible at any time. The profile is no "
+"longer visible to other members after  of the deactivation is no longer "
+"visible for other members."
+
+#: web/templates/web/agb.html:57
+msgid ""
+"Die kostenpflichtige Premium-Mitgliedschaft wird nicht automatisch "
+"verlängert und bedarf daher keiner Kündigung. Nach Ablauf geht die Premium-"
+"Mitgliedschaft automatisch in eine kostenlose Basis-Mitgliedschaft über."
+msgstr ""
+"The paid premium membership is not automatically  and therefore does not "
+"require cancellation. After expiration, the premium  membership "
+"automatically becomes a free basic membership."
+
+#: web/templates/web/agb.html:60
+#, fuzzy
+#| msgid "Betreuungsart."
+msgid "Haftung von Betreuungsart"
+msgstr "Type Of Care"
+
+#: web/templates/web/agb.html:67
+msgid ""
+"nanny25.ch übernimmt, soweit gesetzlich zuläsig, bei Zustandekommen einer "
+"Vermittlung von Service-Suchenden\n"
+"                        und Service-Anbietenden weder Partei noch "
+"Vertragspartner. Service-Suchende und Service-Anbietende verzichten darauf,\n"
+"                        Ansprüche oder Pflichten gegenüber Betreuungsart "
+"geltend zu machen. Insbesondere übernimmt Betreuungsart\n"
+"                        keinerlei Haftung für Schäden oder Streitigkeiten, "
+"die sich zwischen Service-Suchenden und Service-Anbietenden ergeben."
+msgstr ""
+
+#: web/templates/web/agb.html:75
+msgid ""
+"nanny25.ch übernimmt keinerlei Gewährleistung für die Qualität der "
+"Arbeitsleistungen der Service-Anbietenden und schliesst \n"
+"                        jegliche Haftung aus, die sich aus einem "
+"Vertragsverhältnis zwischen Service-Suchendem und Service-Anbietendem "
+"ergibt.\n"
+"                        <br>\n"
+"                        <strong>Der Service-Anbietende hat selbständig "
+"allenfalls notwendige Aufenthalts- oder Arbeitsbewilligungen zu besorgen.</"
+"Strong>\n"
+"                        Der Service-Suchende hat den Service-Anbietenden "
+"gesetzeskonform zu versichern bzw. diesen auf eine allfällige \n"
+"                        Notwendigkeit für eine Versicherung hinzuweisen."
+msgstr ""
+
+#: web/templates/web/agb.html:85
+msgid ""
+"nanny25.ch übernimmt, soweit gesetzlich zulässig, keine Verantwortung für "
+"den Inhalt und die Richtigkeit\n"
+"                        der Angaben in den Anmelde- und Profildaten der "
+"Nutzer sowie weiteren von den Nutzern generierten Inhalten. \n"
+"                        Ebenso übernimmt nanny25.ch, soweit gesetzlich "
+"zulässig, keine Haftung für den eventuellen Missbrauch\n"
+"                        von Informationen."
+msgstr ""
+
+#: web/templates/web/agb.html:93
+msgid ""
+"In Bezug auf die gesuchte oder angebotene Dienstleistung kommt der Vertrag "
+"ausschliesslich zwischen den \n"
+"                        jeweilig beteiligten Nutzern zustande. Daher haftet "
+"Betreuungsart.com nicht für Leistungen der \n"
+"                        teilnehmenden Nutzer."
+msgstr ""
+
+#: web/templates/web/agb.html:100
+msgid ""
+"Entsprechend sind alle Angelegenheiten bzgl. der Beziehung zwischen "
+"Suchendem und Anbieter einschliesslich,\n"
+"                        und ohne Ausnahme, der Services die ein Suchender "
+"erhalten hat oder Zahlungen die an Anbietende fällig sind, \n"
+"                        direkt an die jeweilige Partei des Suchenden oder "
+"Anbietenden zu richten. nanny25.ch kann hierfür nicht verantwortlich \n"
+"                        gemacht werden und widerspricht hiermit, soweit "
+"gesetzlich zulässig, ausdrücklich allen etwaigen Haftungsansprüchen\n"
+"                        welcher Art auch immer einschliesslich Forderungen, "
+"Leistungen, direkte oder indirekte Beschädigungen jeder Art, \n"
+"                        bewusst oder unbewusst, vermutet oder unvermutet, "
+"offengelegt oder nicht, in welcher Art auch immer im Zusammenhang \n"
+"                        mit den genannten Angelegenheiten."
+msgstr ""
+
+#: web/templates/web/agb.html:111
+msgid ""
+"nanny25.ch haftet, soweit gesetzlich zulässig, nicht für unbefugte "
+"Kenntniserlangung \n"
+"                        von persönlichen Nutzerdaten durch Dritte (z.B. "
+"durch \"Hacken\" der Datenbank). Ebenso haftet \n"
+"                        der Betreiber, soweit gesetzlich zulässig, nicht für "
+"den Missbrauch von Informationen von Nutzern \n"
+"                        durch Dritte, die von diesen Nutzern selbst Dritten "
+"zugänglich gemacht wurden."
+msgstr ""
+
+#: web/templates/web/agb.html:117 web/templates/web/agb.html:125
+msgid ""
+"Der Betreiber behält sich das Recht vor - geht jedoch nicht die "
+"Verpflichtung ein -, \n"
+"                        den Inhalt eines von einem Nutzer verfassten Textes "
+"sowie hochgeladener Dateien (Bilder, Videos) \n"
+"                        auf die Einhaltung von Gesetz und Recht hin zu "
+"überprüfen und, wenn nötig, ganz oder teilweise zu löschen."
+msgstr ""
+
+#: web/templates/web/agb.html:122
+msgid ""
+"Die Betreuungsart übernimmt keine Garantie dafür, dass sich angeschriebene "
+"Personen innert kürzester Frist oder überhaupt auf eine Anfrage melden."
+msgstr ""
+"The care type does not take over guarantee for the fact that written  "
+"persons will respond to a request within the shortest possible time or at "
+"all."
+
+#: web/templates/web/base.html:45 web/templates/web/contact.html:10
+msgid "Kontakt"
+msgstr "Contact"
+
+#: web/templates/web/base.html:46
+msgid "AGB"
+msgstr "T&C"
+
+#: web/templates/web/base.html:47
+msgid "Datenschutz"
+msgstr "Data protection"
+
+#: web/templates/web/contact.html:13
+msgid "Bitte nehmen Sie mit uns Kontakt auf bei Fragen oder Unklarheiten."
+msgstr "Please contact us with any questions or uncertainties."
+
+#: web/templates/web/dataprotection.html:14
+msgid "Ansprechspartner"
+msgstr "Contact"
+
+#: web/templates/web/dataprotection.html:22
+msgid ""
+"Der Websitebetreiber nimmt Ihren Datenschutz sehr ernst und behandelt Ihre\n"
+"                    personenbezogenen Daten vertraulich und entsprechend der "
+"gesetzlichen Vorschriften. Da\n"
+"                    durch neue Technologien und die ständige "
+"Weiterentwicklung dieser Webseite Änderungen\n"
+"                    an dieser Datenschutzerklärung vorgenommen werden "
+"können, empfehlen wir Ihnen sich die\n"
+"                    Datenschutzerklärung in regelmäßigen Abständen wieder "
+"durchzulesen.\n"
+"                    Definitionen der verwendeten Begriffe (z.B. "
+"“personenbezogene Daten” oder “Verarbeitung”)\n"
+"                    finden Sie in Art. 4 "
+msgstr ""
+
+#: web/templates/web/dataprotection.html:30
+msgid ""
+"Im Folgenden informieren wir daher über \n"
+"                die Erhebung personenbezogener Daten bei der Nutzung unserer "
+"Webseite. Personenbezogene Daten sind \n"
+"                alle Daten, die auf Sie persönlich beziehbar sind, z. B. "
+"Name, Adresse, E-Mail-Adressen."
+msgstr ""
+
+#: web/templates/web/dataprotection.html:37
+msgid "Zugriffsadaten"
+msgstr "Access data"
+
+#: web/templates/web/dataprotection.html:40
+msgid ""
+"Wir, der Websitebetreiber bzw. Seitenprovider, erheben aufgrund unseres "
+"berechtigten\n"
+"                Interesses (s. Art. 6 Abs. 1 lit. f. DSGVO) Daten über "
+"Zugriffe auf die Website und speichern\n"
+"                diese als „Server-Logfiles“ auf dem Server der Website ab. "
+"Folgende Daten werden so\n"
+"                protokolliert:"
+msgstr ""
+
+#: web/templates/web/dataprotection.html:50
+msgid "Besuchte "
+msgstr "Visited"
+
+#: web/templates/web/dataprotection.html:51
+msgid "Datum und Uhrzeit des Abrufs"
+msgstr "Date and time of retrieval"
+
+#: web/templates/web/dataprotection.html:52
+msgid "Menge der gesendeten Daten in Byte"
+msgstr "Amount of data sent in bytes"
+
+#: web/templates/web/dataprotection.html:53
+msgid "Quelle/Verweis, von welchem Sie auf die Seite gelangten"
+msgstr "Source/reference from which you reached the page"
+
+#: web/templates/web/dataprotection.html:54
+msgid "Verwendeter Browser"
+msgstr "Browser used"
+
+#: web/templates/web/dataprotection.html:55
+msgid "Verwendetes Betriebssystem"
+msgstr "Operating system used"
+
+#: web/templates/web/dataprotection.html:56
+msgid "Verwendete IP-Adresse"
+msgstr "IP address used"
+
+#: web/templates/web/dataprotection.html:57
+msgid "Statusmeldung darüber, ob der Abruf erfolgreich war"
+msgstr "Status message about whether the retrieval was successful"
+
+#: web/templates/web/dataprotection.html:58
+msgid "URL der abgerufenen Seite"
+msgstr "URL of the retrieved page"
+
+#: web/templates/web/dataprotection.html:59
+msgid "Übertragene Datenmenge"
+msgstr "Amount of data transferred"
+
+#: web/templates/web/dataprotection.html:60
+msgid ""
+"die Referrer-URL von der der Nutzer auf die abgerufene Seite gekommen ist"
+msgstr "the referrer URL from which the user came to the accessed page"
+
+#: web/templates/web/dataprotection.html:61
+msgid "HTTP User Agent (Device, Betriebssystem, Browser)"
+msgstr "HTTP User Agent (Device, Operating System, Browser)"
+
+#: web/templates/web/dataprotection.html:66
+msgid ""
+"Information über die Erhebung personenbezogener Daten bei der Nutzung "
+"unserer "
+msgstr "Information on the collection of personal data when using  of our "
+
+#: web/templates/web/dataprotection.html:69
+msgid ""
+"Soweit Sie unsere Plattform nutzen möchten, müssen Sie sich mittels Angabe "
+"Ihrer E-Mail-Adresse, eines selbst\n"
+"                gewählten Passworts sowie der Angabe Ihres Nutzungsgrundes "
+"(anbietende oder suchende Person) registrieren. \n"
+"                Für den Registrierungsprozess verwenden wir das sog. Double-"
+"opt-in-Verfahren, so dass Ihre Registrierung erst \n"
+"                dann abgeschlossen ist, wenn Sie Ihr Benutzerkonto durch "
+"Klick auf den Link in der von uns an Sie zugesandten \n"
+"                Bestätigungs-E-Mail aktivieren. Die Angabe Ihrer E-Mail-"
+"Adresse, des Nutzungsgrundes und des Passwortes sind \n"
+"                verpflichtend."
+msgstr ""
+
+#: web/templates/web/dataprotection.html:80
+msgid ""
+"Wenn Sie unsere Plattform nutzen, um ein Jobinserat zu erstellen, speichern "
+"wir Ihre dafür erforderlichen Daten. Im einzelnen werden folgende "
+"personenbezogene Angaben abgefragt: Vorname, Nachname, Postleitzahl, Wohnort."
+msgstr ""
+
+#: web/templates/web/dataprotection.html:85
+msgid ""
+"Wenn Sie unsere Plattform nutzen, um ein Profil als Betreuuer/in zu "
+"erstellen, speichern wir Ihre dafür \n"
+"                erforderlichen Daten. Im einzelnen werden folgende "
+"personenbezogene Angaben abgefragt: Vorname, Nachname, \n"
+"                Geburtsdatum, Postleitzahl, Wohnort und Sprache."
+msgstr ""
+
+#: web/templates/web/dataprotection.html:91
+msgid ""
+"Wenn Sie von unserem kostenpflichtigen Premium-Angebot Gebrauch machen "
+"möchten, benötigen wir für den \n"
+"                Zahlungsvorgang Angaben zur Zahlungsweise und Ihre "
+"vollständige Rechnungsadresse, bestehend aus Vorname, \n"
+"                Nachname, Strasse, Postleitzahl, Ort."
+msgstr ""
+
+#: web/templates/web/dataprotection.html:97
+msgid ""
+"Die von Ihnen angegebenen freiwilligen Daten wie Bewerbungsunterlagen werden "
+"für die Zeit Ihrer Nutzung \n"
+"                der Plattform gespeichert, soweit Sie diese nicht zuvor "
+"löschen. \n"
+"                Alle Angaben können Sie im geschützten Kundenbereich "
+"verwalten und \n"
+"                ändern.'"
+msgstr ""
+
+#: web/templates/web/dataprotection.html:104
+msgid ""
+"Ziel unserer Plattform ist es, Personen, die die auf unserer Webseite "
+"genannte Dienstleistung anbieten\n"
+"                oder suchen anhand öffentlich zugänglicher Jobinserate bzw. "
+"Profile, zusammen zu bringen. \n"
+"                Wenn Sie unsere Plattform nutzen, sind Ihre im öffentlichen "
+"Jobinserat bzw. Profil zugänglichen \n"
+"                personengebundenen Daten für alle Besucher der Webseite "
+"einsehbar. \n"
+"                Im einzelnen sind das: Vorname, Postleitzahl, Wohnort, "
+"Alter, Fotos. \n"
+"                Nicht einsehbar sind Nachname, Strasse, E-Mail Adresse. \n"
+"        \n"
+"                Um Ihre Möglichkeiten zum Finden eines/einer Betreuuer/in "
+"oder Jobs \n"
+"                weiter zu verbessern, können Ihre öffentlichen Jobinserate "
+"bzw. \n"
+"                Profile mit externen Suchmaschinen und Dienstleistern "
+"geteilt werden."
+msgstr ""
+
+#: web/templates/web/dataprotection.html:118
+msgid ""
+"Die Verbindung wird per TLS-Technik verschlüsselt, um unberechtigten Zugriff "
+"auf \n"
+"                Ihre persönlichen Daten zu verhindern."
+msgstr ""
+
+#: web/templates/web/dataprotection.html:124
+msgid ""
+"Die Verarbeitung Ihrer Daten ist für die Erfüllung eines Vertrags mit uns "
+"bzw. zur Durchführung\n"
+"                vorvertraglicher Massnahmen erforderlich, da wir ohne diese "
+"den Vertrag nicht abschliessen bzw.\n"
+"                vorvertragliche Massnahmen nicht durchführen können. Die in "
+"diesem Zusammenhang anfallenden Daten \n"
+"                löschen wir, nachdem die Speicherung nicht mehr erforderlich "
+"ist, oder schränken die Verarbeitung ein, \n"
+"                falls gesetzliche Aufbewahrungspflichten bestehen.\n"
+"        \n"
+"                Information über die Erhebung personenbezogener Daten bei "
+"einer Kontaktaufnahme per E-Mail."
+msgstr ""
+
+#: web/templates/web/dataprotection.html:135
+msgid "Wenn Sie uns per E-Mail über unsere Webseite kontaktieren"
+msgstr "If you contact us by e-mail through our website"
+
+#: web/templates/web/dataprotection.html:140
+msgid ""
+"Werden die von Ihnen angegebenen Daten (E-Mail-Adresse und ggf. Ihr Vor- und "
+"Nachname, sowie explizit \n"
+"                angeforderte Informationen oder weitere von Ihnen "
+"mitgeteilte Daten) von uns zur Beantwortung Ihrer Fragen \n"
+"                verarbeitet. Die in diesem Zusammenhang anfallenden Daten "
+"löschen wir, nachdem die Speicherung nicht mehr \n"
+"                erforderlich ist, oder schränken die Verarbeitung ein, falls "
+"gesetzliche Aufbewahrungspflichten bestehen."
+msgstr ""
+
+#: web/templates/web/dataprotection.html:149
+msgid "Einsatz von Cookies"
+msgstr "Use of cookies"
+
+#: web/templates/web/dataprotection.html:154
+msgid ""
+"Bei der Nutzung unserer Webseite durch Sie werden zudem Cookies auf Ihrem "
+"Rechner gespeichert, \n"
+"                also kleine Textdateien, die auf Ihrer Festplatte dem von "
+"Ihnen verwendeten Browser zugeordnet \n"
+"                gespeichert werden und durch welche uns als Cookie setzende "
+"Stelle bestimmte Informationen zufliessen. \n"
+"                Wir setzen Cookies dazu ein, unsere Webseite "
+"nutzerfreundlicher und effektiver zu machen und um Sie für \n"
+"                Folgebesuche identifizieren zu können, falls Sie über einen "
+"Account bei uns verfügen. Andernfalls müssten \n"
+"                Sie sich für jeden Besuch erneut einloggen."
+msgstr ""
+
+#: web/templates/web/dataprotection.html:164
+msgid ""
+"Art der Cookies: Auf unserer Webseite verwenden wir transiente Cookies, wie "
+"beispielsweiseSession \n"
+"                Cookies, die eine Session-ID speichern. Mit dieser lassen "
+"sich wiederum verschiedene Anfragen Ihres \n"
+"                Browsers der gemeinsamen Sitzung zuordnen, so dass Ihr "
+"Rechner wiedererkannt werden kann, wenn Sie unsere \n"
+"                Webseite wieder besuchen. Eine Löschung der Session-Cookies "
+"und transiente Cookies findet statt, wenn Sie den \n"
+"                wser schliessen oder sich ausloggen."
+msgstr ""
+
+#: web/templates/web/dataprotection.html:172
+msgid ""
+"Wir verwenden ausserdem Persistente Cookies. Diese werden nach einer für die "
+"jeweils einzelnen Cookies \n"
+"                vorgegeben Dauer automatisiert gelöscht. Davon unabhängig "
+"besteht für Sie jederzeit die Möglichkeit, die \n"
+"                Cookies in den Sicherheitseinstellungen Ihres Browsers zu "
+"löschen."
+msgstr ""
+
+#: web/templates/web/dataprotection.html:179
+msgid ""
+"Es besteht für Sie die Möglichkeit, durch entsprechende Einstellungen in "
+"Ihrem Browser z.B. die Annahme \n"
+"                von Third-Party-Cookies oder allen Cookies zu verhindern. "
+"Dies kann aber dazu führen, dass Sie eventuell \n"
+"                nicht alle Funktionen unserer Webseite nutzen können"
+msgstr ""
+
+#: web/templates/web/dataprotection.html:187
+msgid "Newsletter"
+msgstr "Newsletter"
+
+#: web/templates/web/dataprotection.html:192
+msgid ""
+"Wir können die von Ihnen angegebenen Daten zudem verarbeiten, um Sie über "
+"weitere interessante \n"
+"                Dienstleistungen aus unserem Angebot zu informieren oder "
+"Ihnen E-Mails mit technischen Informationen \n"
+"                zukommen lassen. Im Einzelnen können dies sein:"
+msgstr ""
+
+#: web/templates/web/dataprotection.html:198
+msgid ""
+"Newsletter mit Artikeln, die im Zusammenhang mit unserer Dienstleistung für "
+"Sie relevant sein können"
+msgstr ""
+"Newsletter with articles related to our service for  may be relevant to you"
+
+#: web/templates/web/dataprotection.html:199
+msgid "Newsletter mit Discount-"
+msgstr "Newsletter with discount"
+
+#: web/templates/web/dataprotection.html:200
+msgid "E-Mails mit technischen oder ähnlichen Informationen"
+msgstr "Emails with technical or similar information"
+
+#: web/templates/web/dataprotection.html:202
+msgid ""
+"Teilweise bitten wir Sie um Ihre Einwilligung um Ihre Daten zu Marketing- "
+"und Verkaufszwecken zu verwenden."
+msgstr ""
+"In some cases, we ask for your consent to use your data for marketing  and "
+"sales purposes."
+
+#: web/templates/web/dataprotection.html:209
+msgid ""
+"Wir möchten unser Angebot laufend verbessern und für Sie interessanter "
+"gestalten. \n"
+"                Dies geschieht auf Grundlage von Analysen des "
+"Nutzerverhaltens, die wir über ein sog.\n"
+"                A/B-Testing durchführen. Hierbei werden Ihnen unsere "
+"Webseiten mit leicht unterschiedlichen \n"
+"                Abweichungen angezeigt, je nach einer erfolgten "
+"Profilzuordnung."
+msgstr ""
+
+#: web/templates/web/dataprotection.html:216
+msgid ""
+"Damit die Auswertung erfolgen kann, werden Cookies auf Ihrem Computer "
+"gespeichert \n"
+"                (für nähere Informationen s.h. Cookies). Die Informationen, "
+"die so erhoben wurden, \n"
+"                werden auf einem Server in der Schweiz gespeichert."
+msgstr ""
+
+#: web/templates/web/dataprotection.html:222
+msgid ""
+"Wenn Sie die Auswertung verhindern möchten, können Sie dies durch Löschung "
+"vorhandener Cookies tun \n"
+"                und in dem Sie die Speicherung von Cookies durch "
+"entsprechende Einstellung in Ihrem Browser verhindern. \n"
+"                Im letzteren Fall besteht die Möglichkeit, dass Sie unsere "
+"Webseite gegebenenfalls nicht vollumfänglich \n"
+"                nutzen können. "
+msgstr ""
+
+#: web/templates/web/dataprotection.html:229
+msgid "Google Analytics"
+msgstr "Google Analytics"
+
+#: web/templates/web/dataprotection.html:233
+msgid ""
+"Auf unserer Webseite nutzen wir den Webanalysedienst Google Analytics der \n"
+"                Google Inc. („Google“). Google Analytics verwendet Cookies, "
+"wodurch eine Analyse der \n"
+"                Benutzung der Webseite durch Sie ermöglicht wird. Wir "
+"verfolgen damit das Interesse, \n"
+"                unsere Webseite zu analysieren, regelmässig zu verbessern "
+"und für Sie interessanter zu gestalten."
+msgstr ""
+"On our website we use the web analytics service Google Analytics of the \n"
+"  Google Inc. (\"Google\"). Google Analytics uses cookies,  whereby an "
+"analysis of the  use of the website by you is made possible. We  pursue "
+"thereby the interest, \n"
+" to analyze our website, to regularly improve  and to make it more "
+"interesting for you."
+
+#: web/templates/web/dataprotection.html:239
+msgid ""
+"Die so erzeugten Informationen werden regelmässig an einen Server von Google "
+"in den USA übertragen \n"
+"                und dort gespeichert. Google hat sich dem EU-US Privacy "
+"Shield unterworfen, \n"
+"                https://www.privacyshield.gov/EU-US-Framework."
+msgstr ""
+
+#: web/templates/web/dataprotection.html:244
+msgid ""
+"Wir haben Google damit beauftragt, die so gewonnenen Informationen über Ihre "
+"Nutzung unserer \n"
+"                Webseite auszuwerten, um Reports über die "
+"Webseitenaktivitäten zusammenzustellen und um weitere mit\n"
+"                der Webseitennutzung und der Internetnutzung verbundene "
+"Dienstleistungen uns gegenüber zu erbringen. \n"
+"                Es findet jedoch keine Zusammenführung der von Ihrem Browser "
+"übermittelte IP-Adresse mit anderen Daten \n"
+"                von Google statt."
+msgstr ""
+"We have commissioned Google to use the information thus obtained about your  "
+"use of our  website in order to compile reports about the  website activity "
+"and for other purposes relating to the use of the website and internet. the "
+"use of the website and the use of the Internet services to us. services to "
+"us. \n"
+"  However, the IP address transmitted by your browser is not merged with "
+"other data. transmitted IP address with other data \n"
+" of Google takes place."
+
+#: web/templates/web/dataprotection.html:251
+msgid ""
+"Wenn Sie verhindern möchten, dass Cookies gespeichert werden, können Sie "
+"dies über entsprechende\n"
+"                Einstellung in Ihrem Browser bewirken. Dies kann jedoch dazu "
+"führen, dass nicht alle Funktionen unserer\n"
+"                Webseite vollumfänglich nutzbar sind. Ausserdem können Sie "
+"die Erfassung und Verarbeitung der auf Ihre\n"
+"                Nutzung der Webseite bezogenen Daten (inkl. Ihrer IP-"
+"Adresse) durch Google verhindern, indem Sie das unter\n"
+"                dem folgenden Link verfügbare Browser-Plug-in herunterladen "
+"und \n"
+"                installieren: http://tools.google.com/dlpage/gaoptout?hl=de."
+msgstr ""
+
+#: web/templates/web/dataprotection.html:259
+msgid ""
+"Diese Webseite verwendet Google Analytics mit der Erweiterung "
+"„_anonymizeIp()“, \n"
+"                wodurch IP-Adressen gekürzt weiterverarbeitet werden. "
+"Hierdurch kann eine Personenbeziehbarkeit \n"
+"                ausgeschlossen werden. Soweit den über Sie erhobenen Daten "
+"ein Personenbezug zukommt, wird dieser also \n"
+"                sofort ausgeschlossen und die personenbezogenen Daten damit "
+"umgehend gelöscht."
+msgstr ""
+
+#: web/templates/web/dataprotection.html:265
+msgid ""
+"Informationen über Google finden Sie unter: Google Dublin, Google Ireland "
+"Ltd., Gordon House, \n"
+"                Barrow Street, Dublin 4, Ireland, Fax: +353 (1) 436 1001."
+msgstr ""
+
+#: web/templates/web/dataprotection.html:268
+msgid ""
+"Nutzerbedingungen: http://www.google.com/analytics/terms/de.html\n"
+"                Übersicht zum Datenschutz: http://www.google.com/intl/de/"
+"analytics/learn/privacy.html\n"
+"                Datenschutzerklärung: http://www.google.de/intl/de/policies/"
+"privacy."
+msgstr ""
+
+#: web/templates/web/dataprotection.html:275
+msgid "Google Adwords"
+msgstr "Google Adwords"
+
+#: web/templates/web/dataprotection.html:281
+msgid ""
+"Wir verwenden Google Adwords um auf externen Webseiten auf unsere Angebote "
+"aufmerksam zu machen und können\n"
+"                 so ermitteln, wie erfolgreich die einzelnen Werbemassnahmen "
+"sind. Unser berechtigtes Interesse \n"
+"                 hieran ist es, unsere Webseite für Sie interessanter zu "
+"gestalten und Ihnen für Sie interessante Werbung \n"
+"                 anzuzeigen."
+msgstr ""
+
+#: web/templates/web/dataprotection.html:288
+msgid ""
+"Google Adwords werden über Adserver ausgeliefert. Hierbei werden Adserver "
+"Cookies eingesetzt, mit deren \n"
+"                Hilfe bestimmte Parameter zur Erfolgsmessung, wie "
+"Einblendung der Anzeigen oder Klicks durch die Nutzer, \n"
+"                gemessen werden können. Wenn Sie also mittels Google-Anzeige "
+"auf unsere Webseite gelangen, speichert \n"
+"                Google Adwords ein Conversion Cookie mit begrenzter "
+"Gültigkeit (30 Tage) in Ihrem PC, das jedoch nicht \n"
+"                dazu dient, Sie persönlich zu identifizieren. Folgende "
+"Analyse-Werte werden in der Regel zu diesem \n"
+"                Cookie gespeichert: Unique Cookie-ID, Anzahl Ad Impressions "
+"pro Platzierung (Frequency), letzte Impression\n"
+"                 (relevant für Post-View-Conversions) sowie Opt-out-"
+"Informationen (Markierung, dass der Nutzer nicht mehr \n"
+"                 angesprochen werden möchte)."
+msgstr ""
+
+#: web/templates/web/dataprotection.html:299
+msgid ""
+"Mit Hilfe des Cookies kann Google Ihren Browser wiedererkennen. Sofern das "
+"Cookie noch nicht \n"
+"                abgelaufen ist, können Google und wir also erkennen, dass "
+"Sie eine Anzeige geklickt haben und zu \n"
+"                unserer Seite weitergeleitet wurden und ob Sie einen Umsatz "
+"generiert haben. Es ist uns jedoch nicht \n"
+"                möglich, Sie als Nutzer zu identifizieren. Wir erhalten "
+"lediglich eine statistische Auswertung von \n"
+"                Google um die Wirksamkeit der verwendeten Werbemassnahmen zu "
+"prüfen."
+msgstr ""
+
+#: web/templates/web/dataprotection.html:306
+msgid ""
+"Aufgrund des eingesetzten Marketing-Tools werden bei jedem Besuch unserer "
+"Webseiten personenbezogene\n"
+"                Daten an Google in den Vereinigten Staaten von Amerika "
+"übertragen und gespeichert. Diese umfassen z.B.\n"
+"                die durch Sie besuchten Internetseiten sowie Ihre IP-"
+"Adresse. Google gibt diese personenbezogenen Daten\n"
+"                unter Umständen an Dritte weiter. Zudem kann Google – sofern "
+"Sie bei einem Dienst von Google registriert \n"
+"                sind – den Besuch Ihrem Account zuordnen."
+msgstr ""
+
+#: web/templates/web/dataprotection.html:313
+msgid ""
+"Wenn Sie dies verhindern wollen, können Sie dies auf verschiedene Arten tun:"
+msgstr "If you want to prevent this, you can do so in several ways:"
+
+#: web/templates/web/dataprotection.html:316
+msgid ""
+"Unterdrückung von Drittanbieter Cookies durch Einstellung in Ihrem Browser;\n"
+"                Blockierung von Cookies von der Domain www.googleadservices."
+"com, https://www.google.de/settings/ads, wobei diese Einstellung gelöscht "
+"werden, wenn Sie Ihre Cookies löschen;\n"
+"                durch Deaktivierung der interessenbezogenen Anzeigen der "
+"Anbieter, die Teil der Selbstregulierungs-Kampagne „About Ads“ sind, über "
+"den Link http://www.aboutads.info/choices, wobei diese Einstellung gelöscht "
+"wird, wenn Sie Ihre Cookies löschen;\n"
+"                durch dauerhafte Deaktivierung in Ihren Browsern: http://www."
+"google.com/settings/ads/plugin."
+msgstr ""
+
+#: web/templates/web/dataprotection.html:323
+msgid "Weitergehende Informationen zum Datenschutz bei Google finden Sie hier:"
+msgstr "You can find more information about data protection at Google here:"
+
+#: web/templates/web/dataprotection.html:336
+msgid "Google hat sich dem EU-US Privacy Shield unterworfen:"
+msgstr "Google has submitted to the EU-US Privacy Shield:"
+
+#: web/templates/web/dataprotection.html:343
+msgid "Weitergabe Ihrer personenbezogenen Daten an andere Empfänger"
+msgstr "Sharing your personal data with other recipients"
+
+#: web/templates/web/dataprotection.html:348
+msgid ""
+"Um unsere kostenpflichtigen Angebote zu nutzen, haben Sie auf unserer "
+"Webseite die Möglichkeit, \n"
+"                zwischen verschiedenen Zahlungsarten zu wählen. Wenn Sie "
+"sich für die Zahlung per Kreditkarte entscheiden,\n"
+"                werden Ihre Zahlungsdaten an die jeweiligen "
+"Zahlungsdienstleister übermittelt, \n"
+"                abhängig von der von Ihnen gewählten Zahlungsmethode. Der "
+"Zahlungsdienstleister trägt die Verantwortung \n"
+"                für Ihre Zahlungsdaten.\n"
+"        \n"
+"                Für Kreditkartenzahlungen nutztnanny25.ch die "
+"Dienstleistungen der Stripe, Inc.\n"
+"                Die Kontaktdaten von Stripe, ihres Datenschutzbeauftragten "
+"(falls vorhanden) \n"
+"                und die Kategorien der von den Zahlungsdienstleistern "
+"verarbeiteten personenbezogenen Daten sind unter https://stripe.com/ch/"
+"privacy abrufbar."
+msgstr ""
+
+#: web/templates/web/dataprotection.html:360
+msgid ""
+"Soweit Sie darin eingewilligt haben, ermöglichen wir es anderen Nutzern "
+"unserer Plattform \n"
+"                die von Ihnen hochgeladenen Dokumente, wie beispielsweise "
+"Lebenslauf, Referenzen oder Führerausweis,\n"
+"                einzusehen. Sie können diese Einwilligung jederzeit "
+"widerrufen. Durch den Widerruf wird die \n"
+"                Rechtmässigkeit der aufgrund der Einwilligung bis zum "
+"Widerruf erfolgten Verarbeitung nicht berührt, \n"
+"                d.h. der Widerruf beeinflusst die Zulässigkeit der "
+"Verarbeitung Ihrer personenbezogenen Daten erst \n"
+"                nachdem er uns gegenüber erklärt wurde.' "
+msgstr ""
+
+#: web/templates/web/dataprotection.html:368
+msgid ""
+"Im Übrigen erfolgt eine Weitergabe Ihrer Daten an Dritte grundsätzlich "
+"nicht, es sei denn, es besteht \n"
+"                für uns eine gesetzliche Pflicht zur Weitergabe oder diese "
+"dient der Strafverfolgung."
+msgstr ""
+
+#: web/templates/web/dataprotection.html:374
+msgid "Stand: Juni 2021"
+msgstr "Status: June 2021"
+
+#: web/templates/web/einstellungen.html:33
+msgid "Möchten Sie Ihr Profil bearbeiten?"
+msgstr "Do you want to edit your profile?"
+
+#: web/templates/web/einstellungen.html:37
+msgid "Möchten Sie Ihr Profil Löschen?"
+msgstr "Do you want to delete your profile?"
+
+#: web/templates/web/index.html:20
+msgid "Für Familien"
+msgstr "For families"
+
+#: web/templates/web/index.html:21
+msgid "Kinderbetreuung Angebot"
+msgstr "childcare offer"
+
+#: web/templates/web/index.html:25 web/templates/web/jobartauswaehlen.html:12
+#: web/templates/web/register.html:18
+msgid "Kinderbetreuung"
+msgstr "childcare"
+
+#: web/templates/web/index.html:32
+msgid "Für Nannys"
+msgstr "For nannys"
+
+#: web/templates/web/index.html:40 web/templates/web/register.html:29
+msgid "Jobs"
+msgstr "jobs"
+
+#: web/templates/web/index.html:42
+msgid " "
+msgstr " "
+
+#: web/templates/web/index.html:64
+msgid "Inserat erstellen"
+msgstr "create advertisement"
+
+#: web/templates/web/index.html:67
+msgid ""
+"Erstellen Sie Ihr persönliches Inserat nach Ihren Anfoderungen und Wünschen."
+msgstr ""
+"Create your personal advertisement according to your requirements and wishes."
+
+#: web/templates/web/index.html:78
+msgid "Profile durchsuchen"
+msgstr "Search profiles"
+
+#: web/templates/web/index.html:81
+msgid ""
+"Sehen Sie sich die Kandidaten an, und wählen Sie die Kanditaten die zu Ihnen "
+"passt."
+msgstr "Look at the candidates and choose the one that suits you."
+
+#: web/templates/web/index.html:89
+msgid "Kontakt aufnehmen"
+msgstr "Contact"
+
+#: web/templates/web/index.html:92
+msgid ""
+"Nehmen Sie Kontakt mit den Kanditaten auf und setzten sie einen "
+"Arbeitsvetrag auf."
+msgstr "Contact the candidates and set up a work contract."
+
+#: web/templates/web/index.html:106
+msgid "Die Nanny"
+msgstr "the nanny"
+
+#: web/templates/web/index.html:108
+msgid ""
+"Die Kinderbetreuung bei einer Nanny bringt viele Vorteile. In Persönlich "
+"geht die Nanny genau auf die Bedürfnisse Ihres Kindes ein. Durch individuell "
+"vereinbarte Betreuungszeiten können Familie und Beruf perfekt vereinbaren. "
+"Sie erfahren persönlich von der Nanny regelmäßig von den Fortschritten Ihres "
+"Kindes."
+msgstr ""
+"Childcare with a nanny brings many advantages. In Personally the nanny "
+"responds precisely to the needs of your child. Through individually agreed "
+"care times,family and career can be perfectly combined. You will personally "
+"hear from the nanny on a regular basis about the progress of your child"
+
+#: web/templates/web/index.html:125
+msgid "Die Tagesmutter"
+msgstr "the daycaremother"
+
+#: web/templates/web/index.html:127
+msgid ""
+"Die Kinderbetreuung bei einer Tagesmutter bringt viele Vorteile. In kleinen "
+"Gruppen geht die Tagesmutter genau auf die Bedürfnisse Ihres Kindes ein. "
+"Durch individuell vereinbarte Betreuungszeiten können Familie und Beruf "
+"perfekt vereinbaren. Sie erfahren von der Tagesmutter regelmäßig von den "
+"Fortschritten Ihres Kindes."
+msgstr ""
+"Childcare with a daycare mother brings many advantages. In small groups,the "
+"daycare mother responds precisely to the needs of your child. "
+"Individuallyagreed care times allow you to perfectly combine family and "
+"career. You will hear regularly from the daycaremother about your child's "
+"progress."
+
+#: web/templates/web/index.html:144
+msgid "Nanny gefunden?"
+msgstr "found a nanny?"
+
+#: web/templates/web/index.html:146
+msgid ""
+"Jemand Privat bei sich Zuhause ist ein sehr persönliches Arbeitsverhältnis, "
+"darum sollte man grundsätzlich alle Vereinbarungen schriftlich festhalten. "
+"Sichern Sie Ihrer Haushaltangestellte mit den rechtlich notwendigen "
+"Versicherungen."
+msgstr ""
+"Someone private at home is a very personal working relationship, that's why "
+"you should always put all agreements in writing. Secure your home employee "
+"with the legally necessary insurances."
+
+#: web/templates/web/index.html:156
+msgid "Babysitter/Nanny oder Tagesmutter?"
+msgstr "babysitter/nanny or daycare mother?"
+
+#: web/templates/web/index.html:169
+msgid ""
+"nanny25.ch bietet Familien die für Ihre Kinder eine Nanny/Tagesmutter "
+"benötigen die Möglichkeit einen Inserat zu erstellen um die passende Person "
+"zu finden. Falls du auf der Job-Suche bist und Interesse hast, kannst du "
+"dich gerne bei uns registrieren und dein Profil anlegen."
+msgstr ""
+"nanny25.ch offers families who need a nanny or daycare mother for their "
+"children need the possibility to create an ad to find the right person  to "
+"find the right person. If you are looking for a job and are interested, you "
+"can feel free to register with us and create your profile."
+
+#: web/templates/web/index.html:171
+msgid "Dein Betreuungsart Team"
+msgstr "Your type of care Team"
+
+#: web/templates/web/index_navigation.html:10
+msgid "Registrieren"
+msgstr "Register"
+
+#: web/templates/web/jobartauswaehlen.html:8
+msgid "Im welchen Bereich Suchen Sie einen Job?"
+msgstr "In which area are you looking for a job?"
+
+#: web/templates/web/jobartauswaehlen.html:16
+msgid "Haustierbetreuung"
+msgstr "petting service"
+
+#: web/templates/web/jobartauswaehlen.html:20
+#, fuzzy
+#| msgid "Seniorenbetreuung"
+msgid "Seniorbetreuung"
+msgstr "elderly care"
+
+#: web/templates/web/login.html:8
+msgid "Hier Können Sie sich "
+msgstr "Here you can "
+
+#: web/templates/web/nachrichten.html:24
+msgid "Postfach"
+msgstr "Inbox"
+
+#: web/templates/web/nachrichten.html:53
+msgid "Nachricht löschen"
+msgstr "Delete message"
+
+#: web/templates/web/nachrichten.html:121
+msgid ""
+"Es sind keine Konversation ausgewählt. Wählen Sie auf der Linken seite eine "
+"Konversation oder beginnen Sie eine Konversation."
+msgstr ""
+"There are no conversations selected. On the left side, select a  "
+"conversation or start a conversation."
+
+#: web/templates/web/nachrichten.html:122
+msgid ""
+"Um eine Neue Konversation zu starten , wählen Sie ein Profil auf der "
+"Startseite aus und Klicken darauf auf den Button Nachricht."
+msgstr ""
+"To start a new conversation, select a profile on the  home page and click "
+"the Message button on it."
+
+#: web/templates/web/nanny/additionalskillschild.html:10
+msgid "Ich besitze oder absolviere"
+msgstr "I own or graduate"
+
+#: web/templates/web/nanny/angabejob.html:10
+msgid "Als was möchten Sie sich bewerben?"
+msgstr "What would you like to apply as?"
+
+#: web/templates/web/nanny/description.html:9
+msgid "Schreiben Sie Ihr Inserat für den Arbeitgeber"
+msgstr "Write your advertisement for the employer"
+
+#: web/templates/web/schnuppern.html:17
+msgid "Liebevolle Kinderbetreuer "
+msgstr "Lovely Childcare"
+
+#: web/templates/web/schnuppern.html:41
+msgid "Vorgeschlagene Profile"
+msgstr "Proposed childcare"
+
+#, fuzzy
+#~| msgid "Kinderbetreuung"
+#~ msgid "Finden Sie Ihren Kinderbetreuer"
+#~ msgstr "childcare"
+
+#~ msgid "Schreiben Sie hier Ihr Job Anzeige für die Bewerbende"
+#~ msgstr "Write your job ad for the applicant here"
+
+#~ msgid "Finden Sie Ihren "
+#~ msgstr "Find your "
+
+#~ msgid "Finde eine Kinder-Tier- oder Senior-Betreuung."
+#~ msgstr "Find child, animal or senior care."
+
+#~ msgid "Jobs anschauen"
+#~ msgstr "view jobs"
+
+#~ msgid "Los gehts"
+#~ msgstr "Let's go"
+
+#~ msgid "Previous"
+#~ msgstr "Previous"
+
+#~ msgid "Next"
+#~ msgstr "Next"
+
+#~ msgid "Was wir tun"
+#~ msgstr "What we do"
+
+#~ msgid "Suche nach einem Job"
+#~ msgstr "Search for a job"

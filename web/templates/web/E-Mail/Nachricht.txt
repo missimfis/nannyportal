@@ -1,0 +1,19 @@
+{% load i18n %}
+{% translate 'nanny25.ch' %}
+
+{% translate 'Hallo ' %}{{to_user.first_name}},
+{% translate 'Sie haben eine neue Nachricht von' %} {{from_user.first_name}} {% translate 'erhalten.' %}
+{% translate 'Schauen Sie nach wer Ihnen geschrieben hat.' %} 
+{% translate 'Nachricht von ' %}{{from_user.first_name}}{% translate ' anschauen: '%}https://nanny25.ch/accounts/login/ 
+
+{% translate 'Liebe Grüsse
+Ihr nanny25.ch Team' %}
+
+
+{% blocktranslate %}Dies ist eine automatisierte E-Mail. 
+Bitte antworten Sie nicht darauf.
+Bei Fragen oder Unklarheiten nehmen Sie auf 
+unserer Webseite mit uns Kontakt auf.
+Den Link dazu finden Sie in der Fusszeile der Seite.
+©2021 nanny25.ch{% endblocktranslate %}
+

@@ -1,0 +1,44 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block navigation %}
+    {% include "web/index_navigation.html" %}
+{% endblock %}
+{%block stylesheet%}
+    <link href='{% static 'web/css/user.css' %}' rel='stylesheet' type='text/css'>
+{% endblock %}
+
+{% block content %}
+<br>
+    <div class="registrierenname"> Registrieren </div>  <small> </small>
+
+    {% if form.non_field_errors %}
+        <div class="alert alert-danger" role="alert">
+            {% for error in form.non_field_errors %}
+                {{ error }}
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <form action="" method="Post">
+        <div class="Personalien-box">
+            {% csrf_token %}
+            {% for field in form.visible_fields %}
+                <div class="form-group">
+                    {% if field.errors %}
+                        {% for error in field.errors %}
+                            <div class="invalid-feedback">
+                                {{ error }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                    <input type="{% if field.html_name == "password1" or field.html_name == "password2" %}password{%elif field.html_name == "username"%}email{% else %}text{% endif %}" class="form-control" name="{{field.html_name}}" id="{{ field.id_for_label }}" {% if form.name.value is not None %} value="{{ form.name.value|stringformat:'s' }}" {% endif %} maxlength="{{ form.name.field.max_length }}" placeholder="{% if field.html_name == "username" %}E-Mail{% elif field.html_name == "first_name" %}Vorname{% elif field.html_name == "last_name" %}Nachname{%else%}{{field.label}}{% endif %}" {% if form.name.field.required %} required {% endif %}>
+                </div>
+            {% endfor %}
+	    <small>Das Passwort muss aus 8 oder mehr Zeichen mit einer Mischung aus Gross- und Klein-Buchstaben, sowie mindestens einer Zahl bestehen.</small>
+        </div>
+        <br>
+        <input class="input_send" type="submit" value="Weiter"/>
+
+    </form>
+{% endblock %}

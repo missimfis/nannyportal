@@ -1,0 +1,119 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block navigation %}
+        {% include "web/Nanny.Login/nanny_navigation.html" %}
+{% endblock %}
+{% block content %}
+<div class="profilbildbearbeiten">{% translate 'Profil bearbeiten' %}</h5> </div>
+    <p>{% translate '' %}</p>
+        <form action="" method="POST"  enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="Fotohochaden edit">
+                <div class="form-input">
+                    <div class="preview"> 
+                        <img id="file-ip-1-preview"  src="/media/{{bild.bild.url|slice:"7:"}}">
+                    </div>
+                    <div class="labelbox">
+                        <label for="file-ip-1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                        <path d="M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z"/>
+                        </svg>
+                        </label>
+                            <input type="file" id="file-ip-1" accept="image/*" name="bild" onchange="showPreview(event);">
+                        <label for="file-ip-2" onclick="deleteImage();"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
+                            <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
+                        </svg>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+    
+                <input class="input_bearbeiten" type="submit" name="image_upload" value="{% translate 'Bild speichern' %}" />
+        </form>
+    <br>
+
+    <p>{% translate '' %}</p>
+    <br>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="Personalien-box">
+            <div class="berarbeitugtext">
+
+            {% include "web/form_snippet.html" with form=profilForm %}
+        </div>
+    </form>
+        <br>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {% for field in angabeForm.visible_fields|slice:"4:" %}
+        <div class="form-group">
+            <label for="{{field.auto_id}}"  id="{{field.name}}" class="betreuungsart-button" onclick="changeCheckedClass('{{field.name}}')">{{field.label}}</label>
+            {{ field.errors }} {{ field }}
+        </div>
+        {% endfor %}
+            <input class="input_bearbeiten" type="submit" name="profiltier" value="{% translate 'Angabe speichern' %}" />
+        </form>
+    <br>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <br>
+        <p>{% translate '' %}</p>
+        <div class="berarbeitugtext">
+        {% include "web/form_snippet.html" with form=descriptionForm %}
+        </div>
+        <input class="input_bearbeiten" type="submit" name="description_save" value="{% translate 'Text speichern' %}"  />
+    </form>
+        <br>
+    <form action="" method="POST">
+        {% csrf_token %}
+    <p>{% translate '' %}</p>
+        {% for field in angabejobForm.visible_fields|slice:":4" %}
+        <div class="form-group">
+            <div class="berarbeitugklick">
+                <label for="{{field.auto_id}}"  id="{{field.name}}" class="betreuungsart-button" onclick="changeCheckedClass('{{field.name}}')">{{field.label}}</label>
+                {{ field.errors }} {{ field }}
+            </div>
+        </div>
+        {% endfor %}
+            <input class="input_bearbeiten" type="submit" name="angabejob_save" value="{% translate 'Jobtitel speichern' %}"  />
+    </form>
+        <br>
+        <br>
+    <form action="" method="POST">
+    {% csrf_token %}
+    <p>{% translate '' %}</p>
+    {% for field in experiencechildForm.visible_fields|slice:":4" %}
+    <div class="form-group">
+        <div class="berarbeitugklick">
+            <label for="{{field.auto_id}}"  id="{{field.name}}" class="betreuungsart-button" onclick="changeCheckedClass('{{field.name}}')">{{field.label}}</label>
+            {{ field.errors }} {{ field }}
+        </div>
+    </div>
+        {% endfor %}
+        <input class="input_bearbeiten" type="submit" name="experience_save" value="{% translate 'Erfahrung speichern' %}"  />
+    </form>
+<br>
+    <form action="" method="POST">
+    {% csrf_token %}
+    <p>{% translate '' %}</p>
+        {% for field in additionalskillschildForm.visible_fields|slice:":8" %}
+        <div class="form-group">
+            <div class="berarbeitugklick">
+                <label for="{{field.auto_id}}"  id="{{field.name}}" class="betreuungsart-button" onclick="changeCheckedClass('{{field.name}}')">{{field.label}}</label>
+                {{ field.errors }} {{ field }}
+            </div>
+        </div>
+        {% endfor %}
+            <input class="input_bearbeiten" type="submit" name="skills_save" value="{% translate 'Skills speichern' %}"  />
+    </form>
+        <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+{% endblock %}  
+{% block scripts %}<script src="{% static 'web/js/foto.js' %}"></script>
+<script src="{% static 'web/js/helperfunctions.js' %}"></script>{% endblock scripts %}

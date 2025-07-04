@@ -1,0 +1,32 @@
+.input2 {
+    margin: auto;
+    width: 50%;
+}
+
+h4 {
+    margin: auto;
+    width: 30%;
+}
+
+h2 {
+    margin: auto;
+    width: 30%;
+}
+
+hr {
+    margin: auto;
+    width: 50%;
+}
+
+.input3 {
+    margin: auto;
+    width: 13%;
+    display: inline-block;
+}
+
+main {
+    box-sizing: border-box;
+    display: block;
+}
+
+.form-select datum {}

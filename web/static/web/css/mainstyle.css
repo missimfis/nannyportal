@@ -1,0 +1,1521 @@
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: rgb(249, 249, 249);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 5em;
+}
+
+h1 {
+    color: rgb(126, 102, 134);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    padding: 2%;
+}
+
+small {
+    color: gray;
+    text-shadow: none;
+    font-weight: normal;
+}
+
+.betreuungsart-row {
+    margin: 30px 0;
+    display: block;
+    width: 100%;
+}
+
+.betreuungsart-col {
+    min-width: 0px;
+    padding: 6px;
+    border: 1px solid rgb(222, 222, 222);
+    color: rgb(68, 68, 68);
+    border-radius: 8px;
+    box-sizing: border-box;
+    min-height: 40px;
+    height: auto;
+    margin: 16px auto;
+    display: block;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    max-width: 300px;
+    box-shadow: 0 0 0.65rem rgb(0 0 0 / 15%);
+    background-color: white;
+}
+
+.betreuungsart-col:hover {
+    background: rgb(234, 236, 238);
+    color: black;
+    box-shadow: 0 0 0 0.05rem rgb(233, 226, 236);
+    border-color: 0 0 0 0.05rem rgb(233, 226, 236);
+}
+
+.betreuungsart-col a {
+    color: rgb(5, 5, 5);
+    text-decoration: none;
+}
+
+.haupt-jobsuchen {
+    background-color: rgb(113, 185, 190);
+    display: inline-block;
+    width: 28px;
+    padding: 20px 10px;
+    margin: 20px auto;
+    border: 1px none rgb(45, 0, 128);
+    color: rgb(2, 2, 2);
+    border-radius: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 20px auto;
+}
+
+div {
+    display: block;
+}
+
+#kontaktForm {
+    display: block;
+    width: 50%;
+    min-width: 350px;
+    padding: 40px 0;
+    margin: auto;
+}
+
+.kontakt {
+    padding: 30px;
+}
+
+.kontakt textarea {
+    width: 200px;
+    height: 200px;
+}
+
+.kontakt label {
+    vertical-align: top;
+}
+
+.haupt-jobsuchen:hover {
+    background-color: rgb(143, 184, 197);
+}
+
+.registrieren {
+    background-color: rgb(113, 185, 190);
+    border: 1px none rgb(45, 0, 128);
+    color: rgb(2, 2, 2);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    width: 150px;
+    display: block;
+    margin: 10px auto;
+}
+
+.registrieren:hover {
+    background-color: rgb(143, 184, 197);
+}
+
+.anfoderungs_box {
+    background-color: rgb(143, 200, 204);
+    border: 1px none rgb(45, 0, 128);
+    color: rgb(2, 2, 2);
+    padding: 15px 20px;
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+    width: 280px;
+    display: block;
+    margin: 10px auto;
+}
+
+.input_send {
+    background-color: rgb(245, 247, 251);
+    padding: 10px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    margin-top: 30px;
+    font-size: 19px;
+    border: 0.01px solid rgb(234, 240, 248);
+    width: 140px;
+    color: rgb(53, 52, 52);
+    border-color: rgb(211, 220, 225);
+    box-shadow: 0 0 0 0.1rem rgb(143, 176, 192);
+}
+
+.input_send:hover {
+    background: rgb(241, 235, 243);
+    color: black;
+}
+
+.betreuungsart-button {
+    min-width: 288px;
+    padding: 15px;
+    border: 1px solid rgb(222, 222, 222);
+    color: rgb(68, 68, 68);
+    border-radius: 8px;
+    box-sizing: border-box;
+    min-height: 40px;
+    vertical-align: middle;
+    white-space: nowrap;
+    -webkit-font-smoothing: antialiased;
+    text-decoration: none;
+    height: auto;
+    margin: 16px auto;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    max-width: 100px;
+}
+
+.betreuungsart-button:hover {
+    color: rgb(2, 2, 2);
+    border-color: rgb(75, 107, 122);
+    box-shadow: rgb(75, 107, 122) 0px 0px 0px 1px;
+}
+
+.betreuungsart-button-active {
+    color: rgb(2, 2, 2);
+    border-color: rgb(75, 107, 122);
+    box-shadow: rgb(75, 107, 122) 0px 0px 0px 1px;
+}
+
+.navbar-brand {
+    color: rgb(96, 158, 250);
+}
+
+.Telefon-menu {
+    display: block;
+    padding: 16px 0;
+    color: #fff;
+    letter-spacing: 0.0357em;
+    text-decoration: none;
+}
+
+.X-Schliessen {
+    top: 6px;
+    right: 10px;
+    position: fixed;
+    width: 37px;
+    height: 37px;
+}
+
+.Datai-Hochladen {
+    width: 300%;
+}
+
+.personal-data {
+    width: 30%;
+    margin: auto;
+}
+
+.datum {
+    width: 100px;
+    display: inline-block;
+}
+
+.Stundenlohn {
+    width: 100px;
+    margin: auto;
+}
+
+.Kalender-box {
+    width: 80%;
+    margin: auto;
+}
+
+.E-Mail-box {
+    width: 80%;
+    margin: auto;
+}
+
+.Personalien-box {
+    width: 400px;
+    margin: auto;
+}
+
+.Personalien-box-Jobsuchende {
+    width: 90%;
+    margin: auto;
+}
+
+button {
+    background-color: rgb(255, 255, 255);
+    border: 0.01px solid rgb(234, 240, 248);
+    color: rgb(49, 98, 122);
+    font-weight: 800;
+}
+
+.datenschutzerklärung {
+    display: table;
+    width: 100%;
+    text-align: left;
+}
+
+.Fusszeile {
+    margin-top: 30%;
+    background-color: rgb(236, 235, 233);
+    background-size: auto 400px;
+    background-position: center;
+    padding: 5%;
+    clear: both;
+}
+
+.Fusszeile a {
+    text-decoration: none;
+    color: rgb(49, 48, 48);
+    padding: 1%;
+}
+
+.Kontakt-Formular textarea {
+    resize: none;
+    height: 100px;
+}
+
+.hidden {
+    display: none;
+}
+
+.form-control {
+    padding: 0.9rem 0.75rem;
+    margin-top: 0rem;
+}
+
+.Hase {
+    margin-bottom: 2rem;
+}
+
+.form-control.profiltierbetreuer {
+    margin: 1rem 0;
+}
+
+.form-select.profiltierbetreuer {
+    margin: 1rem;
+}
+
+.form-group textarea.form-control {
+    margin: auto;
+    resize: none;
+    height: 260px;
+}
+
+.background_registieren_eltern {
+    background-image: url("/media/web/images/IMG_Eltern_regi.jpg");
+    background-repeat: no-repeat;
+    background-size: auto 150%;
+    background-position: center;
+    height: 660px;
+    margin-top: 15px;
+}
+
+.background_registieren_eltern::before {
+    background-color: rgba(255, 255, 255 0.5);
+}
+
+.Schriftvorgeschlageneprofile2 {
+    font-size: 21px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(65, 65, 66);
+}
+
+.meinprofilbox {
+    display: block;
+    padding: 1rem;
+    overflow-wrap: anywhere;
+}
+
+.meinprofilboxfoto {
+    width: 40%;
+    display: block;
+    float: left;
+}
+
+.meinprofilboxfoto img {
+    height: 72px;
+    width: 76px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.klickmeinprofil {
+    background-color: #539bc1;
+    padding: 7px;
+    border-radius: 3px;
+    font-size: 16px;
+    border: none;
+    width: 100px;
+    margin-top: 15px;
+    box-shadow: none;
+    color: white;
+}
+
+.klickmeinprofil:hover {
+    background: #2778a3;
+    box-shadow: none;
+}
+
+.klickpremium {
+    background-color: #e9ecef;
+    height: 50px;
+    width: 250px;
+    font-size: 17px;
+    box-shadow: none;
+}
+
+.container .col-sm-3 {
+    display: block;
+}
+
+.container .col-sm-3 .container {
+    padding: 10px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    margin-top: 30px;
+    width: 308px;
+    min-width: 250px;
+    border: 0.01px solid rgb(234, 240, 248);
+}
+
+.einstellungen {
+    max-width: 750px;
+    background-color: rgb(227, 227, 227);
+    margin: auto;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    margin-bottom: 400px;
+}
+
+.einstellungen .table th {
+    padding: 1rem;
+}
+
+.einstellungen .table td {
+    padding: 1rem;
+}
+
+.container {
+    display: block;
+}
+
+@media (max-width: 1130px) {
+    .container .col-sm-3 {
+        min-width: 100%;
+        display: block;
+    }
+}
+
+@media (max-width: 750px) {
+    .form-group textarea.form-control {
+        display: block;
+        width: 90%;
+    }
+}
+
+.form-control:focus {
+    border-color: rgb(143, 176, 192);
+    box-shadow: 0 0 0 0.1rem rgb(143, 176, 192);
+}
+
+input[type="file"] {
+    margin: auto;
+    width: 300px;
+    border: none;
+}
+
+.kontoerstellen a {
+    text-decoration: none;
+    color: rgb(49, 48, 48);
+    padding: 1%;
+    font-size: 15px;
+    font-size: arial;
+}
+
+.Fotohochaden {
+    height: 100%;
+    width: 50%;
+    display: block;
+    margin: auto;
+}
+
+.form-input {
+    width: 100%;
+    padding: 20px;
+}
+
+.form-input input {
+    display: none;
+    margin: auto;
+}
+
+.labelbox {
+    color: rgb(68, 104, 122);
+    font-weight: 800;
+    display: block;
+    width: 160px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: rgb(229, 228, 231);
+    font-size: 17px;
+    text-transform: 600;
+    cursor: pointer;
+    margin: auto;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.form-input img {
+    width: 100%;
+    display: block;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    background-image: url("/media/web/images/smiley.png");
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: center;
+}
+
+#file-ip-1-preview {
+    width: 160px;
+    height: 174px;
+    object-fit: cover;
+    margin: auto;
+}
+
+.labelbox label {
+    width: 50%;
+    height: 50px;
+    display: inline-block;
+    float: left;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.bearbeitenbox {
+    width: 95%;
+    margin: auto;
+}
+
+.navbar-toggler,
+.navbar-toggler:hover,
+.navbar-toggler:focus {
+    background: none;
+    box-shadow: none;
+    border: none;
+}
+
+.nav {
+    padding: 1rem;
+    text-align: left;
+}
+
+.nav-tabs .nav-link {
+    color: none;
+}
+
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .show.nav-link {
+    color: rgb(54, 54, 54);
+    background-color: none;
+    border-bottom: 3px solid rgb(195, 181, 199);
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+    background-color: #688db1!;
+}
+
+.klickeinstellung {
+    width: 95px;
+    height: 900px;
+    background-color: #f1eeee;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-size: 13px;
+    border: none;
+    color: rgb(71, 71, 71);
+    text-decoration: none;
+    padding: 0.9rem 0.75rem;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+.btn-secondary {
+    width: 155px;
+    height: 50px;
+    background-color: #f1eeee;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-size: 15px;
+    border: none;
+    color: rgb(71, 71, 71);
+    text-decoration: none;
+    padding: 0.9rem 0.75rem;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+.btn-secondary:hover {
+    background-color: none;
+    background: none;
+    color: rgb(0, 0, 0);
+}
+
+.padding {
+    padding: 1rem !important;
+}
+
+.user-card-full {
+    overflow: hidden;
+}
+
+.card {
+    border: none;
+    margin-bottom: 30px;
+}
+
+.m-r-0 {
+    margin-right: 0px;
+}
+
+.m-l-0 {
+    margin-left: 0px;
+}
+
+.user-card-full .user-profile {
+    height: 333px;
+}
+
+.user-profile {
+    padding: 20px 0;
+}
+
+.card-block {
+    padding: 1.25rem;
+}
+
+.m-b-25 {
+    margin-bottom: 25px;
+}
+
+.img-radius {
+    border-radius: 2px;
+    width: 160px;
+    height: 200px;
+    object-fit: cover;
+}
+
+h6 {
+    font-size: 14px;
+}
+
+.card .card-block p {
+    line-height: 25px;
+}
+
+.user-card-full {
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+    box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+    border: 2px solid rgb(221, 225, 230);
+}
+
+.card-block {
+    padding: 1.25rem;
+}
+
+.b-b-default {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.m-b-20 {
+    margin-bottom: 20px;
+}
+
+.p-b-5 {
+    padding-bottom: 5px !important;
+}
+
+.card .card-block p {
+    line-height: 25px;
+}
+
+.m-b-10 {
+    margin-bottom: 10px;
+}
+
+.text-muted {
+    color: #919aa3 !important;
+}
+
+.b-b-default {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.f-w-600 {
+    font-weight: 600;
+}
+
+.m-b-20 {
+    margin-bottom: 20px;
+}
+
+.m-t-40 {
+    margin-top: 20px;
+}
+
+.p-b-5 {
+    padding-bottom: 5px !important;
+}
+
+.m-b-10 {
+    margin-bottom: 10px;
+}
+
+.m-t-40 {
+    margin-top: 20px;
+}
+
+.user-card-full .social-link li {
+    display: inline-block;
+}
+
+.user-card-full .social-link li a {
+    font-size: 20px;
+    margin: 0 10px 0 0;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.card-block {
+    display: block;
+}
+
+.Schriftstartseite {
+    height: 59px;
+    font-weight: 400;
+    font-size: 34px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: middle;
+    color: rgb(80, 80, 80);
+}
+
+@media (min-width: 600px) {
+    .Schriftstartseite {
+        font-size: 35px;
+        text-align: left;
+    }
+}
+
+.Vorgeschlageneprofile {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+.Vorgeschlageneprofile:hover {
+    color: rgb(71, 71, 71);
+    background-color: rgb(246, 247, 250);
+}
+
+.Schriftvorgeschlageneprofile {
+    font-size: 19px;
+    vertical-align: middle;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(65, 65, 66);
+}
+
+.container .row .col-sm-9 {
+    display: block;
+}
+
+.container .row .col-sm-9 h2 {
+    display: block;
+}
+
+.bg-c-lite-green {
+    background: #e9ebf0;
+}
+
+.form-control {
+    margin-top: none;
+}
+
+.input-group .form-select {
+    max-width: 115px;
+    padding-right: 2rem;
+}
+
+.input-group {
+    width: 50%;
+    margin: auto;
+}
+
+.input-group-text {
+    display: flex;
+    align-items: center;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: center;
+    white-space: nowrap;
+    background-color: rgb(246, 242, 242);
+    border: none;
+    border-radius: 0.25rem;
+}
+
+.premiumfoto1 {
+    padding: 0;
+}
+
+.premiumfoto1 img {
+    height: 145px;
+    width: 287px;
+    text-align: center;
+    display: block;
+}
+
+.textright {
+    color: #444;
+    text-align: left;
+    width: 60%;
+    float: right;
+    display: block;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.Kinderbetreuersuchen {
+    background-color: rgb(227, 227, 233);
+    padding: 10px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    font-size: 20px;
+    border: none;
+    height: 50;
+    margin: 0;
+    box-shadow: none;
+    color: rgb(59, 59, 59);
+    font-weight: 800;
+}
+
+@media (min-width: 780px) {
+    .Kinderbetreuersuchen {
+        font-weight: 300;
+    }
+}
+
+.Kinderbetreuersuchen:hover {
+    background: linear-gradient(85.16deg, #ffffff 0%, rgb(246, 242, 242) 95.12%);
+}
+
+.Altersklasseschrift {
+    color: rgb(68, 104, 122);
+    font-size: 25px;
+    font-weight: 800;
+}
+
+@media only screen and (min-width: 1400px) {
+    p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .col-sm {
+        display: block;
+        width: 100%;
+    }
+    .container .box {
+        display: block;
+        width: 100%;
+    }
+    #carouselExampleCaptions {
+        width: 100%;
+        margin: auto;
+    }
+    .container-fluid .col-sm.Bild img {
+        width: 40%;
+        display: inline-block;
+    }
+    .container {
+        padding: 0;
+    }
+    .row {
+        margin: auto;
+    }
+}
+
+.Schriftmeinprofil {
+    color: rgb(71, 71, 71);
+    font-size: 17px;
+}
+
+.Nachrichtenbutton {
+    width: 100px;
+    border: 2px solid rgb(148, 170, 180);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: rgb(20, 20, 20);
+    text-decoration: none;
+    padding: 1.2%;
+    margin-top: 0.5rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(255, 255, 255);
+    font-size: 15px;
+    color: rgb(71, 71, 71);
+}
+
+.Nachrichtenbutton:hover {
+    color: rgb(71, 71, 71);
+    background-color: none;
+}
+
+@media (max-width: 700px) {
+    .Nachrichtenbutton {
+        width: 100%;
+        color: rgb(27, 55, 69);
+        background-color: rgb(148 178 194);
+        border: 15px solid rgb(255, 255, 255);
+        font-weight: 800;
+        position: relative;
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1030;
+        font-size: 16px;
+    }
+}
+
+#carouselExampleCaptions button:hover {
+    background: none;
+}
+
+#carouselExampleCaptions button {
+    box-shadow: none;
+}
+
+.berarbeitugtext {
+    display: block;
+    width: 100%;
+    height: auto;
+    display: block;
+    padding: 5px 12px;
+}
+
+.berarbeitugklick {
+    width: 100%;
+    box-shadow: none;
+}
+
+.Profillöschen {
+    background-color: #dee0e2;
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-size: 13px;
+    border: none;
+    width: 110px;
+    margin-top: 15px;
+    color: rgb(71, 71, 71);
+    text-decoration: none;
+}
+
+.Profilbearbeiten {
+    background-color: #dee0e2;
+    padding: 15px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-size: 15px;
+    border: none;
+    width: 140px;
+    margin-top: 15px;
+    color: rgb(71, 71, 71);
+    text-decoration: none;
+}
+
+@media (max-width: 1200px) {
+    .input-group {
+        width: 100%;
+    }
+}
+
+@media (max-width: 780px) {
+    .Kinderbetreuersuchen {
+        width: 100%;
+        display: block;
+        margin-top: 10px;
+        margin-left: 0;
+        border-top-left-radius: 5px !important;
+        border-bottom-left-radius: 5px !important;
+    }
+}
+
+.form-check-input:checked {
+    background-color: rgb(50, 205, 48);
+    border: none;
+}
+
+.form-select:focus {
+    box-shadow: 0 0 0 0.1rem rgb(209, 198, 212);
+    border-color: rgb(209, 198, 212);
+}
+
+.input_bearbeiten {
+    background-color: rgb(233, 226, 236);
+    padding: 10px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    margin-top: 30px;
+    font-size: 14px;
+    border: 0.01px solid rgb(234, 240, 248);
+    width: 140px;
+    color: rgb(42, 73, 89);
+    font-weight: 800;
+}
+
+.klickkontakt a {
+    text-decoration: none;
+    color: rgb(73, 51, 80);
+    border: solid 1px rgb(161, 141, 168);
+    padding: 10px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.klickkontakt a:hover {
+    background: rgb(244, 241, 245);
+}
+
+.weiter {
+    background-color: rgb(233, 226, 236);
+    padding: 10px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    margin-top: 30px;
+    font-size: 19px;
+    width: 140px;
+    color: rgb(53, 52, 52);
+}
+
+.weiter:hover {
+    background: none;
+    background-color: rgb(233, 226, 236);
+}
+
+.kontoerstellenpasswortvergessen {
+    text-align: right;
+    text-decoration: none;
+    margin: 12px;
+}
+
+a {
+    color: rgb(126, 102, 134);
+}
+
+.login {
+    color: rgb(79, 120, 141);
+    font-size: 28px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+
+.sprache {
+    margin: 0;
+    display: inline-block;
+}
+
+.sprache:first-of-type {
+    border-right: solid 0.5px rgb(126, 102, 134);
+    padding-right: 0.25rem;
+}
+
+.page-link {
+    color: rgb(0, 0, 0);
+}
+
+.page-link:hover {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+    background-color: #ececec;
+    color: black;
+}
+
+.page-link:focus {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+    background-color: rgb(235, 230, 236);
+    color: black;
+    box-shadow: none;
+}
+
+.page-item.active .page-link {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+    background-color: #e9ebf0;
+    border-color: rgb(222, 222, 222);
+    color: rgb(0, 0, 0);
+}
+
+.gefunden {
+    color: black;
+    text-align: left;
+    padding: 2rem;
+}
+
+.ortprofil {
+    width: 135px;
+    margin: auto;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-size: 20px;
+    color: rgb(71, 71, 71);
+    text-decoration: none;
+    padding: 1.2%;
+}
+
+.bg-color {
+    background-color: #cb5767 !important;
+    font-size: 10px;
+}
+
+.navbar {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.titeltext {
+    color: rgb(79, 120, 141);
+    font-size: 28px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.bg-light {
+    border-bottom: solid 0px rgb(101, 19, 122);
+    background-color: #ffffff !important;
+}
+
+.navbar button.navbar-toggler {
+    margin: 0;
+}
+
+.herzen {
+    font-size: 14px;
+    color: gray;
+}
+
+.titeltext img {
+    margin-bottom: 5px;
+    width: 43px;
+    height: 43px;
+    object-fit: cover;
+}
+
+h5.titel-suche {
+    color: rgb(112, 124, 135);
+    font-size: 28px;
+    font-weight: 900;
+}
+
+.titel-gross {
+    font: 1.6875em/1.14815 Frutiger, Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    color: rgb(79, 120, 141);
+    font-weight: 900;
+}
+
+.Fürfamlien {
+    color: grey;
+    width: 141px;
+    height: 0px;
+}
+
+.funktion {
+    color: rgb(79, 120, 141);
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.funktion1 {
+    letter-spacing: 0.009375rem;
+}
+
+.gefunden1 {
+    font-size: 25px;
+    color: rgb(79, 120, 141);
+    font-weight: 600;
+    text-align: center;
+}
+
+.container-fluid .col-sm.Bild img.nanny-bild {
+    width: 400px;
+}
+
+@media (max-width: 500px) {
+    .container-fluid .col-sm.Bild img.nanny-bild {
+        width: 320px;
+    }
+    .Personalien-box {
+        width: 93%;
+    }
+}
+
+.herzen1 {
+    color: grey;
+    width: 261px;
+    height: 0px;
+}
+
+.kasse {
+    color: rgb(66, 66, 66);
+    font-size: 30px;
+    line-height: 0.125rem;
+    height: 35px;
+    flex: 1 1;
+    border-bottom: 1.5px solid #5e5e5e;
+    margin: auto;
+}
+
+.onemont {
+    color: rgb(66, 66, 66);
+    font-size: 23px;
+    line-height: 6.125rem;
+    height: 80px;
+    color: rgb(79, 120, 141);
+}
+
+.unbegrenztnachricht {
+    color: rgb(56, 56, 56);
+    font-size: 17px;
+    line-height: 3.125rem;
+}
+
+.zahlungsmethoden {
+    color: rgb(66, 66, 66);
+    font-size: 35px;
+    line-height: 3.125rem;
+    height: 57px;
+}
+
+.hintergrund-kasse {
+    background-color: rgb(233, 238, 239);
+    min-width: 0px;
+    padding: 24px;
+    color: rgb(68, 68, 68);
+    box-sizing: border-box;
+    height: auto;
+    margin: 0px auto;
+    display: block;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    max-width: 451px;
+}
+
+.kassebox {
+    min-width: 0px;
+    padding: 15px;
+    border: 1px solid rgb(222, 222, 222);
+    color: rgb(68, 68, 68);
+    border-radius: 8px;
+    box-sizing: border-box;
+    min-height: 40px;
+    height: auto;
+    margin: 16px auto;
+    display: block;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    max-width: 400px;
+    box-shadow: 0 0 0.65rem rgb(0 0 0 / 15%);
+    background-color: white;
+}
+
+.kassebox:hover {
+    background: rgb(234, 236, 238);
+    color: black;
+    box-shadow: 0 0 0 0.05rem rgb(233, 226, 236);
+    border-color: 0 0 0 0.05rem rgb(233, 226, 236);
+}
+
+@media (max-width: 1300px) {
+    .user-card-full .col-sm-4,
+    .user-card-full .col-sm-8 {
+        width: 50%;
+    }
+    .user-card-full .user-profile {
+        height: auto;
+    }
+    .card-block {
+        padding: 0.5em;
+    }
+    .card .card-block p {
+        line-height: 1.25rem;
+    }
+}
+
+.registrieren1 {
+    min-width: 0px;
+    padding: 17px;
+    border: 1px solid rgb(222, 222, 222);
+    color: rgb(68, 68, 68);
+    border-radius: 8px;
+    box-sizing: border-box;
+    min-height: 40px;
+    height: auto;
+    margin: 16px auto;
+    display: block;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    max-width: 300px;
+    box-shadow: 0 0 0.65rem rgb(0 0 0 / 15%);
+    background-color: white;
+}
+
+.registrieren1:hover {
+    background: rgb(234, 236, 238);
+    color: black;
+    box-shadow: 0 0 0 0.05rem rgb(233, 226, 236);
+    border-color: 0 0 0 0.05rem rgb(233, 226, 236);
+}
+
+.registrieren1 a {
+    text-decoration: none;
+    color: black;
+}
+
+.kinderbetreuerprofile {
+    font: 1.6875em/1.14815 Frutiger, Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    color: rgb(68, 104, 122);
+    font-weight: 900;
+}
+
+.page-link {
+    border: none;
+}
+
+.vorgeschlagen {
+    font-size: 17px;
+    margin: 19px;
+    color: #6c6c6c;
+}
+
+.registrierenname {
+    font: 1.6875em/1.14815 Frutiger, Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    color: rgb(68, 104, 122);
+    font-weight: 900;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 800px) {
+    .registrierenname {
+        margin-top: 0;
+    }
+}
+
+.alert.alert-info.alert-dismissible.fade.show.fixed-bottom {
+    margin: 0;
+}
+
+.arbeitschrift {
+    font-size: 20px;
+    color: rgb(68, 104, 122);
+    font-weight: 800;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.beschreibungtitel {
+    text-align: center;
+    color: rgb(68, 104, 122);
+    font-size: 10pt;
+    margin-top: 1rem;
+    font-weight: 800;
+}
+
+.beschreibungfront {
+    margin-top: none;
+    font-family: unset;
+    color: rgb(32, 32, 32);
+}
+
+.Schriftvorgeschlageneprofile2 {
+    font-size: 16pt;
+    color: rgb(68, 104, 122);
+    font-weight: 800;
+}
+
+@media (max-width: 990px) {
+    .beschreibungfront {
+        font-size: 10pt;
+        text-align: left;
+    }
+    .Schriftvorgeschlageneprofile {
+        font-size: 11pt;
+        text-align: left;
+    }
+    .Schriftvorgeschlageneprofile2 {
+        font-size: 20px;
+        top: 10px;
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 550px) {
+    .beschreibungfront {
+        font-size: 9pt;
+        text-align: left;
+    }
+}
+
+@media (max-width: 400px) {
+    .img-radius {
+        width: 100%
+    }
+}
+
+.ansicht {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+}
+
+.inhaltBoxKathrin {
+    font-size: 14px;
+    display: inline-block;
+    float: left;
+    width: 50%;
+    max-height: 110px;
+}
+
+.breiteRow {
+    margin: auto;
+    width: 80%;
+    margin-top: 1rem;
+    margin-bottom: 1rem
+}
+
+.nannyvorschau {
+    width: 4.5em;
+    height: 4.5em;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.boxAussenBitteSOnstnichtanrührenDanke {
+    border-top: 2px solid rgb(221, 225, 230);
+}
+
+.ansichtname {
+    font-weight: 800;
+    color: rgb(68, 104, 122);
+    text-align: left;
+    margin-top: 5px;
+    margin-bottom: 3px;
+}
+
+.ansichttext {
+    text-align: left;
+    font-size: 12px;
+}
+
+.ansichtarbeit {
+    font-size: 14px;
+    color: rgb(68, 104, 122);
+    margin-bottom: 3px;
+    font-weight: 800;
+}
+
+.dreivon {
+    font-size: 25px;
+    color: rgb(68, 104, 122);
+    margin-bottom: 3px;
+    font-weight: 800;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.registrationschrift {
+    font-size: 20px;
+    color: rgb(68, 104, 122);
+    margin-bottom: 3px;
+    font-weight: 800;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@media (min-width: 900px) {
+    .registrationschrift {
+        margin-top: 3rem;
+    }
+}
+
+.Furfamilien {
+    margin-top: 3rem;
+    font-size: 19px;
+    color: rgb(109, 109, 109);
+    font-weight: 800;
+}
+
+.profilbildbearbeiten {
+    font: 1.6875em/1.14815 Frutiger, Arial, Helvetica, sans-serif;
+    font-size: 23px;
+    color: rgb(68, 104, 122);
+    font-weight: 900;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}

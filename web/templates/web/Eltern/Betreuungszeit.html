@@ -1,0 +1,64 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block navigation %}
+    {% include "web/index_navigation.html" %}
+{% endblock %}
+{% block content %}
+    <div class="registrationschrift">{% translate 'An welchen Tagen benötigen Sie eine Kinderbetreuung?' %}</div>
+    <small> 5 von 6 </small>
+    <br>
+    <br>
+
+    <p>{% translate 'Klicken Sie im Feld ein' %}</p>
+    <form action="" method="Post">
+        {% csrf_token %}
+        <div class="Kalender-box">
+            <table class="table">
+                <thead class="table-light">
+                    <tr>
+                        <th>&nbsp;</th>
+                        <th>{% translate 'Mo' %}</th>
+                        <th>{% translate 'Di' %}</th>
+                        <th>{% translate 'Mi' %}</th>
+                        <th>{% translate 'Do' %}</th>
+                        <th>{% translate 'Fr' %}</th>
+                        <th>{% translate 'Sa' %}</th>
+                        <th>{% translate 'So' %}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{% translate 'Vormittag' %}</td>
+                        {% for field in form.visible_fields|slice:":7" %}
+                            <td>{{ field.errors }}
+                                {{ field }}</td>
+                        {% endfor %}
+                    </tr>
+                    <tr>
+                        <td>{% translate 'Nachmittag' %}</td>
+                        {% for field in form.visible_fields|slice:"7:14" %}
+                            <td>{{ field.errors }}
+                                {{ field }}</td>
+                        {% endfor %}
+                    </tr>
+                    <tr>
+                        <td>{% translate 'Abend' %}</td>
+                        {% for field in form.visible_fields|slice:"14:21" %}
+                            <td>{{ field.errors }}
+                                {{ field }}</td>
+                        {% endfor %}
+                    </tr>
+                    <tr>
+                        <td>{% translate 'Übernachtung' %}</td>
+                        {% for field in form.visible_fields|slice:"21:" %}
+                            <td>{{ field.errors }}
+                                {{ field }}</td>
+                        {% endfor %}
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <input class="input_send" type="submit" value="{% translate 'Weiter' %}"/>
+    </form>
+{% endblock %}

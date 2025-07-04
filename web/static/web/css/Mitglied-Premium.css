@@ -1,0 +1,198 @@
+body {
+    background-color: rgb(249, 249, 249);
+}
+
+.container-premium {
+    width: 80%;
+    margin: 40px auto;
+    /*background: rgb(214, 206, 206);*/
+}
+
+.background {
+    background-image: url("/media/web/images/IMG_pay1.jpg");
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: center;
+    height: 280px;
+}
+
+.box-premium {
+    background: rgb(251, 252, 249);
+    margin: 4%;
+    padding: 1%;
+    text-align: center;
+    display: inline-block;
+    box-shadow: 0 0 0.65rem rgb(143 146 148 / 50%);
+    background-color: white;
+}
+
+.hintergrund-premium {
+    background: linear-gradient(85.16deg, #a2ddee 0%, #f1f6f7 95.12%);
+}
+
+.hintergrund-premium div {
+    margin: auto;
+}
+
+.premium-inside {
+    color: rgb(82, 84, 86);
+    font-weight: 900;
+}
+
+@media (min-width: 850px) {
+    .hintergrund-premium div {
+        margin-top: 1rem;
+    }
+}
+
+.hintergrund-premium div svg.bi-stars {
+    margin: auto;
+}
+
+.button {
+    background-color: rgb(194, 219, 248);
+    padding: 1% 10%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    margin-top: 70px;
+    font-size: 20px;
+    border: 0.01px solid rgb(248, 249, 250);
+}
+
+.col-sm .monat {
+    margin-top: 30%;
+    font-size: 30pt;
+    color: rgb(47, 54, 58);
+    font-weight: 700;
+    font-family: inherit;
+}
+
+@media (max-width: 350px) {
+    .col-sm h2 {
+        margin-top: 8%;
+        font-size: 15pt;
+        width: 13rem;
+    }
+}
+
+@media (max-width: 350px) {
+    .nachrichtenaktivieren {
+        font-size: 10pt;
+        width: 13rem;
+    }
+}
+
+.col-sm h3 {
+    margin-top: 52%;
+    font-size: 13pt;
+}
+
+.col-sm h3 small {
+    font-size: 10pt;
+}
+
+.small {
+    color: rgb(199, 195, 181);
+}
+
+.betreuungsart-col2 {
+    margin: 25px auto;
+    padding: 11px 16px;
+    text-align: center;
+    font-weight: 700;
+}
+
+a {
+    color: rgb(12, 14, 12);
+    text-decoration: none;
+    margin: 0;
+    padding: 0%;
+}
+
+.nachrichtenaktivieren {
+    font-size: 25px;
+    color: rgb(54, 54, 54);
+    height: 70px;
+    padding: 12px;
+    font-weight: 800;
+}
+
+.verschicken {
+    color: rgb(84, 84, 84);
+    padding: 15px;
+}
+
+.dankebeitrag {
+    font-size: 15px;
+    color: rgb(54, 54, 54);
+    font-weight: 800;
+    text-align: center;
+    margin-top: 4rem;
+    height: 25px;
+}
+
+.premium-inside {
+    width: 100%;
+    display: block;
+}
+
+.sale {
+    font-size: 23px;
+    margin-top: 1.5rem;
+    color: rgb(248, 61, 61);
+    font-weight: 800;
+}
+
+@media (max-width: 870px) {
+    .box-premium {}
+    .premium-inside {
+        display: inline-block;
+        float: left;
+    }
+    .premium-inside .monat {
+        margin-top: 0.4em;
+        margin-bottom: 0;
+    }
+    .premium-inside a {
+        padding: 0.25rem 0.5rem;
+        margin-top: 0;
+    }
+    .premium-inside hr {
+        display: none;
+    }
+    .betreuungsart-col2 {
+        margin-top: 10;
+    }
+}
+
+.btn {
+    color: rgb(79, 120, 141);
+    font-size: 24px;
+}
+
+@media (max-width: 850px) {
+    .nachrichtenaktivieren {
+        font-size: 22px;
+        color: rgb(54, 54, 54);
+        height: 55px;
+    }
+    .verschicken {
+        font-size: 16px;
+    }
+    .hintergrund-premium .dankebeitrag {
+        font-size: 12px;
+        text-align: center;
+        margin-top: 2em;
+    }
+    .btn {
+        font-size: 20px;
+    }
+    .col-sm .monat {
+        margin-top: 6%;
+        font-size: 20pt;
+        width: 100%;
+        font-family: inherit
+    }
+}

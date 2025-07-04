@@ -1,0 +1,145 @@
+    body {
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif
+    }
+    
+    .fixedheight {
+        height: 200px;
+    }
+    
+    .box {
+        padding: 1%;
+        height: 65px;
+        width: 30%;
+        float: left;
+        margin: 0 1%;
+        background-color: rgb(236, 235, 233);
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        margin-top: 3rem;
+    }
+    
+    .box .title {
+        display: block;
+        color: gray;
+    }
+    
+    .specialbox {
+        padding: 1%;
+        background-color: rgb(246, 242, 242);
+        height: 65px;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+    
+    #profilbild {
+        width: 226px;
+        height: 255px;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+        object-fit: cover;
+        margin-top: 1rem;
+        border: none;
+    }
+    
+    .profilbildeltern {
+        width: 226px;
+        height: 255px;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+        object-fit: cover;
+        margin-top: 1rem;
+        border: 4px solid rgb(189, 210, 220);
+    }
+    
+    .row {
+        margin-top: 9px;
+    }
+    
+    .text-left {
+        text-align: left;
+    }
+    
+    .row ul {
+        list-style-type: none;
+        text-align: left;
+    }
+    
+    h3 {
+        text-align: left;
+        color: rgb(96, 158, 250)
+    }
+    
+    .background1 {
+        background: linear-gradient(85.16deg, #ecedee 0%, #deeffd 95.12%);
+        height: 57px;
+    }
+    
+    h4 {
+        vertical-align: middle;
+        font-family: Arial, Helvetica, sans-serif;
+        color: rgb(52, 52, 53);
+    }
+    
+    .btn-secondary {
+        width: 135px;
+        margin: auto;
+        background-color: #f1eeee;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        font-size: 13px;
+        border: none;
+        color: rgb(71, 71, 71);
+        text-decoration: none;
+        padding: .900rem .75rem;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    
+    .btn-secondary:hover {
+        color: rgb(0, 4, 8);
+    }
+    
+    .nameprofil {
+        font-size: 25px;
+        color: rgb(68, 104, 122);
+        font-weight: 800;
+        margin-top: 1rem;
+        margin-bottom: 1%;
+    }
+    
+    .nameprofil1 {
+        font-size: 25px;
+        color: rgb(68, 104, 122);
+        font-weight: 800;
+        margin-top: 4%;
+    }
+    
+    .persönlichebeschreibung {
+        font-size: 21px;
+        color: rgb(68, 104, 122);
+        font-weight: 800;
+        margin-top: 1%;
+        margin-bottom: 2%;
+    }
+    
+    .text10 {
+        color: rgb(68, 104, 122);
+        font-size: 14px;
+        font-weight: 800;
+    }
+    
+    @media (max-width:450px) {
+        .table-fix {
+            margin-left: -2em;
+        }
+    }

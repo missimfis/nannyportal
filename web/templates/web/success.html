@@ -1,0 +1,16 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block navigation %}
+        {% include "web/Eltern.Profilseite/eltern_navigation.html" %}
+{% endblock %}
+{% block stylesheet %} <link href="{% static 'web/css/Mitglied-Premium.css' %}" rel="stylesheet" type="text/css">{% endblock %}
+{% block content %}
+    <section>
+        <p>{% translate 'Vielen Dank, dass Sie uns damit ermöglichen die Webseite zu betreiben.' %}</p>
+        {% if subscription.is_valid %}
+        <p>{% translate 'Dein Abonement wurde soeben erfolgreich aktiviert.' %}</p>
+        {% endif %}
+        <a href="{% url 'web:subscription' %}">{% translate 'nochmals ein Abonement kaufen?' %}</a>
+    </section>
+{% endblock %}

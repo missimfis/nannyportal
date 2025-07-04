@@ -1,0 +1,22 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block navigation %}
+    {% include "web/index_navigation.html" %}
+{% endblock %}
+{% block content %}
+    <div class="registrationschrift">{% translate 'Schreiben Sie Ihr Inserat für den Arbeitgeber' %}</div>
+    <small> 3 von 6</small>
+    <br>
+    <br>
+        <div class="bearbeitenbox">
+            <form action="" method="Post">
+                {% include "web/form_snippet.html" %}
+                <input class="input_send" type="submit" value="{% translate 'Weiter' %}"/>
+            </form>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+    {% endblock %}

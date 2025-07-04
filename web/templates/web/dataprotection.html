@@ -1,0 +1,378 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block navigation %}
+    {% include "web/index_navigation.html" %}
+{% endblock %}
+{% block content %}
+
+    <div class="datenschutzerklärung">
+
+        <h4>Datenschutzerklärung</h4>
+
+
+        {% translate 'Ansprechspartner' %}
+        <br>
+        <br>
+        Löwenstrasse 27
+        <br>
+        8400 Winterthur
+        <br>
+
+        <p>{% blocktranslate %}Der Websitebetreiber nimmt Ihren Datenschutz sehr ernst und behandelt Ihre
+                    personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Vorschriften. Da
+                    durch neue Technologien und die ständige Weiterentwicklung dieser Webseite Änderungen
+                    an dieser Datenschutzerklärung vorgenommen werden können, empfehlen wir Ihnen sich die
+                    Datenschutzerklärung in regelmäßigen Abständen wieder durchzulesen.
+                    Definitionen der verwendeten Begriffe (z.B. “personenbezogene Daten” oder “Verarbeitung”)
+                    finden Sie in Art. 4 {% endblocktranslate %}</p>
+
+                    {% blocktranslate %}Im Folgenden informieren wir daher über 
+                die Erhebung personenbezogener Daten bei der Nutzung unserer Webseite. Personenbezogene Daten sind 
+                alle Daten, die auf Sie persönlich beziehbar sind, z. B. Name, Adresse, E-Mail-Adressen.{% endblocktranslate %}
+
+        <br>
+
+
+        <strong>{% translate 'Zugriffsadaten' %}</strong>
+
+
+        {% blocktranslate %}Wir, der Websitebetreiber bzw. Seitenprovider, erheben aufgrund unseres berechtigten
+                Interesses (s. Art. 6 Abs. 1 lit. f. DSGVO) Daten über Zugriffe auf die Website und speichern
+                diese als „Server-Logfiles“ auf dem Server der Website ab. Folgende Daten werden so
+                protokolliert:{% endblocktranslate %}
+
+        <br>
+        <br>
+
+
+        <ul>
+            <li>{% translate 'Besuchte ' %}</li>
+            <li>{% translate 'Datum und Uhrzeit des Abrufs' %}</li>
+            <li>{% translate 'Menge der gesendeten Daten in Byte' %}</li>
+            <li>{% translate 'Quelle/Verweis, von welchem Sie auf die Seite gelangten' %}</li>
+            <li>{% translate 'Verwendeter Browser' %}</li>
+            <li>{% translate 'Verwendetes Betriebssystem' %}</li>
+            <li>{% translate 'Verwendete IP-Adresse' %}</li>
+            <li>{% translate 'Statusmeldung darüber, ob der Abruf erfolgreich war' %}</li>
+            <li>{% translate 'URL der abgerufenen Seite' %}</li>
+            <li>{% translate 'Übertragene Datenmenge' %}</li>
+            <li>{% translate 'die Referrer-URL von der der Nutzer auf die abgerufene Seite gekommen ist' %}</li>
+            <li>{% translate 'HTTP User Agent (Device, Betriebssystem, Browser)' %}</li>
+        </ul>
+
+
+        <strong>
+                {% translate 'Information über die Erhebung personenbezogener Daten bei der Nutzung unserer ' %}
+        </strong>
+
+        {% blocktranslate %}Soweit Sie unsere Plattform nutzen möchten, müssen Sie sich mittels Angabe Ihrer E-Mail-Adresse, eines selbst
+                gewählten Passworts sowie der Angabe Ihres Nutzungsgrundes (anbietende oder suchende Person) registrieren. 
+                Für den Registrierungsprozess verwenden wir das sog. Double-opt-in-Verfahren, so dass Ihre Registrierung erst 
+                dann abgeschlossen ist, wenn Sie Ihr Benutzerkonto durch Klick auf den Link in der von uns an Sie zugesandten 
+                Bestätigungs-E-Mail aktivieren. Die Angabe Ihrer E-Mail-Adresse, des Nutzungsgrundes und des Passwortes sind 
+                verpflichtend.{% endblocktranslate %}
+
+        <br>
+        <br>
+
+
+        {% translate 'Wenn Sie unsere Plattform nutzen, um ein Jobinserat zu erstellen, speichern wir Ihre dafür erforderlichen Daten. Im einzelnen werden folgende personenbezogene Angaben abgefragt: Vorname, Nachname, Postleitzahl, Wohnort.' %}
+
+        <br>
+        <br>
+
+        {% blocktranslate %}Wenn Sie unsere Plattform nutzen, um ein Profil als Betreuuer/in zu erstellen, speichern wir Ihre dafür 
+                erforderlichen Daten. Im einzelnen werden folgende personenbezogene Angaben abgefragt: Vorname, Nachname, 
+                Geburtsdatum, Postleitzahl, Wohnort und Sprache.{% endblocktranslate %}
+
+        <br>
+        <br>
+        {% blocktranslate %}Wenn Sie von unserem kostenpflichtigen Premium-Angebot Gebrauch machen möchten, benötigen wir für den 
+                Zahlungsvorgang Angaben zur Zahlungsweise und Ihre vollständige Rechnungsadresse, bestehend aus Vorname, 
+                Nachname, Strasse, Postleitzahl, Ort.{% endblocktranslate %}
+
+        <br>
+        <br>
+        {% blocktranslate %}Die von Ihnen angegebenen freiwilligen Daten wie Bewerbungsunterlagen werden für die Zeit Ihrer Nutzung 
+                der Plattform gespeichert, soweit Sie diese nicht zuvor löschen. 
+                Alle Angaben können Sie im geschützten Kundenbereich verwalten und 
+                ändern.'{% endblocktranslate %}
+
+        <br>
+        <br>
+        {% blocktranslate %}Ziel unserer Plattform ist es, Personen, die die auf unserer Webseite genannte Dienstleistung anbieten
+                oder suchen anhand öffentlich zugänglicher Jobinserate bzw. Profile, zusammen zu bringen. 
+                Wenn Sie unsere Plattform nutzen, sind Ihre im öffentlichen Jobinserat bzw. Profil zugänglichen 
+                personengebundenen Daten für alle Besucher der Webseite einsehbar. 
+                Im einzelnen sind das: Vorname, Postleitzahl, Wohnort, Alter, Fotos. 
+                Nicht einsehbar sind Nachname, Strasse, E-Mail Adresse. 
+        
+                Um Ihre Möglichkeiten zum Finden eines/einer Betreuuer/in oder Jobs 
+                weiter zu verbessern, können Ihre öffentlichen Jobinserate bzw. 
+                Profile mit externen Suchmaschinen und Dienstleistern geteilt werden.{% endblocktranslate %}
+
+        <br>
+        <br>
+
+        {% blocktranslate %}Die Verbindung wird per TLS-Technik verschlüsselt, um unberechtigten Zugriff auf 
+                Ihre persönlichen Daten zu verhindern.{% endblocktranslate %}
+
+        <br>
+        <br>
+
+        {% blocktranslate %}Die Verarbeitung Ihrer Daten ist für die Erfüllung eines Vertrags mit uns bzw. zur Durchführung
+                vorvertraglicher Massnahmen erforderlich, da wir ohne diese den Vertrag nicht abschliessen bzw.
+                vorvertragliche Massnahmen nicht durchführen können. Die in diesem Zusammenhang anfallenden Daten 
+                löschen wir, nachdem die Speicherung nicht mehr erforderlich ist, oder schränken die Verarbeitung ein, 
+                falls gesetzliche Aufbewahrungspflichten bestehen.
+        
+                Information über die Erhebung personenbezogener Daten bei einer Kontaktaufnahme per E-Mail.{% endblocktranslate %}
+        <br>
+        <br>
+
+
+        <strong>{% translate 'Wenn Sie uns per E-Mail über unsere Webseite kontaktieren' %}</strong>
+
+        <br>
+        <br>
+
+        {% blocktranslate %}Werden die von Ihnen angegebenen Daten (E-Mail-Adresse und ggf. Ihr Vor- und Nachname, sowie explizit 
+                angeforderte Informationen oder weitere von Ihnen mitgeteilte Daten) von uns zur Beantwortung Ihrer Fragen 
+                verarbeitet. Die in diesem Zusammenhang anfallenden Daten löschen wir, nachdem die Speicherung nicht mehr 
+                erforderlich ist, oder schränken die Verarbeitung ein, falls gesetzliche Aufbewahrungspflichten bestehen.{% endblocktranslate %}
+
+        <br>
+        <br>
+
+
+        <strong>{% translate 'Einsatz von Cookies' %}</strong>
+
+
+        <br>
+        <br>
+        {% blocktranslate %}Bei der Nutzung unserer Webseite durch Sie werden zudem Cookies auf Ihrem Rechner gespeichert, 
+                also kleine Textdateien, die auf Ihrer Festplatte dem von Ihnen verwendeten Browser zugeordnet 
+                gespeichert werden und durch welche uns als Cookie setzende Stelle bestimmte Informationen zufliessen. 
+                Wir setzen Cookies dazu ein, unsere Webseite nutzerfreundlicher und effektiver zu machen und um Sie für 
+                Folgebesuche identifizieren zu können, falls Sie über einen Account bei uns verfügen. Andernfalls müssten 
+                Sie sich für jeden Besuch erneut einloggen.{% endblocktranslate %}
+
+
+        <br>
+
+        {% blocktranslate %}Art der Cookies: Auf unserer Webseite verwenden wir transiente Cookies, wie beispielsweiseSession 
+                Cookies, die eine Session-ID speichern. Mit dieser lassen sich wiederum verschiedene Anfragen Ihres 
+                Browsers der gemeinsamen Sitzung zuordnen, so dass Ihr Rechner wiedererkannt werden kann, wenn Sie unsere 
+                Webseite wieder besuchen. Eine Löschung der Session-Cookies und transiente Cookies findet statt, wenn Sie den 
+                wser schliessen oder sich ausloggen.{% endblocktranslate %}
+
+        <br>
+
+        {% blocktranslate %}Wir verwenden ausserdem Persistente Cookies. Diese werden nach einer für die jeweils einzelnen Cookies 
+                vorgegeben Dauer automatisiert gelöscht. Davon unabhängig besteht für Sie jederzeit die Möglichkeit, die 
+                Cookies in den Sicherheitseinstellungen Ihres Browsers zu löschen.{% endblocktranslate %}
+
+        <br>
+
+
+        {% blocktranslate %}Es besteht für Sie die Möglichkeit, durch entsprechende Einstellungen in Ihrem Browser z.B. die Annahme 
+                von Third-Party-Cookies oder allen Cookies zu verhindern. Dies kann aber dazu führen, dass Sie eventuell 
+                nicht alle Funktionen unserer Webseite nutzen können{% endblocktranslate %}
+
+        <br>
+        <br>
+
+
+        <strong>{% translate 'Newsletter' %}</strong>
+
+        <br>
+        <br>
+
+        {% blocktranslate %}Wir können die von Ihnen angegebenen Daten zudem verarbeiten, um Sie über weitere interessante 
+                Dienstleistungen aus unserem Angebot zu informieren oder Ihnen E-Mails mit technischen Informationen 
+                zukommen lassen. Im Einzelnen können dies sein:{% endblocktranslate %}
+
+        <br>
+
+        <li>{% translate 'Newsletter mit Artikeln, die im Zusammenhang mit unserer Dienstleistung für Sie relevant sein können' %}</li>
+        <li>{% translate 'Newsletter mit Discount-' %}</li>
+        <li>{% translate 'E-Mails mit technischen oder ähnlichen Informationen' %}</li>
+        <br>
+        {% translate 'Teilweise bitten wir Sie um Ihre Einwilligung um Ihre Daten zu Marketing- und Verkaufszwecken zu verwenden.' %}
+
+        <strong>7A/B-Testing</strong>
+
+        <br>
+        <br>
+
+        {% blocktranslate %}Wir möchten unser Angebot laufend verbessern und für Sie interessanter gestalten. 
+                Dies geschieht auf Grundlage von Analysen des Nutzerverhaltens, die wir über ein sog.
+                A/B-Testing durchführen. Hierbei werden Ihnen unsere Webseiten mit leicht unterschiedlichen 
+                Abweichungen angezeigt, je nach einer erfolgten Profilzuordnung.{% endblocktranslate %}
+
+        <br>
+
+        {% blocktranslate %}Damit die Auswertung erfolgen kann, werden Cookies auf Ihrem Computer gespeichert 
+                (für nähere Informationen s.h. Cookies). Die Informationen, die so erhoben wurden, 
+                werden auf einem Server in der Schweiz gespeichert.{% endblocktranslate %}
+
+        <br>
+
+        {% blocktranslate %}Wenn Sie die Auswertung verhindern möchten, können Sie dies durch Löschung vorhandener Cookies tun 
+                und in dem Sie die Speicherung von Cookies durch entsprechende Einstellung in Ihrem Browser verhindern. 
+                Im letzteren Fall besteht die Möglichkeit, dass Sie unsere Webseite gegebenenfalls nicht vollumfänglich 
+                nutzen können. {% endblocktranslate %}
+
+        <br>
+        <br>
+        <strong>{% translate 'Google Analytics' %}</strong>
+        <br>
+        <br>
+
+        {% blocktranslate %}Auf unserer Webseite nutzen wir den Webanalysedienst Google Analytics der 
+                Google Inc. („Google“). Google Analytics verwendet Cookies, wodurch eine Analyse der 
+                Benutzung der Webseite durch Sie ermöglicht wird. Wir verfolgen damit das Interesse, 
+                unsere Webseite zu analysieren, regelmässig zu verbessern und für Sie interessanter zu gestalten.{% endblocktranslate %}
+        <br>
+
+        {% blocktranslate %}Die so erzeugten Informationen werden regelmässig an einen Server von Google in den USA übertragen 
+                und dort gespeichert. Google hat sich dem EU-US Privacy Shield unterworfen, 
+                https://www.privacyshield.gov/EU-US-Framework.{% endblocktranslate %}
+
+        <br>
+        {% blocktranslate %}Wir haben Google damit beauftragt, die so gewonnenen Informationen über Ihre Nutzung unserer 
+                Webseite auszuwerten, um Reports über die Webseitenaktivitäten zusammenzustellen und um weitere mit
+                der Webseitennutzung und der Internetnutzung verbundene Dienstleistungen uns gegenüber zu erbringen. 
+                Es findet jedoch keine Zusammenführung der von Ihrem Browser übermittelte IP-Adresse mit anderen Daten 
+                von Google statt.{% endblocktranslate %}
+
+        <br>
+        {% blocktranslate %}Wenn Sie verhindern möchten, dass Cookies gespeichert werden, können Sie dies über entsprechende
+                Einstellung in Ihrem Browser bewirken. Dies kann jedoch dazu führen, dass nicht alle Funktionen unserer
+                Webseite vollumfänglich nutzbar sind. Ausserdem können Sie die Erfassung und Verarbeitung der auf Ihre
+                Nutzung der Webseite bezogenen Daten (inkl. Ihrer IP-Adresse) durch Google verhindern, indem Sie das unter
+                dem folgenden Link verfügbare Browser-Plug-in herunterladen und 
+                installieren: http://tools.google.com/dlpage/gaoptout?hl=de.{% endblocktranslate %}
+
+        <br>
+        {% blocktranslate %}Diese Webseite verwendet Google Analytics mit der Erweiterung „_anonymizeIp()“, 
+                wodurch IP-Adressen gekürzt weiterverarbeitet werden. Hierdurch kann eine Personenbeziehbarkeit 
+                ausgeschlossen werden. Soweit den über Sie erhobenen Daten ein Personenbezug zukommt, wird dieser also 
+                sofort ausgeschlossen und die personenbezogenen Daten damit umgehend gelöscht.{% endblocktranslate %}
+
+        <br>
+        {% blocktranslate %}Informationen über Google finden Sie unter: Google Dublin, Google Ireland Ltd., Gordon House, 
+                Barrow Street, Dublin 4, Ireland, Fax: +353 (1) 436 1001.{% endblocktranslate %}
+        <br>
+        {% blocktranslate %}Nutzerbedingungen: http://www.google.com/analytics/terms/de.html
+                Übersicht zum Datenschutz: http://www.google.com/intl/de/analytics/learn/privacy.html
+                Datenschutzerklärung: http://www.google.de/intl/de/policies/privacy.{% endblocktranslate %}
+
+        <br>
+        <br>
+
+        <strong>{% translate 'Google Adwords' %}</strong>
+
+        <br>
+        <br>
+
+        <br>
+        {% blocktranslate %}Wir verwenden Google Adwords um auf externen Webseiten auf unsere Angebote aufmerksam zu machen und können
+                 so ermitteln, wie erfolgreich die einzelnen Werbemassnahmen sind. Unser berechtigtes Interesse 
+                 hieran ist es, unsere Webseite für Sie interessanter zu gestalten und Ihnen für Sie interessante Werbung 
+                 anzuzeigen.{% endblocktranslate %}
+
+        <br>
+
+        {% blocktranslate %}Google Adwords werden über Adserver ausgeliefert. Hierbei werden Adserver Cookies eingesetzt, mit deren 
+                Hilfe bestimmte Parameter zur Erfolgsmessung, wie Einblendung der Anzeigen oder Klicks durch die Nutzer, 
+                gemessen werden können. Wenn Sie also mittels Google-Anzeige auf unsere Webseite gelangen, speichert 
+                Google Adwords ein Conversion Cookie mit begrenzter Gültigkeit (30 Tage) in Ihrem PC, das jedoch nicht 
+                dazu dient, Sie persönlich zu identifizieren. Folgende Analyse-Werte werden in der Regel zu diesem 
+                Cookie gespeichert: Unique Cookie-ID, Anzahl Ad Impressions pro Platzierung (Frequency), letzte Impression
+                 (relevant für Post-View-Conversions) sowie Opt-out-Informationen (Markierung, dass der Nutzer nicht mehr 
+                 angesprochen werden möchte).{% endblocktranslate %}
+
+        <br>
+
+        {% blocktranslate %}Mit Hilfe des Cookies kann Google Ihren Browser wiedererkennen. Sofern das Cookie noch nicht 
+                abgelaufen ist, können Google und wir also erkennen, dass Sie eine Anzeige geklickt haben und zu 
+                unserer Seite weitergeleitet wurden und ob Sie einen Umsatz generiert haben. Es ist uns jedoch nicht 
+                möglich, Sie als Nutzer zu identifizieren. Wir erhalten lediglich eine statistische Auswertung von 
+                Google um die Wirksamkeit der verwendeten Werbemassnahmen zu prüfen.{% endblocktranslate %}
+
+        <br>
+        {% blocktranslate %}Aufgrund des eingesetzten Marketing-Tools werden bei jedem Besuch unserer Webseiten personenbezogene
+                Daten an Google in den Vereinigten Staaten von Amerika übertragen und gespeichert. Diese umfassen z.B.
+                die durch Sie besuchten Internetseiten sowie Ihre IP-Adresse. Google gibt diese personenbezogenen Daten
+                unter Umständen an Dritte weiter. Zudem kann Google – sofern Sie bei einem Dienst von Google registriert 
+                sind – den Besuch Ihrem Account zuordnen.{% endblocktranslate %}
+
+        <br>
+        {% translate 'Wenn Sie dies verhindern wollen, können Sie dies auf verschiedene Arten tun:' %}
+
+        <br>
+        {% blocktranslate %}Unterdrückung von Drittanbieter Cookies durch Einstellung in Ihrem Browser;
+                Blockierung von Cookies von der Domain www.googleadservices.com, https://www.google.de/settings/ads, wobei diese Einstellung gelöscht werden, wenn Sie Ihre Cookies löschen;
+                durch Deaktivierung der interessenbezogenen Anzeigen der Anbieter, die Teil der Selbstregulierungs-Kampagne „About Ads“ sind, über den Link http://www.aboutads.info/choices, wobei diese Einstellung gelöscht wird, wenn Sie Ihre Cookies löschen;
+                durch dauerhafte Deaktivierung in Ihren Browsern: http://www.google.com/settings/ads/plugin.{% endblocktranslate %}
+
+        <br>
+        <br>
+        {% translate 'Weitergehende Informationen zum Datenschutz bei Google finden Sie hier:' %}
+
+        <br>
+        <br>
+        <ul>
+            <li>
+                http://www.google.com/intl/de/policies/privacy
+            </li>
+            <li>
+                https://services.google.com/sitestats/de.html
+            </li>
+
+        </ul>
+        {% translate 'Google hat sich dem EU-US Privacy Shield unterworfen:' %}
+        
+                https://www.privacyshield.gov/EU-US-Framework
+
+        <br>
+        <br>
+
+        <strong>{% translate 'Weitergabe Ihrer personenbezogenen Daten an andere Empfänger' %}</strong>
+
+        <br>
+        <br>
+
+        {% blocktranslate %}Um unsere kostenpflichtigen Angebote zu nutzen, haben Sie auf unserer Webseite die Möglichkeit, 
+                zwischen verschiedenen Zahlungsarten zu wählen. Wenn Sie sich für die Zahlung per Kreditkarte entscheiden,
+                werden Ihre Zahlungsdaten an die jeweiligen Zahlungsdienstleister übermittelt, 
+                abhängig von der von Ihnen gewählten Zahlungsmethode. Der Zahlungsdienstleister trägt die Verantwortung 
+                für Ihre Zahlungsdaten.
+        
+                Für Kreditkartenzahlungen nutztnanny25.ch die Dienstleistungen der Stripe, Inc.
+                Die Kontaktdaten von Stripe, ihres Datenschutzbeauftragten (falls vorhanden) 
+                und die Kategorien der von den Zahlungsdienstleistern verarbeiteten personenbezogenen Daten sind unter https://stripe.com/ch/privacy abrufbar.{% endblocktranslate %}
+
+        <br>
+
+        {% blocktranslate %}Soweit Sie darin eingewilligt haben, ermöglichen wir es anderen Nutzern unserer Plattform 
+                die von Ihnen hochgeladenen Dokumente, wie beispielsweise Lebenslauf, Referenzen oder Führerausweis,
+                einzusehen. Sie können diese Einwilligung jederzeit widerrufen. Durch den Widerruf wird die 
+                Rechtmässigkeit der aufgrund der Einwilligung bis zum Widerruf erfolgten Verarbeitung nicht berührt, 
+                d.h. der Widerruf beeinflusst die Zulässigkeit der Verarbeitung Ihrer personenbezogenen Daten erst 
+                nachdem er uns gegenüber erklärt wurde.' {% endblocktranslate %}
+        <br>
+        <br>
+        {% blocktranslate %}Im Übrigen erfolgt eine Weitergabe Ihrer Daten an Dritte grundsätzlich nicht, es sei denn, es besteht 
+                für uns eine gesetzliche Pflicht zur Weitergabe oder diese dient der Strafverfolgung.{% endblocktranslate %}
+
+        <br>
+        <br>
+
+        {% translate 'Stand: Juni 2021' %}
+    </div>
+
+
+{% endblock %}

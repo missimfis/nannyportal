@@ -1,0 +1,421 @@
+.background {
+    background-image: url("/media/web/images/IMG_Titel.jpg");
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: center;
+    margin-top: 15px;
+    height: 400px;
+}
+
+@media (max-width: 900px) {
+    .background {
+        background-image: url("/media/web/images/IMG_Titel.jpg");
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        background-position: center;
+        margin-top: 15px;
+        height: 307px;
+    }
+}
+
+.col-sm {
+    display: inline-block;
+    width: 50%;
+}
+
+h4 {
+    margin: 1rem;
+    text-align: left;
+}
+
+.container-fluid .pinkbox {
+    padding: 45px;
+    background: #ffffff;
+    margin: 7px;
+    box-sizing: border-box;
+    border-radius: 20px;
+}
+
+@media (min-width: 1400px) {
+    .container-fluid .col-sm {
+        display: block;
+        width: 100%;
+    }
+    .container-fluid .col-sm.box2 {
+        text-align: left;
+        width: 46%;
+        display: inline-block;
+    }
+}
+
+.container-fluid .col-sm.Bild img {
+    width: 23%;
+    display: inline-block;
+}
+
+.box2 {
+    text-align: left;
+    width: 46%;
+    display: inline-block;
+}
+
+#carouselExampleCaptions {
+    width: 30%;
+    margin: auto;
+}
+
+h4.title {
+    text-align: center;
+}
+
+.padding {
+    padding: 1rem !important
+}
+
+.user-card-full {
+    overflow: hidden
+}
+
+.card {
+    border: none;
+    margin-bottom: 30px
+}
+
+.m-r-0 {
+    margin-right: 0px
+}
+
+.m-l-0 {
+    margin-left: 0px
+}
+
+.user-card-full .user-profile {
+    border-radius: 5px 0 0 5px;
+    height: 333px;
+}
+
+.user-profile {
+    padding: 20px 0;
+}
+
+.card-block {
+    padding: 1.25rem;
+}
+
+.m-b-25 {
+    margin-bottom: 25px
+}
+
+.img-radius {
+    border-radius: 2px;
+    width: 177px;
+    height: 185px;
+}
+
+h6 {
+    font-size: 14px
+}
+
+.card .card-block p {
+    line-height: 25px
+}
+
+.user-card-full {
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+    box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+    border: 3px solid rgb(234, 240, 248);
+}
+
+.card-block {
+    padding: 1.25rem
+}
+
+.b-b-default {
+    border-bottom: 1px solid #e0e0e0
+}
+
+.m-b-20 {
+    margin-bottom: 20px
+}
+
+.p-b-5 {
+    padding-bottom: 5px !important
+}
+
+.card .card-block p {
+    line-height: 25px
+}
+
+.m-b-10 {
+    margin-bottom: 10px
+}
+
+.text-muted {
+    color: #919aa3 !important
+}
+
+.b-b-default {
+    border-bottom: 1px solid #e0e0e0
+}
+
+.f-w-600 {
+    font-weight: 600
+}
+
+.m-b-20 {
+    margin-bottom: 20px
+}
+
+.m-t-40 {
+    margin-top: 20px
+}
+
+.p-b-5 {
+    padding-bottom: 5px !important
+}
+
+.m-b-10 {
+    margin-bottom: 10px
+}
+
+.m-t-40 {
+    margin-top: 20px
+}
+
+.user-card-full .social-link li {
+    display: inline-block
+}
+
+.user-card-full .social-link li a {
+    font-size: 20px;
+    margin: 0 10px 0 0;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.card-block {
+    display: block;
+}
+
+.Schriftstartseite {
+    height: 90px;
+    font-weight: 400;
+    font-size: 36px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    color: rgb(80, 80, 80)
+}
+
+.Vorgeschlageneprofile {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+.Vorgeschlageneprofile:hover {
+    color: rgb(71, 71, 71);
+    background-color: rgb(246, 247, 250);
+}
+
+.Schriftvorgeschlageneprofile {
+    font-size: 19px;
+    vertical-align: middle;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(65, 65, 66);
+}
+
+.container .row .col-sm-9 {
+    display: block;
+}
+
+.container .row .col-sm-9 h2 {
+    display: block;
+}
+
+.bg-c-lite-green {
+    background: #e9ebf0;
+}
+
+.form-control {
+    margin-top: 0;
+}
+
+.input-group .form-select {
+    max-width: 115px;
+}
+
+.input-group {
+    width: 50%;
+    margin: auto;
+}
+
+.input-group-text {
+    display: flex;
+    align-items: center;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #d6e8f8;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+}
+
+.premiumfoto1 {
+    padding: 0;
+}
+
+.premiumfoto1 img {
+    height: 145px;
+    width: 287px;
+    text-align: center;
+    display: block;
+}
+
+.textright {
+    color: #444;
+    text-align: justify;
+    width: 60%;
+    float: right;
+    display: block;
+}
+
+.Posteingangschrift {
+    color: #444;
+    font-size: 20px;
+}
+
+.Altersklasseschrift {
+    color: rgb(54, 54, 70);
+    font-size: 25px;
+}
+
+@media only screen and (min-width: 1400px) {
+    p {
+        font-size: 14px
+    }
+}
+
+@media (max-width: 1200px) {
+    .col-sm {
+        display: block;
+        width: 100%;
+    }
+    .container .box {
+        display: block;
+        width: 100%;
+    }
+    #carouselExampleCaptions {
+        width: 100%;
+        margin: auto;
+    }
+    .container-fluid .col-sm.Bild img {
+        width: 40%;
+        display: inline-block;
+    }
+}
+
+.Schriftmeinprofil {
+    color: rgb(71, 71, 71);
+    font-size: 17px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.Nachrichtenbutton {
+    background-color: #f1eeee;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-size: 16px;
+    border: none;
+    color: rgb(71, 71, 71);
+    text-decoration: none;
+    padding: .900rem .75rem;
+}
+
+.Nachrichtenbutton:hover {
+    color: rgb(0, 4, 8);
+    background-color: none;
+}
+
+#carouselExampleCaptions button:hover {
+    background: none;
+}
+
+#carouselExampleCaptions button {
+    box-shadow: none;
+}
+
+.berarbeitugtext {
+    display: block;
+    width: 100%;
+    height: auto;
+    display: block;
+    padding: 5px 12px;
+}
+
+.berarbeitugklick {
+    width: 100%;
+    box-shadow: none;
+}
+
+.Profillöschen {
+    background-color: #dee0e2;
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-size: 13px;
+    border: none;
+    width: 110px;
+    margin-top: 15px;
+    color: rgb(71, 71, 71);
+    text-decoration: none;
+}
+
+.Profilbearbeiten {
+    background-color: #dee0e2;
+    padding: 15px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-size: 15px;
+    border: none;
+    width: 140px;
+    margin-top: 15px;
+    color: rgb(71, 71, 71);
+    text-decoration: none;
+}
+
+@media (max-width: 1200px) {
+    .input-group {
+        width: 100%;
+    }
+}
+
+@media (max-width: 780px) {
+    .Kinderbetreuersuchen {
+        width: 100%;
+        display: block;
+        margin-top: 10px;
+        margin-left: 0;
+        border-top-left-radius: 5px !important;
+        border-bottom-left-radius: 5px !important;
+    }
+}
+
+.klickkontakt {
+    text-decoration: none;
+    color: black;
+}
+
+.col-sm Bild2 {
+    width: 50px;
+    display: inline-block;
+}

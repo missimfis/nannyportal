@@ -1,0 +1,13 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block navigation %}
+        {% include "web/Eltern.Profilseite/eltern_navigation.html" %}
+{% endblock %}
+{% block stylesheet %} <link href="{% static 'web/css/Mitglied-Premium.css' %}" rel="stylesheet" type="text/css">{% endblock %}
+{% block content %}
+<section>
+    <p>{% translate 'Das Abonnement, konnte nicht aktiviert werden.' %}<br/>
+        {% translate 'Wollen Sie stattdessen ein anderes Abonnement?' %}<a href="{% url 'web:subscription' %}">{% translate 'Zu den Abos' %}</a></p>
+</section>
+{% endblock %}

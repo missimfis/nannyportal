@@ -1,0 +1,66 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block navigation %}
+        {% include "web/Nanny.Login/nanny_navigation.html" %}
+{% endblock %}
+{% block stylesheet %} <link href="{% static 'web/css/Mitglied-Premium.css' %}" rel="stylesheet" type="text/css">{% endblock %}
+{% block content %}
+     
+        <div class="hintergrund-premium">
+            <h3>{% translate 'Premium-Mitglied werden' %}</h3>
+            <div>
+                <p> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
+                        <path
+                            d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+                    </svg>{% translate 'Ihr Profil wird herrovgehoben' %}</p>
+                <p> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
+                        <path
+                            d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+                    </svg>{% translate 'Sie werden häufiger gesehen' %}</p>
+                    <br>
+
+            </div>
+        </div>
+        <div class="container-fluid container-premium">
+            <div class="row">
+               <div class="col-sm box-premium">
+                   <a href={% url 'web:kasse' abo=1 %}>
+                       <div class="premium-inside">
+                               <h2> {% translate '1 Monat' %}</h2>
+                       </div>
+                       <div class="premium-inside">
+                               <h3>{% translate '19.00' %}<small class="small">CHF</small></h3>
+                               <span class="btn betreuungsart-col2"> {% translate 'Wählen' %}</span>
+                       </div>
+                   </a>
+               </div>
+
+               <div class="col-sm box-premium">
+                   <a href={% url 'web:kasse' abo=2 %}>
+                       <div class="premium-inside">
+                           <h2> {% translate '3 Monate' %}</h2>
+                       </div>
+                       <div class="premium-inside">
+                               <h3> {% translate '29.00' %}<small class="small">CHF</small></h3>
+                               <span class="btn betreuungsart-col2"> {% translate 'Wählen' %}</span>
+                       </div>
+                   </a>
+               </div>
+
+               <div class="col-sm box-premium">
+                   <a href={% url 'web:kasse' abo=3 %}>
+                       <div class="premium-inside">
+                           <h2> {% translate '6 Monate' %}</h2>
+                   </div>
+                   <div class="premium-inside">
+                           <h3>{% translate '59.00' %}<small class="small">CHF</small></h3>
+                           <span class="btn betreuungsart-col2"> {% translate 'Wählen' %}</span>
+                   </div>
+               </a>
+               </div>
+           <div class="dankebeitrag"> Dank Ihrem Beitrag können wir die Kosten für die Website aufrecht erhalten. </div>
+
+
+{% endblock %}
+{% block scripts %}<script src="{% static 'web/js/premium.js' %}"></script>{% endblock scripts %}

@@ -1,0 +1,28 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block navigation %}
+    {% include "web/index_navigation.html" %}
+        <link href='{% static 'web/css/hauptseite_Foto.css' %}' rel='stylesheet' type='text/css'>
+
+{% endblock %}
+{% block content %}
+    <h2>{% translate 'Kontakt' %}</h2>
+
+
+    <p>{% translate 'Bitte nehmen Sie mit uns Kontakt auf bei Fragen oder Unklarheiten.' %}</p>
+
+info@nanny25.ch
+<br>
+<br>
+<br>
+    
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm Bild">
+            <img src="/media/web/images/IMG_contact1.png" alt="smiling lady writing on a laptop">
+        </div>
+    </div>
+</div>
+
+{% endblock %}

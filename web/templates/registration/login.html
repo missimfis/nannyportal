@@ -1,0 +1,59 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block navigation %}
+    {% include "web/index_navigation.html" %}
+{% endblock %}
+{%block stylesheet%}
+    <link href='{% static 'web/css/user.css' %}' rel='stylesheet' type='text/css'>
+{% endblock %}
+{% block content %}
+    <h3 div class="login">{% translate 'Login' %}</h3>
+    {% if form.non_field_errors %}
+        <div class="alert alert-danger" role="alert">
+            {% for error in form.non_field_errors %}
+                {{ error }}
+            {% endfor %}
+        </div>
+    {% endif %}
+    <form action="" method="Post">
+        <div class="Personalien-box">
+            <br>
+            {% csrf_token %}
+            {% for hidden in form.hidden_fields %}
+                {{ hidden }}
+            {% endfor %}
+            {# Include the visible fields #}
+            {% for field in form.visible_fields %}
+                <div class="form-group">
+                    {% if field.errors %}
+                        {% for error in field.errors %}
+                            <div class="invalid-feedback">
+                                {{ error }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                    <input type="{% if field.html_name == "password" %}password{% else %}text{% endif %}" class="form-control" name="{{field.name}}" placeholder="{% if field.name == "username" %}{% translate 'E-Mail' %}{% else %}{{field.label}}{% endif %}">
+                </div>
+            {% endfor %}
+             <div class="kontoerstellenpasswortvergessen">
+                <a href="{% url 'password_reset' %}">
+                <small>{% translate 'Passwort vergessen?' %}</small>
+            </div>
+                <br>
+                    <div>
+                        <input class="btn input_send" type="submit" value="{% translate 'Anmelden' %}">
+                    </div>
+            <br>
+            <br>
+            <br>
+            <div class="kontoerstellen">
+                <a href="{% url 'web:register' %}">
+                        <small>{% translate 'Noch kein Benutzerkonto?' %}</small> 
+                        <br>{% translate 'Jetzt registrieren' %}
+                </a>
+            </div>
+        </div>
+    </form>
+{% endblock %}
+{% block scripts %}<script src="{% static 'web/js/helperfunctions.js' %}"></script>{% endblock scripts %}

@@ -1,0 +1,356 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block navigation %}
+    {% if eltern %}
+        {% include "web/Eltern.Profilseite/eltern_navigation.html" %}
+    {% else %}
+        {% include "web/Nanny.Login/nanny_navigation.html" %}
+    {% endif %}
+{% endblock %}
+{% block stylesheet %}
+    <link href="{% static 'web/css/Profil.css' %}" rel="stylesheet" type="text/css">
+    {% endblock %}
+    {% block content %}
+    </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm">
+
+                             
+                    <img class="profilbildeltern" id="profilbild" src="/media/{{ profilbild.bild.url|slice:" 7:" }}">
+                    <div class="nameprofil" >{{ user.first_name }} {{ user.last_name|slice:":1"}}. </div>
+
+                
+                            <div class="title">
+                                <div class="Schriftmeinprofil"> <small> von </small> {{ profil.ort }}</div>
+                          
+                            </div>
+                            {% if eltern == False %}
+                            <a class="Nachrichtenbutton" href="{% url "web:nachrichten" empfaenger_id=user.id %}?message=true">{% translate 'Nachricht' %}</a>
+                        {% else %}
+                            <a class="Nachrichtenbutton" href="{% url 'web:bearbeitungelternprofil' %}">{% translate 'Bearbeiten' %}</a>
+                        {% endif %}
+                    
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                           
+                                        
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                                <div class="persönlichebeschreibung">{% translate 'Stellen Beschreibung' %}</div>
+                                                <p class="text-left">
+                                                    {{ description.description }}
+                                                </p>
+
+                                            </div>
+
+                                            <div class="row">
+                                                <table class="table table-fix">
+                                                    <thead class="table-light">
+                                                        <tr>
+                                                            <hr>
+                                                                <h5>{% translate 'Gewünschte Daten' %}</h5>
+                                                                <th>&nbsp;</th>
+                                                                <th>{% translate 'Mo' %}</th>
+                                                                <th>{% translate 'Di' %}</th>
+                                                                <th>{% translate 'Mi' %}</th>
+                                                                <th>{% translate 'Do' %}</th>
+                                                                <th>{% translate 'Fr' %}</th>
+                                                                <th>{% translate 'Sa' %}</th>
+                                                                <th>{% translate 'So' %}</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+<tr>
+<td>{% translate 'Vormittag' %}</td>
+{% if betreuungszeiteltern.Mo_Vor %}
+<td>
+<input class="form-check-input" type="checkbox" name="Mo_Vor" checked disabled></td>
+{% else %}
+<td>
+<input class="form-check-input" type="checkbox" name="Mo_Vor" disabled></td>
+{% endif %}
+{% if betreuungszeiteltern.Di_Vor %}
+<td>
+<input class="form-check-input" type="checkbox" name="Di_Vor" checked disabled></td>
+{% else %}
+<td>
+<input class="form-check-input" type="checkbox" name="Di_Vor" disabled></td>
+{% endif %}
+{% if betreuungszeiteltern.Mi_Vor %}
+<td>
+<input class="form-check-input" type="checkbox" name="Mi_Vor" checked disabled></td>
+{% else %}
+<td>
+<input class="form-check-input" type="checkbox" name="Mi_Vor" disabled></td>
+{% endif %}
+{% if betreuungszeiteltern.Do_Vor %}
+<td>
+<input class="form-check-input" type="checkbox" name="Do_Vor" checked disabled></td>
+{% else %}
+<td>
+<input class="form-check-input" type="checkbox" name="Do_Vor" disabled></td>
+{% endif %}
+{% if betreuungszeiteltern.Fr_Vor %}
+<td>
+<input class="form-check-input" type="checkbox" name="Fr_Vor" checked disabled></td>
+{% else %}
+<td>
+<input class="form-check-input" type="checkbox" name="Fr_Vor" disabled></td>
+{% endif %}
+{% if betreuungszeiteltern.Sa_Vor %}
+<td>
+<input class="form-check-input" type="checkbox" name="Sa_Vor" checked disabled></td>
+{% else %}
+<td>
+<input class="form-check-input" type="checkbox" name="Sa_Vor" disabled></td>
+{% endif %}
+{% if betreuungszeiteltern.So_Vor %}
+<td>
+<input class="form-check-input" type="checkbox" name="So_Vor" checked disabled></td>
+{% else %}
+<td>
+<input class="form-check-input" type="checkbox" name="So_Vor" disabled></td>
+{% endif %}
+</tr>
+
+<tr>
+<td>{% translate 'Nachmittag' %}</td>
+{% if betreuungszeiteltern.Mo_Nach %}
+<td>
+<input class="form-check-input" type="checkbox" name="Mo_Nach" checked disabled></td>
+{% else %}
+<td>
+<input class="form-check-input" type="checkbox" name="Mo_Nach" disabled></td>
+{% endif %}
+{% if betreuungszeiteltern.Di_Nach %}
+<td>
+<input class="form-check-input" type="checkbox" name="Di_Nach" checked disabled></td>
+{% else %}
+<td>
+<input class="form-check-input" type="checkbox" name="Di_Nach" disabled></td>
+{% endif %}
+{% if betreuungszeiteltern.Mi_Nach %}
+<td>
+<input class="form-check-input" type="checkbox" name="Mi_Nach" checked disabled></td>
+{% else %}
+<td>
+<input class="form-check-input" type="checkbox" name="Mi_Nach" disabled></td>
+{% endif %}
+{% if betreuungszeiteltern.Do_Nach %}
+<td>
+<input class="form-check-input" type="checkbox" name="Do_Nach" checked disabled></td>
+{% else %}
+<td>
+<input class="form-check-input" type="checkbox" name="Do_Nach" disabled></td>
+{% endif %}
+{% if betreuungszeiteltern.Fr_Nach %}
+<td>
+<input class="form-check-input" type="checkbox" name="Fr_Nach" checked disabled></td>
+{% else %}
+<td>
+<input class="form-check-input" type="checkbox" name="Fr_Nach" disabled></td>
+{% endif %}
+{% if betreuungszeiteltern.Sa_Nach %}
+<td>
+<input class="form-check-input" type="checkbox" name="Sa_Nach" checked disabled></td>
+{% else %}
+<td>
+<input class="form-check-input" type="checkbox" name="Sa_Nach" disabled></td>
+{% endif %}
+{% if betreuungszeiteltern.So_Nach %}
+<td>
+<input class="form-check-input" type="checkbox" name="So_Nach" checked disabled></td>
+{% else %}
+<td>
+<input class="form-check-input" type="checkbox" name="So_Nach" disabled></td>
+{% endif %}
+
+</tr>
+
+<tr>
+<td>{% translate 'Abend' %}</td>
+{% if betreuungszeiteltern.Mo_Ab %}
+<td>
+<input class="form-check-input" type="checkbox" name="Mo_Ab" checked disabled></td>
+{% else %}
+<td>
+<input class="form-check-input" type="checkbox" name="Mo_Ab" disabled></td>
+{% endif %}
+{% if betreuungszeiteltern.Di_Ab %}
+<td>
+<input class="form-check-input" type="checkbox" name="Di_Ab" checked disabled></td>
+{% else %}
+<td>
+<input class="form-check-input" type="checkbox" name="Di_Ab" disabled></td>
+{% endif %}
+{% if betreuungszeiteltern.Mi_Ab %}
+<td>
+<input class="form-check-input" type="checkbox" name="Mi_Ab" checked disabled></td>
+{% else %}
+<td>
+<input class="form-check-input" type="checkbox" name="Mi_Ab" disabled></td>
+{% endif %}
+{% if betreuungszeiteltern.Do_Ab %}
+<td>
+<input class="form-check-input" type="checkbox" name="Do_Ab" checked disabled></td>
+{% else %}
+<td>
+<input class="form-check-input" type="checkbox" name="Do_Ab" disabled></td>
+{% endif %}
+{% if betreuungszeiteltern.Fr_Ab %}
+<td>
+<input class="form-check-input" type="checkbox" name="Fr_Ab" checked disabled></td>
+{% else %}
+<td>
+<input class="form-check-input" type="checkbox" name="Fr_Ab" disabled></td>
+{% endif %}
+{% if betreuungszeiteltern.Sa_Ab %}
+<td>
+<input class="form-check-input" type="checkbox" name="Sa_Ab" checked disabled></td>
+{% else %}
+<td>
+<input class="form-check-input" type="checkbox" name="Sa_Ab" disabled></td>
+{% endif %}
+{% if betreuungszeiteltern.So_Ab %}
+<td>
+<input class="form-check-input" type="checkbox" name="So_Ab" checked disabled></td>
+{% else %}
+<td>
+<input class="form-check-input" type="checkbox" name="So_Ab" disabled></td>
+{% endif %}
+</tr>
+
+<tr>
+<td>{% translate 'Übernachtung' %}</td>
+{% if betreuungszeiteltern.Mo_uberna %}
+<td>
+<input class="form-check-input" type="checkbox" name="Mo_uberna" checked disabled></td>
+{% else %}
+<td>
+<input class="form-check-input" type="checkbox" name="Mo_uberna" disabled></td>
+{% endif %}
+{% if betreuungszeiteltern.Di_uberna %}
+<td>
+<input class="form-check-input" type="checkbox" name="Di_uberna" checked disabled></td>
+{% else %}
+<td>
+<input class="form-check-input" type="checkbox" name="Di_uberna" disabled></td>
+{% endif %}
+{% if betreuungszeiteltern.Mi_uberna %}
+<td>
+<input class="form-check-input" type="checkbox" name="Mi_uberna" checked disabled></td>
+{% else %}
+<td>
+<input class="form-check-input" type="checkbox" name="Mi_uberna" disabled></td>
+{% endif %}
+{% if betreuungszeiteltern.Do_uberna %}
+<td>
+<input class="form-check-input" type="checkbox" name="Do_uberna" checked disabled></td>
+{% else %}
+<td>
+<input class="form-check-input" type="checkbox" name="Do_uberna" disabled></td>
+{% endif %}
+{% if betreuungszeiteltern.Fr_uberna %}
+<td>
+<input class="form-check-input" type="checkbox" name="Fr_uberna" checked disabled></td>
+{% else %}
+<td>
+<input class="form-check-input" type="checkbox" name="Fr_uberna" disabled></td>
+{% endif %}
+{% if betreuungszeiteltern.Sa_uberna %}
+<td>
+<input class="form-check-input" type="checkbox" name="Sa_uberna" checked disabled></td>
+{% else %}
+<td>
+<input class="form-check-input" type="checkbox" name="Sa_uberna" disabled></td>
+{% endif %}
+{% if betreuungszeiteltern.So_uberna %}
+<td>
+                <input class="form-check-input" type="checkbox" name="So_uberna" checked disabled></td>
+            {% else %}
+                <td>
+                    <input class="form-check-input" type="checkbox" name="So_uberna" disabled></td>
+                {% endif %}
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+<hr>
+    <div class="row">
+
+        <h3 class="Altersklasseschrift">{% translate 'Altersklasse Kinder' %}</h3>
+
+        <ul>
+            {% if anzahlkinder.neugeborenes_baby %}
+                <li>{% translate 'Neugeborenes Baby' %}</li>
+            {% endif %}
+            {% if anzahlkinder.kleinkind %}
+                <li>{% translate 'Kleinkind' %}</li>
+            {% endif %}
+            {% if anzahlkinder.kindergartenalter %}
+                <li>{% translate 'Kindergartenalter' %}</li>
+            {% endif %}
+            {% if anzahlkinder.schulalter %}
+                <li>{% translate 'Schulater' %}</li>
+            {% endif %}
+            {% if anzahlkinder.teenager %}
+                <li>{% translate 'Teenager' %}</li>
+            {% endif %}
+        </ul>
+
+        <h3 class="Altersklasseschrift">{% translate 'Aufgaben' %}</h3>
+
+        <ul>
+            {% if anforderungeneltern.essenzubereitung %}
+                <li>{% translate 'Essenzubereitung' %}</li>
+            {% endif %}
+            {% if anforderungeneltern.unterstutzung_bei_hausaufgaben %}
+                <li>{% translate 'Unterstützung bei Hausaufgaben' %}</li>
+            {% endif %}
+            {% if anforderungeneltern.bring_und_abholung %}
+                <li>{% translate 'Bring- und Abholservice' %}</li>
+            {% endif %}
+            {% if anforderungeneltern.leichte_haushaltarbeiten %}
+                <li>{% translate 'Leichte Haushaltarbeiten' %}</li>
+            {% endif %}
+            {% if anforderungeneltern.Kind_fodern_beim_Sprechen %}
+                <li>{% translate 'Kind Sprache beibringen' %}</li>
+            {% endif %}
+        </ul>
+    </div>
+
+    
+    <hr>
+        <div class="row">
+            <ul>
+                <li>
+                
+                    <small>
+                        {% translate 'Mitglied seit:' %}
+                        {{ user.date_joined|date:'M. y' }}
+                    </small>
+                </li>
+                <li>
+                    <small>
+                    
+                        {% translate 'Zuletzt Online:' %}
+                        {{ user.last_login|date:'d. M' }}</small>
+                </li>
+            </ul>
+            
+        </div>
+      
+
+        <br>
+        <br>
+        <br>
+        
+    {% endblock %}
+    {% block scripts %}<script src="{% static 'web/js/helperfunctions.js' %}"></script>{% endblock scripts %}

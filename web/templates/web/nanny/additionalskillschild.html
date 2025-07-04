@@ -1,0 +1,37 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block navigation %}
+    {% include "web/index_navigation.html" %}
+{% endblock %}
+{% block content %}
+    <form action="" method="Post">
+        <br>
+        <div class="registrationschrift">{% translate 'Ich besitze oder absolviere' %}
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bank2" viewbox="0 0 16 16">
+                <path d="M8.277.084a.5.5 0 0 0-.554 0l-7.5 5A.5.5 0 0 0 .5 6h1.875v7H1.5a.5.5 0 0 0 0 1h13a.5.5 0 1 0 0-1h-.875V6H15.5a.5.5 0 0 0 .277-.916l-7.5-5zM12.375 6v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zM8 4a1 1 0 1 1 0-2 1 1 0 0 1 0 2zM.5 15a.5.5 0 0 0 0 1h15a.5.5 0 1 0 0-1H.5z"/>
+            </svg>
+        </div>
+        <small> 5 von 6</small>
+        <br>
+      
+        {% csrf_token %}
+        {% for hidden in form.hidden_fields %}
+            <label for="{{hidden.auto_id}}" id="{{hidden.name}}" class="betreuungsart-button" onclick="changeCheckedClass('{{hidden.name}}')">{{hidden.label}}</label>
+            {{ hidden }}
+        {% endfor %}
+        {% for field in form.visible_fields %}
+            <div class="form-group">
+                <label for="{{field.auto_id}}" id="{{field.name}}" class="betreuungsart-button" onclick="changeCheckedClass('{{field.name}}')">{{field.label}}</label>
+                {{ field.errors }}
+                {{ field }}
+            </div>
+
+
+        {% endfor %}
+        <input class="input_send" type="submit" value="{% translate 'Weiter' %}"/>
+
+
+    </form>
+    <script src="{% static 'web/js/helperfunctions.js' %}"></script>
+{% endblock %}

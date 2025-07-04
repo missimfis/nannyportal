@@ -1,0 +1,44 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block navigation %}
+    {% if group == "Eltern" %}
+        {% include "web/Eltern.Profilseite/eltern_navigation.html" %}
+    {% elif group == "Nanny" %}
+        {% include "web/Nanny.Login/nanny_navigation.html" %}
+    {% elif group == "Tier Inserat" %}
+        {% include "web/Tier.inserat/tier_navigation.html" %}
+    {% elif group == "Tier Jobsuchende" %}
+        {% include "web/Tier.job-inserat/tiersitter_navigation.html" %}
+    {% elif group == "Senior Jobsuchende" %}
+        {% include "web/Senior.job-inserat/senhelferin_navigation.html" %}
+    {% elif group == "Senior Inserat" %}
+        {% include "web/senior.inserat/senior_navigation.html" %}
+    {% endif %}
+{% endblock %}
+{%block stylesheet%}{% endblock %}
+{% block content %}
+
+<h3>{% translate 'Einstellungen' %}</h3>
+<div class="einstellungen">
+
+        <table class="table table-borderless">
+        <thead></thead>
+        <tbody>
+                <tr>
+                        <th>{% translate 'Mitglied seit:' %}</th>
+                        <td>{{user.date_joined|date:'d.M. y'}} </td>
+                </tr>
+                <tr>
+                        <th>{% translate 'Möchten Sie Ihr Profil bearbeiten?' %}</th>
+                        <td><a class="btn btn-secondary" href="{% if group == "Eltern" %}{% url 'web:bearbeitungelternprofil' %}{% elif group == "Nanny" %}{% url 'web:bearbeitungnanny' %}{% elif group == "Tier Inserat" %}{% url "web:bearbeitungtier" %}{% elif group == "Tier Jobsuchende" %}{% url "web:tiersitter_bearbeitung" %}{% elif group == "Senior Jobsuchende" %}{% url "web:bearbeitungseniorbetreuer" %}{% elif group == "Senior Inserat" %}{% url "web:bearbeitungsenior" %}{% endif %}">{% translate 'Profil bearbeiten' %}</a></td>
+                </tr>
+                <tr>
+                        <th>{% translate 'Möchten Sie Ihr Profil Löschen?' %}</th>
+                        <td><a class="btn btn-secondary" href="{% url 'web:delete-user' %}">{% translate 'Profil löschen' %}</a></td>
+                </tr>
+        </tbody>
+        </table>
+</div>
+{% endblock %}
+{% block scripts %}<script src="{% static 'web/js/helperfunctions.js' %}"></script>{% endblock scripts %}

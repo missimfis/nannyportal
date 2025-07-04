@@ -1,0 +1,59 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block navigation %}
+        {% include "web/Eltern.Profilseite/eltern_navigation.html" %}
+{% endblock %}
+{% block stylesheet %} <link href="{% static 'web/css/Mitglied-Premium.css' %}" rel="stylesheet" type="text/css">{% endblock %}
+{% block content %}
+<div class="col-sm background"></div>
+<div class="col-sm">
+        <div class="hintergrund-kasse">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gem" viewBox="0 0 16 16">
+            <div class="kasse">{% translate 'Warenkorb' %}</div>
+                <div class="onemont">1 Monat aktivieren</div> 
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-emoji-heart-eyes" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                    <path d="M11.315 10.014a.5.5 0 0 1 .548.736A4.498 4.498 0 0 1 7.965 13a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .548-.736h.005l.017.005.067.015.252.055c.215.046.515.108.857.169.693.124 1.522.242 2.152.242.63 0 1.46-.118 2.152-.242a26.58 26.58 0 0 0 1.109-.224l.067-.015.017-.004.005-.002zM4.756 4.566c.763-1.424 4.02-.12.952 3.434-4.496-1.596-2.35-4.298-.952-3.434zm6.488 0c1.398-.864 3.544 1.838-.952 3.434-3.067-3.554.19-4.858.952-3.434z"/>
+                </svg> <div class="unbegrenztnachricht"> {% translate 'Für unbegrenzte Nachrichten schreiben und empfangen.' %}</div> 
+                <br>
+                Bestellwert Total CHF {{preis|floatformat:2}} 
+            </div>
+        </div>
+        <br>
+        <br>
+        <hr>
+        <br>
+        <div class="zahlungsmethoden"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-credit-card-2-back" viewBox="0 0 16 16">
+            <path d="M11 5.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1z"/>
+            <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2zm13 2v5H1V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1zm-1 9H2a1 1 0 0 1-1-1v-1h14v1a1 1 0 0 1-1 1z"/>
+          </svg> {% translate 'Zahlungsmethoden ' %}</div>
+
+        <div class="container-fluid container-premium">
+
+          
+
+            <div class="kassebox">
+                <input type="radio" name="zahlungsart" value="kreditkarte"/>
+                        
+                    <br>
+                    <h5 class="titel-suche1">{% translate "Kredikarte" %}</h5>
+                </div>
+           <hr>
+                   
+                </div>
+
+            <div class="kassebox">
+                <input type="radio" name="zahlungsart" value="paypal"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-paypal" viewBox="0 0 16 16">
+                            <path d="M14.06 3.713c.12-1.071-.093-1.832-.702-2.526C12.628.356 11.312 0 9.626 0H4.734a.7.7 0 0 0-.691.59L2.005 13.509a.42.42 0 0 0 .415.486h2.756l-.202 1.28a.628.628 0 0 0 .62.726H8.14c.429 0 .793-.31.862-.731l.025-.13.48-3.043.03-.164.001-.007a.351.351 0 0 1 .348-.297h.38c1.266 0 2.425-.256 3.345-.91.379-.27.712-.603.993-1.005a4.942 4.942 0 0 0 .88-2.195c.242-1.246.13-2.356-.57-3.154a2.687 2.687 0 0 0-.76-.59l-.094-.061ZM6.543 8.82a.695.695 0 0 1 .321-.079H8.3c2.82 0 5.027-1.144 5.672-4.456l.003-.016c.217.124.4.27.548.438.546.623.679 1.535.45 2.71-.272 1.397-.866 2.307-1.663 2.874-.802.57-1.842.815-3.043.815h-.38a.873.873 0 0 0-.863.734l-.03.164-.48 3.043-.024.13-.001.004a.352.352 0 0 1-.348.296H5.595a.106.106 0 0 1-.105-.123l.208-1.32.845-5.214Z"/>
+                        </svg> 
+                    <br>
+                    <h5 class="titel-suche1">{% translate "Paypal" %}</h5>
+                </div>
+              <br>
+
+
+           
+            <p><small> {% translate '*Premium-Mitgliedschaften verlängern sich automatisch, bis sie gekündigt werden. Alle Preise inklusive Mehrwertsteuer.' %}</small></p>
+{% endblock %}

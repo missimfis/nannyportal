@@ -1,0 +1,117 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block navigation %}
+        {% include "web/Eltern.Profilseite/eltern_navigation.html" %}
+{% endblock %}
+{% block content %}
+
+        <h2>Kasse</h2>
+        <br>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
+            <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+          </svg>
+        <br>
+        <br>
+        <h4>Zahlungsart Eingeben</h4>
+        <br>
+        <hr>
+        <br>
+        <h4>Kredikarte</h4>
+        <br>
+        <div class="input1">
+
+            <div class="form-group">
+                <input id="names" type="text" class="form-control input2" placeholder="Karteninhaber">
+                <br>
+                <input id="names" type="text" class="form-control input2" placeholder="Kartenummer">
+                <br>
+
+                <input id="names" type="text" class="form-control input3" placeholder="CVC">
+
+                <label for="Month">Gültig bis</label>
+                <select class="form-select datum" name="Month">
+                            <option value="0" selected disabled>Monat</option>
+                            <option value="jan">Januar</option>
+                            <option value="feb">Feburar</option>
+                            <option value="march">März</option>
+                            <option value="april">April</option>
+                            <option value="may">Mai</option>
+                            <option value="june">Juni</option>
+                            <option value="july">Juli</option>
+                            <option value="aug">August</option>
+                            <option value="sept">September</option>
+                            <option value="oct">Oktober</option>
+                            <option value="nov">November</option>
+                            <option value="dec">Dezember</option>
+                        </select>
+
+
+
+                <label for="Month"></label>
+                <select class="form-select datum" name="Month">
+                                <option value="0" selected disabled>Jahr</option>
+                                <option value="1920">2021</option>
+                                <option value="1920">2022</option>
+                                <option value="1921">2023</option>
+                                <option value="1922">2024</option>
+                                <option value="1923">2025</option>
+                                <option value="1924">2026</option>
+                                <option value="1925">2027</option>
+                                <option value="1926">2028</option>
+                                <option value="1927">2029</option>
+                                <option value="1928">2030</option>
+                                <option value="1929">2031</option>
+                                <option value="1930">2032</option>
+                                <option value="1931">2033</option>
+                                <option value="1932">2034</option>
+                                <option value="1933">2035</option>
+                                <option value="1934">2036</option>
+                                <option value="1935">2037</option>
+                                <option value="1936">2038</option>
+                                <option value="1937">2039</option>
+                                <option value="1938">2040</option>
+                                <option value="1939">2041</option>
+                                <option value="1940">2042</option>
+                                <option value="1941">1943</option>
+                                <option value="1942">2044</option>
+                                <option value="1943">2045</option>
+                                <option value="1944">2046</option>
+                                <option value="1945">2047</option>
+                                <option value="1946">2048</option>
+                                <option value="1947">2049</option>
+                                <option value="1948">2050</option>
+                                <option value="1949">2051</option>
+                                <option value="1950">2052</option>
+                                <option value="1951">2053</option>
+                                <option value="1980">2054</option>
+                                <option value="1981">2055</option>
+                                <option value="1982">2056</option>
+                                <option value="1983">2057</option>
+                                <option value="1984">2058</option>
+                                <option value="1985">2059</option>
+                                <option value="1986">2060</option>
+                               
+                            </select>
+                <br>
+                <br>
+                <input id="names" type="text" class="form-control input2" placeholder="Strasse und Nr">
+                <br>
+                <input id="names" type="text" class="form-control input2" placeholder="Postleizahl und Ort">
+                <br>
+
+                <input type="submit" class="btn btn-primary" value="Bezahlen">
+
+
+
+
+            </div>
+
+
+
+
+</main>
+
+</body>
+
+</html>

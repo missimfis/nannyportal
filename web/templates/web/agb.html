@@ -1,0 +1,136 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block navigation %}
+    {% include "web/index_navigation.html" %}
+{% endblock %}
+{% block content %}
+    <h3>{% translate 'Allgemeine Geschäftsbedingungen' %}</h3>
+    <br>
+    <div class="datenschutzerklärung">
+
+        <p>{% blocktranslate %}Allgemeine Geschäftsbedingungen
+            Die nachstehenden Allgemeinen Geschäftsbedingungen regeln das Vertragsverhältnis zwischen www.nanny25.ch 
+            und den Verbrauchern, die das Internetangebot von www.nanny25.ch als registrierte Personen oder Firmen nutzen 
+            (nachfolgend „Mitglieder“).
+            
+            
+            Die “Mitglieder” unterscheiden sich in solche die eine Service-Leistung suchen (nachfolgend “Service-Suchende”)
+            und solche die einen Service anbieten (nachfolgend "Service-Anbieter”).{% endblocktranslate %}
+            <br>
+            <br>
+            <strong>
+                {% translate 'Vertragsabschluss' %}
+            </strong>
+            <br>
+            {% blocktranslate %}Der Zugang zur Nutzung setzt eine kostenlose Registrierung voraus.
+            Alle Nutzer erklären mit ihrer Registrierung, dass sie das 15. Altersjahr vollendet haben.
+            Unsere Plattform erlaubt ausschliesslich die Vermittlung von Arbeitskräften mit Wohnsitz in der 
+            Schweiz an Arbeitsplätze in der ganzen Schweiz, sowie die Vermittlung von Grenzgängern (ausgenommen Lichtenstein), die in der Schweiz arbeiten möchten.
+            Mit der Registrierung erkennt das Mitglied die vorliegenden Allgemeinen Geschäftsbedingungen an, und es entsteht ein Vertragsverhältnis zwischen www.nanny25.ch und dem registrierten Mitglied.{% endblocktranslate %}
+
+            <br>
+            <br>
+
+            <strong>
+                {% translate 'Leistungsumfang' %}
+            </strong>
+
+            <br>
+
+
+            <li>{% blocktranslate %}Nach der kostenlosen Registrierung auf der Webseite können Service-Suchende und Service-Anbietende ein Profil 
+                anlegen, andere Profile anschauen und nach einem Job oder nach Service-Anbietern suchen.{% endblocktranslate %}</li>
+
+            <li>{% translate 'Private Service-Anbieter haben nach der Registrierung die Möglichkeit, kostenlos Service-Suchende über ein Kontaktformular zu kontaktieren.' %}</li>
+
+
+            <br>
+            <br>
+
+            <strong>{% translate 'Deaktivierung, Kündigung' %}</strong>
+
+            <br>
+            <br>
+            <ul>
+                <li>{% translate 'Eine Deaktivierung des Profils ist jederzeit möglich. Das Profil ist nach der Deaktivierung für andere Mitglieder nicht mehr sichtbar.' %}</li>
+                <li>{% translate 'Die kostenpflichtige Premium-Mitgliedschaft wird nicht automatisch verlängert und bedarf daher keiner Kündigung. Nach Ablauf geht die Premium-Mitgliedschaft automatisch in eine kostenlose Basis-Mitgliedschaft über.' %}</li>
+            </ul>
+                <br>
+                <strong>{% translate 'Haftung von Betreuungsart' %}</strong>
+
+                <br>
+                <br>
+
+                <ul>
+                    <li>
+                        {% blocktranslate %}nanny25.ch übernimmt, soweit gesetzlich zuläsig, bei Zustandekommen einer Vermittlung von Service-Suchenden
+                        und Service-Anbietenden weder Partei noch Vertragspartner. Service-Suchende und Service-Anbietende verzichten darauf,
+                        Ansprüche oder Pflichten gegenüber Betreuungsart geltend zu machen. Insbesondere übernimmt Betreuungsart
+                        keinerlei Haftung für Schäden oder Streitigkeiten, die sich zwischen Service-Suchenden und Service-Anbietenden ergeben.{% endblocktranslate %}</li>
+
+                    <br>
+
+                    <li>
+                        {% blocktranslate %}nanny25.ch übernimmt keinerlei Gewährleistung für die Qualität der Arbeitsleistungen der Service-Anbietenden und schliesst 
+                        jegliche Haftung aus, die sich aus einem Vertragsverhältnis zwischen Service-Suchendem und Service-Anbietendem ergibt.
+                        <br>
+                        <strong>Der Service-Anbietende hat selbständig allenfalls notwendige Aufenthalts- oder Arbeitsbewilligungen zu besorgen.</Strong>
+                        Der Service-Suchende hat den Service-Anbietenden gesetzeskonform zu versichern bzw. diesen auf eine allfällige 
+                        Notwendigkeit für eine Versicherung hinzuweisen.{% endblocktranslate %}</li>
+
+                    <br>
+
+                    <li>
+                        {% blocktranslate %}nanny25.ch übernimmt, soweit gesetzlich zulässig, keine Verantwortung für den Inhalt und die Richtigkeit
+                        der Angaben in den Anmelde- und Profildaten der Nutzer sowie weiteren von den Nutzern generierten Inhalten. 
+                        Ebenso übernimmt nanny25.ch, soweit gesetzlich zulässig, keine Haftung für den eventuellen Missbrauch
+                        von Informationen.{% endblocktranslate %}</li>
+
+                    <br>
+
+                    <li>
+                        {% blocktranslate %}In Bezug auf die gesuchte oder angebotene Dienstleistung kommt der Vertrag ausschliesslich zwischen den 
+                        jeweilig beteiligten Nutzern zustande. Daher haftet Betreuungsart.com nicht für Leistungen der 
+                        teilnehmenden Nutzer.{% endblocktranslate %}
+
+                        <br><br>
+                    </li>
+                    <li>
+                        {% blocktranslate %}Entsprechend sind alle Angelegenheiten bzgl. der Beziehung zwischen Suchendem und Anbieter einschliesslich,
+                        und ohne Ausnahme, der Services die ein Suchender erhalten hat oder Zahlungen die an Anbietende fällig sind, 
+                        direkt an die jeweilige Partei des Suchenden oder Anbietenden zu richten. nanny25.ch kann hierfür nicht verantwortlich 
+                        gemacht werden und widerspricht hiermit, soweit gesetzlich zulässig, ausdrücklich allen etwaigen Haftungsansprüchen
+                        welcher Art auch immer einschliesslich Forderungen, Leistungen, direkte oder indirekte Beschädigungen jeder Art, 
+                        bewusst oder unbewusst, vermutet oder unvermutet, offengelegt oder nicht, in welcher Art auch immer im Zusammenhang 
+                        mit den genannten Angelegenheiten.{% endblocktranslate %}</li>
+
+                    <br>
+                    <br>
+                    <li>
+                        {% blocktranslate %}nanny25.ch haftet, soweit gesetzlich zulässig, nicht für unbefugte Kenntniserlangung 
+                        von persönlichen Nutzerdaten durch Dritte (z.B. durch "Hacken" der Datenbank). Ebenso haftet 
+                        der Betreiber, soweit gesetzlich zulässig, nicht für den Missbrauch von Informationen von Nutzern 
+                        durch Dritte, die von diesen Nutzern selbst Dritten zugänglich gemacht wurden.{% endblocktranslate %}</li>
+                    <br>
+                    <br>
+                    <li>{% blocktranslate %}Der Betreiber behält sich das Recht vor - geht jedoch nicht die Verpflichtung ein -, 
+                        den Inhalt eines von einem Nutzer verfassten Textes sowie hochgeladener Dateien (Bilder, Videos) 
+                        auf die Einhaltung von Gesetz und Recht hin zu überprüfen und, wenn nötig, ganz oder teilweise zu löschen.{% endblocktranslate %}</li>
+                    <br>
+                    <li>
+                        {% translate 'Die Betreuungsart übernimmt keine Garantie dafür, dass sich angeschriebene Personen innert kürzester Frist oder überhaupt auf eine Anfrage melden.' %}
+                    </li>
+
+                    <li>{% blocktranslate %}Der Betreiber behält sich das Recht vor - geht jedoch nicht die Verpflichtung ein -, 
+                        den Inhalt eines von einem Nutzer verfassten Textes sowie hochgeladener Dateien (Bilder, Videos) 
+                        auf die Einhaltung von Gesetz und Recht hin zu überprüfen und, wenn nötig, ganz oder teilweise zu löschen.{% endblocktranslate %}</li>
+                    <br>
+                    <li>
+                        * nanny25.ch ist nicht haftbar für die Einhaltung rechtlichen Anstellungsbedienungen.
+                    </li>
+                </ul>
+              
+            </div>
+        {% endblock %}
+    </p>

@@ -1,0 +1,87 @@
+{% extends 'web/base.html' %} 
+{% load static %}
+{% load i18n %}
+{% block navigation %}
+    {% include "web/index_navigation.html" %}
+{% endblock %}
+{% block stylesheet %} 
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+      <div class="kinderbetreuerprofile">{% translate 'Liebevolle Kinderbetreuer ' %}</div>
+      <br>
+      <br>
+      <div>
+      <form action="" method="POST" id="suchen_form">
+      {% csrf_token %}
+        <small>{% translate 'Ort und Umkreis eingeben' %}</small>
+        <br>
+        
+        <div class="input-group input-group-lg">
+  <span class="input-group-text" id="inputGroup-sizing-lg"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+  <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+</svg></span>
+  <input type="text" name="term" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"  value="{{suchterm}}" placeholder="Ort">
+  <select class="form-select" id="inputGroupSelect01" name="distance">
+    <option value="20">20km</option>
+    <option value="15">15km</option>
+    <option value="30">30km</option>
+    <option value="50">50km</option>        
+  </select>
+  <button class="Kinderbetreuersuchen" type="submit" id="suchen" onclick="spinner('suchen');">{% translate 'Suchen' %}</button> 
+</div>
+</form>
+      </div> 
+    <div class="vorgeschlagen">{% translate 'Vorgeschlagene Profile' %}</div>
+      <br>
+      {% for item in nanny_list %}
+      <div class="page-content page-container">
+        <div class="row container d-flex">
+            <div class="col-xl-9 col-md-11">
+              <div class="card user-card-full">
+                    <a class="Vorgeschlageneprofile" href="{% url 'web:create-user' group_id=4%}">
+                  <div class="row m-l-0 m-r-0">
+                      <div class="col-sm-4 bg-c-lite-green user-profile">
+                          <div class="card-block text-center">
+                            <p class="m-b-20 -b-default arbeitschrift">{% if item.angabejob.angabe_job_nanny%}{% translate 'Nanny' %}{% endif %}{% if item.angabejob.angabe_job_tagesmutter %}{% translate ' Tagesmutter' %}{% endif %}</p> <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
+                            <div class="m-b-25"><img class="img-radius" width="200" height="200" src="/media/{{item.bild.bild.url|slice:"7:" }}" alt="Profilbild"></div><small>{% translate '' %}</small>
+                             
+                          </div>
+                      </div>
+                      <div class="col-sm-8">
+                        <div class="card-block"> 
+                          <p class="m-b-20 m-t-20 p-b-5 b-b-default Schriftvorgeschlageneprofile2">{{item.nanny.first_name}} {{item.nanny.last_name|slice:":1"}}.</p>
+                        <div class="row">
+                              <div class="col-sm-6">
+                              <div class="Schriftvorgeschlageneprofile"><small>{% translate 'Alter:' %}</small> {{item.profil.calculate_age}}</div>
+                              </div>
+                              <div class="col-sm-6">
+                                <div class="Schriftvorgeschlageneprofile"><small>{% translate 'Ort:' %}</small>
+                                  {{item.profil.ort}}</div>
+                              </div>
+                          </div>
+                        
+                          <p class="p-b-5 b-b-default beschreibungtitel">{% translate 'Beschreibung' %}</p>
+                          <div class="row">
+                              <div class="col-sm-12">
+                                <div class="beschreibungfront">{{item.description.description|slice:":100"}}...</div>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+                </a>
+            </div>
+        </div>
+      </div>
+    </div>
+      {% endfor %}
+      {% include "web/pagination.html" with list=nanny_list page_range=range %}
+      </div>
+</div>
+</div>
+</div>
+{% endblock %}
+{% block scripts %}<script src="{% static 'web/js/helperfunctions.js' %}"></script>{% endblock scripts %}

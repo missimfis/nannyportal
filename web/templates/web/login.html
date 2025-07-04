@@ -1,0 +1,22 @@
+{% extends 'web/base.html' %}
+{% load i18n %}
+{% block navigation %}
+    {% include "web/index_navigation.html" %}
+{% endblock %}
+{% block content %}
+    <form action="" method="Post">
+        <p>{% translate 'Hier Können Sie sich ' %}</p>
+        {% csrf_token %}
+        {% for hidden in form.hidden_fields %}
+            {{ hidden }}
+        {% endfor %}
+        {# Include the visible fields #}
+        {% for field in form.visible_fields %}
+            <div class="form-group">
+                {{ field.errors }}
+                {{ field }}
+            </div>
+        {% endfor %}
+        <input class="btn input_send" type="submit" value="Login"/>
+    </form>
+{% endblock %}
