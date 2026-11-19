@@ -2,7 +2,6 @@
 
 import datetime
 from django.db import migrations, models
-from django.utils.timezone import utc
 
 
 class Migration(migrations.Migration):
@@ -20,6 +19,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='nachrichten',
             name='created',
-            field=models.DateTimeField(default=datetime.datetime(2021, 8, 21, 12, 49, 18, 171991, tzinfo=utc), verbose_name='created'),
+            field=models.DateTimeField(default=datetime.datetime(2021, 8, 21, 12, 49, 18, 171991, tzinfo=datetime.timezone.utc), verbose_name='created'),
         ),
     ]
