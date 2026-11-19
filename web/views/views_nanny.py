@@ -20,13 +20,13 @@ from ..models import Profileltern
 from ..models import Descriptioneltern
 from ..models import BetreuungsZeitEltern
 
-from ..utils import is_in_distance
-from ..utils import get_point
 from ..utils import anz_neue_nachrichten
 from ..utils import send_new_user_email_jobsearch
 from ..utils import paginate_list
 from ..utils import create_and_return_point2
 from ..utils import create_profileimage
+from ..utils import get_populated_parents
+from ..utils import get_relevant_parents
 # Nanny Inserat
 
 
@@ -45,6 +45,7 @@ def create_profil(request):
 
         # finally save the object in db
         profil.save()
+        create_and_return_point2(profil)
         return redirect('web:angabejob')
     context = {
         "form": form
@@ -190,44 +191,12 @@ def profil_nanny(request, user_id=None):
 def startseitenanny(request):
     currentuser = request.user
     profilnanny = Profil.objects.get(user=currentuser)
-    term = None
-    eltern = User.objects.filter(groups__name='Eltern').order_by('-last_login')
-    if request.POST is not None:
-        term = request.POST.get('term')
-        distance = request.POST.get('distance')
-        if term is not None and distance is not None:
-            profileltern = Profileltern.objects.all()
-            eltern_in_range = []
-            point1 = get_point(term)
-            for profil in profileltern:
-                location = profil.ort
-                point2 = create_and_return_point2(profil)
-                if location != None and is_in_distance(point1, point2, distance):
-                    eltern_in_range.append(profil.user.id)
-            if len(eltern_in_range) > 0:
-                eltern = User.objects.filter(
-                    groups__name='Eltern', pk__in=eltern_in_range).order_by('-last_login')
+    term = request.POST.get('term') if request.method == 'POST' else None
+    eltern = get_relevant_parents(request)
 
-    list_of_populated_eltern = []
-    if eltern is not None:
-        for item in eltern:
-            li_profileltern = Profileltern.objects.filter(user=item).first()
-            li_bild = Profilbild.objects.filter(user=item).first()
-            li_description = Descriptioneltern.objects.filter(
-                user=item).first()
-            li_betreuungszeit = BetreuungsZeitEltern.objects.filter(
-                user=item).first()
-            if li_profileltern is not None and li_bild is not None and li_description is not None and li_betreuungszeit is not None:
-                list_of_populated_eltern.append({
-                    'eltern': item,
-                    'profil': li_profileltern,
-                    'bild': li_bild,
-                    'description': li_description,
-                    'betreuungszeit': li_betreuungszeit
-                })
     if term is None or term == '':
         term = profilnanny.ort
-    pagination = paginate_list(request, list_of_populated_eltern, 15)
+    pagination = paginate_list(request, get_populated_parents(eltern), 15)
     context = {
         'user': currentuser,
         'profil': profilnanny,
@@ -273,7 +242,8 @@ def bearbeitungnanny(request):
         elif 'place_save' in request.POST:
             profil_form = ProfilForm(request.POST, instance=profil)
             if profil_form.is_valid():
-                profil_form.save()
+                profil = profil_form.save()
+                create_and_return_point2(profil)
         elif 'angabejob_save' in request.POST:
             angabe_job_form = AngabejobForm(
                 request.POST, instance=angabejob)

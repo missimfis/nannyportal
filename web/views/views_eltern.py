@@ -24,6 +24,7 @@ from ..utils import get_populated_nannys
 from ..utils import paginate_list
 from ..utils import get_relevant_nannys
 from ..utils import create_profileimage
+from ..utils import create_and_return_point2
 # ELTERNINSERAT
 
 
@@ -39,6 +40,7 @@ def create_profil_eltern(request):
         profil.ort = form.cleaned_data['ort']
         # finally save the object in db
         profil.save()
+        create_and_return_point2(profil)
         return redirect('web:anzahl-kinder')
     context = {
         "form": form
@@ -307,7 +309,8 @@ def bearbeitungelternprofil(request):
             profil_eltern_form = ProfilelternForm(
                 request.POST, instance=profil)
             if profil_eltern_form.is_valid():
-                profil_eltern_form.save()
+                profil = profil_eltern_form.save()
+                create_and_return_point2(profil)
         elif 'texteltern' in request.POST:
             description_eltern_form = DescriptionelternForm(
                 request.POST, instance=description)
