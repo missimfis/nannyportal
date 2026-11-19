@@ -1,4 +1,6 @@
 import functools
+import math
+
 from geopy.geocoders import Photon
 from geopy.distance import geodesic
 from geopy.exc import GeocoderTimedOut
@@ -14,6 +16,9 @@ from .models import Profil
 from .models import Description
 from .models import Angabejob
 from .models import Profilbild
+from .models import Profileltern
+from .models import Descriptioneltern
+from .models import BetreuungsZeitEltern
 import threading
 from threading import Thread
 
@@ -27,10 +32,11 @@ class EmailThread(threading.Thread):
         self.email.send(fail_silently=False)
 
 
-keys = ["3P1o7XnrbgdMmtGluNCh4ZylZdMGqpLa", "cxNc1TDVQDjTHAIiZyrRYe8ZvrKmvkPj"]
 geolocator = Photon(user_agent="web", domain='photon.komoot.io')
 
 E_MAIL_ADDR = 'info@nanny25.ch'
+
+KM_PER_DEGREE_LATITUDE = 111.32
 
 
 def anz_neue_nachrichten(request):
@@ -82,33 +88,94 @@ def validate_password(password, user=None, password_validators=None):
 
 def is_in_distance(point1, point2, distance_km=10):
     distance = round(geodesic(point1, point2).km, 2)
-    return distance <= int(distance_km)
+    return distance <= float(distance_km)
+
+
+@functools.lru_cache(maxsize=2048)
+def geocode_address(address):
+    """Geocode an address once per process and cache the result.
+
+    Geocoding is deliberately not done in the search request path. Profiles
+    are geocoded when their address is saved (and by the geocode_profiles
+    management command for existing rows).
+    """
+    for attempt in range(3):
+        try:
+            return geolocator.geocode(address, timeout=2)
+        except GeocoderTimedOut:
+            if attempt == 2:
+                return None
+    return None
 
 
 def get_point(location):
-    loc = do_geocode(location)
+    if not location:
+        return (0.0, 0.0)
+    loc = geocode_address(location.strip().lower())
     if loc is None:
-        return (0, 0)
-    return (loc.latitude, loc.longitude)
-
-
-def do_geocode(address, attempt=1, max_attempts=2):
-    try:
-        return geolocator.geocode(address, timeout=2)
-    except GeocoderTimedOut:
-        if attempt <= max_attempts:
-            return do_geocode(address, attempt=attempt+1)
-        raise
+        return (0.0, 0.0)
+    return (float(loc.latitude), float(loc.longitude))
 
 
 def create_and_return_point2(profil):
-    point2 = (profil.lat, profil.lon)
-    if profil.lat == 0.0:
-        point2 = get_point(profil.ort)
+    if profil.lat and profil.lon:
+        return (float(profil.lat), float(profil.lon))
+    point2 = get_point(profil.ort)
+    if point2 != (0.0, 0.0):
         profil.lat = point2[0]
         profil.lon = point2[1]
-        profil.save()
+        profil.save(update_fields=['lat', 'lon'])
     return point2
+
+
+def _bounding_box(point, distance_km):
+    """Return a conservative lat/lon box around point for a radius."""
+    lat, lon = point
+    lat_delta = distance_km / KM_PER_DEGREE_LATITUDE
+    lon_delta = distance_km / (
+        KM_PER_DEGREE_LATITUDE * max(abs(math.cos(math.radians(lat))), 0.01)
+    )
+    return lat - lat_delta, lat + lat_delta, lon - lon_delta, lon + lon_delta
+
+
+def _get_search_params(request):
+    if request.method != 'POST':
+        return None, None
+    term = (request.POST.get('term') or '').strip()
+    distance = request.POST.get('distance')
+    if not term or distance in (None, ''):
+        return None, None
+    try:
+        distance_km = float(distance)
+    except (TypeError, ValueError):
+        return None, None
+    if distance_km <= 0:
+        return None, None
+    return term, distance_km
+
+
+def _filter_users_by_distance(queryset, profile_model, group_name, term, distance_km):
+    point1 = get_point(term)
+    if point1 == (0.0, 0.0):
+        return queryset.none()
+
+    lat_min, lat_max, lon_min, lon_max = _bounding_box(point1, distance_km)
+    candidates = profile_model.objects.filter(
+        user__groups__name=group_name,
+        lat__gte=lat_min,
+        lat__lte=lat_max,
+        lon__gte=lon_min,
+        lon__lte=lon_max,
+    ).values_list('user_id', 'lat', 'lon')
+
+    user_ids = [
+        user_id
+        for user_id, lat, lon in candidates
+        if is_in_distance(point1, (float(lat), float(lon)), distance_km)
+    ]
+    if not user_ids:
+        return queryset.none()
+    return queryset.filter(pk__in=user_ids)
 
 
 def send_new_user_email_jobsearch(to_user):
@@ -176,54 +243,110 @@ def paginate_list(request, paginate_list, amount):
 
 def get_relevant_nannys(request):
     nannys = User.objects.filter(groups__name='Nanny').order_by('-last_login')
-    term = None
-    if request.POST is not None:
-        term = request.POST.get('term')
-        distance = request.POST.get('distance')
-        if term is not None and distance is not None:
-            nannyprofile = Profil.objects.all()
-            nannys_in_range = []
-            point1 = get_point(term)
-            for profil in nannyprofile:
-                location = profil.ort
-                point2 = create_and_return_point2(profil)
-                if location is not None and is_in_distance(point1, point2, distance):
-                    nannys_in_range.append(profil.user.id)
-            if len(nannys_in_range) > 0:
-                nannys = User.objects.filter(
-                    groups__name='Nanny', pk__in=nannys_in_range).order_by('-last_login')
-    return nannys
+    term, distance_km = _get_search_params(request)
+    if term is None:
+        return nannys
+    return _filter_users_by_distance(nannys, Profil, 'Nanny', term, distance_km)
+
+
+def get_relevant_parents(request):
+    parents = User.objects.filter(groups__name='Eltern').order_by('-last_login')
+    term, distance_km = _get_search_params(request)
+    if term is None:
+        return parents
+    return _filter_users_by_distance(parents, Profileltern, 'Eltern', term, distance_km)
 
 
 def get_populated_nannys(nannys):
-    list_of_populated_nannys = []
-    nannys_ohne_bild = []
-    if nannys is not None:
-        for nanny in nannys:
-            li_profil = Profil.objects.filter(user=nanny).first()
-            li_bild = Profilbild.objects.filter(user=nanny).first()
-            li_description = Description.objects.filter(user=nanny).first()
-            li_angabejob = Angabejob.objects.filter(user=nanny).first()
-            if li_profil is not None and li_bild is not None and li_description is not None and li_angabejob is not None:
-                if li_bild._meta.get_field('bild').get_default() == li_bild.bild:
-                    nannys_ohne_bild.append({
-                        'nanny': nanny,
-                        'profil': li_profil,
-                        'bild': li_bild,
-                        'description': li_description,
-                        'angabejob': li_angabejob
-                    })
-                else:
-                    list_of_populated_nannys.append({
-                        'nanny': nanny,
-                        'profil': li_profil,
-                        'bild': li_bild,
-                        'description': li_description,
-                        'angabejob': li_angabejob
-                    })
-    if len(nannys_ohne_bild) > 0:
-        list_of_populated_nannys.extend(nannys_ohne_bild)
-    return list_of_populated_nannys
+    nanny_list = list(nannys)
+    user_ids = [nanny.pk for nanny in nanny_list]
+    if not user_ids:
+        return []
+
+    profiles = {
+        profile.user_id: profile
+        for profile in Profil.objects.filter(user_id__in=user_ids)
+    }
+    pictures = {
+        picture.user_id: picture
+        for picture in Profilbild.objects.filter(user_id__in=user_ids)
+    }
+    descriptions = {
+        description.user_id: description
+        for description in Description.objects.filter(user_id__in=user_ids)
+    }
+    jobs = {
+        job.user_id: job
+        for job in Angabejob.objects.filter(user_id__in=user_ids)
+    }
+
+    default_image = Profilbild._meta.get_field('bild').get_default()
+    populated = []
+    without_picture = []
+
+    for nanny in nanny_list:
+        profil = profiles.get(nanny.pk)
+        bild = pictures.get(nanny.pk)
+        description = descriptions.get(nanny.pk)
+        angabejob = jobs.get(nanny.pk)
+        if profil is None or bild is None or description is None or angabejob is None:
+            continue
+
+        entry = {
+            'nanny': nanny,
+            'profil': profil,
+            'bild': bild,
+            'description': description,
+            'angabejob': angabejob,
+        }
+        if bild.bild == default_image:
+            without_picture.append(entry)
+        else:
+            populated.append(entry)
+
+    return populated + without_picture
+
+
+def get_populated_parents(parents):
+    parent_list = list(parents)
+    user_ids = [parent.pk for parent in parent_list]
+    if not user_ids:
+        return []
+
+    profiles = {
+        profile.user_id: profile
+        for profile in Profileltern.objects.filter(user_id__in=user_ids)
+    }
+    pictures = {
+        picture.user_id: picture
+        for picture in Profilbild.objects.filter(user_id__in=user_ids)
+    }
+    descriptions = {
+        description.user_id: description
+        for description in Descriptioneltern.objects.filter(user_id__in=user_ids)
+    }
+    times = {
+        time.user_id: time
+        for time in BetreuungsZeitEltern.objects.filter(user_id__in=user_ids)
+    }
+
+    populated = []
+    for parent in parent_list:
+        profil = profiles.get(parent.pk)
+        bild = pictures.get(parent.pk)
+        description = descriptions.get(parent.pk)
+        betreuungszeit = times.get(parent.pk)
+        if (profil is None or bild is None or description is None
+                or betreuungszeit is None):
+            continue
+        populated.append({
+            'eltern': parent,
+            'profil': profil,
+            'bild': bild,
+            'description': description,
+            'betreuungszeit': betreuungszeit,
+        })
+    return populated
 
 
 def create_profileimage(request, form):

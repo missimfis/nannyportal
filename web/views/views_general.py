@@ -1,14 +1,14 @@
-from django.shortcuts import render
-from django.shortcuts import redirect
+from django.shortcuts import get_object_or_404, redirect, render
 from django.utils import timezone
-from django.contrib.auth import login as logout
-from django.contrib.auth import login as dj_login
+from django.contrib.auth import login as dj_login, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth.models import Group
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator
+from django.views.decorators.http import require_POST
 from django.views.generic.base import TemplateView
-from django.db.models import Q
+from django.db.models import Count, OuterRef, Q, Subquery
 from ..forms import RegistrationForm
 from ..forms import NachrichtenForm
 from ..models import Nachrichten
@@ -19,8 +19,15 @@ from ..utils import send_new_message_email
 
 index_site = 'web:index'
 
+# Only these roles may be selected by a public signup request.
+PUBLIC_SIGNUP_GROUPS = {
+    'Nanny': 'web:create-profil',
+    'Eltern': 'web:create-profil-eltern',
+}
+
+
 def logout_view(request):
-    logout(request, request.user)
+    logout(request)
     return redirect(index_site)
 
 
@@ -70,126 +77,153 @@ def kasse(request, abo):
     return render(request, 'web/Eltern.Profilseite/kasse.html', context)
 
 def create_user(request, group_id):
+    # Never create or assign a group chosen by the caller. Only the explicit
+    # public signup roles are accepted; anything else is a 404.
+    group = get_object_or_404(
+        Group,
+        pk=group_id,
+        name__in=PUBLIC_SIGNUP_GROUPS,
+    )
+
     form = RegistrationForm(request.POST or None)
     if request.method == 'POST' and form.is_valid():
         user = form.save(commit=False)
         user.username = user.email
         user.save()
-        # finally save the object in db
-        group, created = Group.objects.get_or_create(pk=group_id)
         group.user_set.add(user)
-        group.save()
         dj_login(request, user)
-        if(group_id == 1):
-            return redirect('web:create-profil')
-        elif(group_id == 4):
-            return redirect('web:create-profil-eltern')
-        else:
-            return redirect(index_site)
+        return redirect(PUBLIC_SIGNUP_GROUPS[group.name])
     context = {
         "form": form
     }
     return render(request, 'web/user.html', context)
 
 
+@login_required
 def nachrichten(request, empfaenger_id=None):
     current_user = request.user
-    if request.method == 'GET' and request.GET.get('delete') == 'True' and empfaenger_id is not None:
-        empfaenger = User.objects.get(pk=int(empfaenger_id))
-        Nachrichten.objects.filter(Q(sender=current_user, empfaenger=empfaenger)| Q(
-            sender=empfaenger, empfaenger=current_user)).delete()
+
+    if request.method == 'POST' and request.POST.get('delete') == 'True':
+        if empfaenger_id is None:
+            return redirect('web:nachrichten')
+        empfaenger = get_object_or_404(User, pk=empfaenger_id)
+        Nachrichten.objects.filter(
+            Q(sender=current_user, empfaenger=empfaenger) |
+            Q(sender=empfaenger, empfaenger=current_user)
+        ).delete()
         return redirect('web:nachrichten')
-    form = NachrichtenForm(request.POST or None)
-    # getting other user
+
     empfaenger = None
     pb = None
     if empfaenger_id is not None:
-        empfaenger = User.objects.get(pk=int(empfaenger_id))
-        pb = Profilbild.objects.get(user=empfaenger)
-    # messages of the conversation
+        empfaenger = get_object_or_404(User, pk=empfaenger_id)
+        pb = Profilbild.objects.filter(user=empfaenger).first()
 
-    meldungen = list(Nachrichten.objects.filter(Q(
-        sender=current_user, empfaenger=empfaenger)| Q(
-        empfaenger=current_user, sender=empfaenger)).order_by('created'))
-    for meldung in meldungen:
-        if meldung.empfaenger == current_user:
-            meldung.gelesen = True
-            meldung.save()
-    meldungen.sort(key=lambda x: x.created)
-    # last_messages
-    senders = list(Nachrichten.objects.filter(empfaenger=current_user)
-                   .values_list("sender", flat=True)
-                   .distinct())
-    recievers = list(Nachrichten.objects.filter(sender=current_user)
-                     .values_list("empfaenger", flat=True)
-                     .distinct())
-    last_message = None
+    form = NachrichtenForm(request.POST or None)
+
+    if request.method == 'POST' and empfaenger is not None and form.is_valid():
+        Nachrichten.objects.create(
+            sender=current_user,
+            empfaenger=empfaenger,
+            meldung=form.cleaned_data['meldung'],
+            created=timezone.now(),
+            gelesen=False,
+        )
+        send_new_message_email(empfaenger, current_user)
+        return redirect('web:nachrichten', empfaenger_id=empfaenger_id)
+
+    # Load only one bounded page of the conversation, not the whole history.
+    page_obj = None
+    if empfaenger is not None:
+        Nachrichten.objects.filter(
+            sender=empfaenger,
+            empfaenger=current_user,
+            gelesen=False,
+        ).update(gelesen=True)
+
+        conversation = (
+            Nachrichten.objects
+            .filter(
+                Q(sender=current_user, empfaenger=empfaenger) |
+                Q(sender=empfaenger, empfaenger=current_user)
+            )
+            .select_related('sender', 'empfaenger')
+            .order_by('created', 'pk')
+        )
+        page_obj = Paginator(conversation, 50).get_page(request.GET.get('page', 1))
+        meldungen = page_obj
+    else:
+        meldungen = []
+
+    # Conversation summaries are fetched in batches rather than per sender.
+    partner_ids = set(
+        Nachrichten.objects.filter(empfaenger=current_user)
+        .values_list('sender_id', flat=True)
+    )
+    partner_ids.update(
+        Nachrichten.objects.filter(sender=current_user)
+        .values_list('empfaenger_id', flat=True)
+    )
+    partner_ids.discard(None)
+
     list_of_interactions = []
-    for sender in senders:
-        messages = Nachrichten.objects.filter(
-            empfaenger=current_user, sender=sender).order_by('-created')
-        if(messages is not None and len(messages) > 0):
-            last_sender_message = messages[0]
-            last_message = last_sender_message
-            if recievers.__contains__(sender):
-                last_reciever_message = Nachrichten.objects.filter(
-                    sender=current_user, empfaenger=sender).order_by('-created')[0]
-                if last_sender_message.created > last_reciever_message.created:
-                    last_message = last_sender_message
-        list_of_interactions.append({
-            'user': User.objects.get(pk=sender),
-            'last_message': last_message,
-            'new_messages': Nachrichten.objects.filter(empfaenger=current_user, sender=sender, gelesen=False).count(),
-            'bild': Profilbild.objects.get(user=sender)
-        })
-    for reciever in recievers:
-        messages = Nachrichten.objects.filter(
-            empfaenger=reciever, sender=current_user).order_by('-created')
-        if(messages is not None and len(messages) > 0):
-            last_reciever_message = messages[0]
-            last_message = last_reciever_message
-            if senders.__contains__(reciever):
-                last_sender_message = Nachrichten.objects.filter(
-                    sender=current_user, empfaenger=reciever).order_by('-created')[0]
-                if last_sender_message.created > last_reciever_message.created:
-                    last_message = last_sender_message
-        list_of_interactions.append({
-            'user': User.objects.get(pk=reciever),
-            'last_message': last_message,
-            'new_messages': 0,
-            'bild': Profilbild.objects.get(user=reciever)
-        })
-    list_of_interactions = sorted(
-        list_of_interactions, key=lambda k: k['last_message'].created)
-    list_of_interactions = list(
-        {v['user']: v for v in list_of_interactions}.values())
-    list_of_interactions = sorted(
-        list_of_interactions, key=lambda k: k['last_message'].created, reverse=True)
+    if partner_ids:
+        latest_message = Nachrichten.objects.filter(
+            Q(sender=current_user, empfaenger_id=OuterRef('pk')) |
+            Q(sender_id=OuterRef('pk'), empfaenger=current_user)
+        ).order_by('-created', '-pk')
 
-    group = request.user.groups.values_list('name', flat=True)[0]
+        partners = (
+            User.objects.filter(pk__in=partner_ids)
+            .annotate(last_message_id=Subquery(latest_message.values('id')[:1]))
+        )
+        partners_by_id = {partner.pk: partner for partner in partners}
+        last_message_ids = [
+            partner.last_message_id
+            for partner in partners_by_id.values()
+            if partner.last_message_id is not None
+        ]
+        last_messages = Nachrichten.objects.in_bulk(last_message_ids)
+        unread_counts = dict(
+            Nachrichten.objects.filter(
+                empfaenger=current_user,
+                sender_id__in=partner_ids,
+                gelesen=False,
+            )
+            .values_list('sender_id')
+            .annotate(count=Count('id'))
+        )
+        pictures = {
+            picture.user_id: picture
+            for picture in Profilbild.objects.filter(user_id__in=partner_ids)
+        }
 
-    if request.method == 'POST':
-        form = NachrichtenForm(request.POST)
+        for partner_id, partner in partners_by_id.items():
+            last_message = last_messages.get(partner.last_message_id)
+            if last_message is None:
+                continue
+            list_of_interactions.append({
+                'user': partner,
+                'last_message': last_message,
+                'new_messages': unread_counts.get(partner_id, 0),
+                'bild': pictures.get(partner_id),
+            })
+        list_of_interactions.sort(
+            key=lambda item: item['last_message'].created,
+            reverse=True,
+        )
 
-        if form.is_valid():
-            # process form data
-            nachrichten = Nachrichten()
-            nachrichten.sender = request.user
-            nachrichten.empfaenger = empfaenger
-            nachrichten.meldung = form.cleaned_data['meldung']
-            nachrichten.created = timezone.now()
-            nachrichten.gelesen = False
-            # finally save the object in db
-            nachrichten.save()
-            send_new_message_email(empfaenger, request.user)
-            return redirect(request.get_full_path_info(), empfaenger_id=empfaenger_id)
+    group = current_user.groups.values_list('name', flat=True).first()
+    pb_me = Profilbild.objects.filter(user=current_user).first()
+
     context = {
         "form": form,
         "meldungen": meldungen,
+        "page_obj": page_obj,
         "empfaenger_id": empfaenger_id,
         "empfaenger": empfaenger,
         "bild": pb,
-        'pbMe': Profilbild.objects.get(user=current_user),
+        'pbMe': pb_me,
         "list_of_interactions": list_of_interactions,
         "group": group,
         'anz_neue_nachrichten': anz_neue_nachrichten(request)
@@ -197,8 +231,12 @@ def nachrichten(request, empfaenger_id=None):
     return render(request, 'web/nachrichten.html', context)
 
 
+@login_required
+@require_POST
 def delete_user(request):
-    request.user.delete()
+    user = request.user
+    logout(request)
+    user.delete()
     return redirect(index_site)
 
 
@@ -225,7 +263,7 @@ class SettingsView(TemplateView):
 
     def get_context_data(self, **kwargs):
         currentuser = self.request.user
-        group = self.request.user.groups.values_list('name', flat=True)[0]
+        group = self.request.user.groups.values_list('name', flat=True).first()
         context = super(SettingsView, self).get_context_data(**kwargs)
         context['user'] = currentuser
         context['group'] =  group

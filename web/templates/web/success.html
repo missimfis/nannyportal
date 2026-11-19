@@ -10,6 +10,10 @@
         <p>{% translate 'Vielen Dank, dass Sie uns damit ermöglichen die Webseite zu betreiben.' %}</p>
         {% if subscription.is_valid %}
         <p>{% translate 'Dein Abonement wurde soeben erfolgreich aktiviert.' %}</p>
+        {% elif subscription %}
+        <p>{% translate 'Deine Zahlung wird noch bestätigt. Die Aktivierung erfolgt automatisch, sobald Stripe die Zahlung bestätigt hat.' %}</p>
+        {% else %}
+        <p>{% translate 'Es wurde kein Abonnement gefunden.' %}</p>
         {% endif %}
         <a href="{% url 'web:subscription' %}">{% translate 'nochmals ein Abonement kaufen?' %}</a>
     </section>

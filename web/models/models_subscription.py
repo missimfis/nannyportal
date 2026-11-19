@@ -25,6 +25,8 @@ class UserSubscription(models.Model):
     price = models.ForeignKey(Price, on_delete=models.DO_NOTHING)
     activated = models.BooleanField(default=False)
     valid_from = models.DateTimeField(default=timezone.now)
+    stripe_checkout_session_id = models.CharField(
+        max_length=255, blank=True, default="")
 
     def is_valid(self):
         if not self.activated:

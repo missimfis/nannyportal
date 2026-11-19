@@ -35,7 +35,12 @@
                 </tr>
                 <tr>
                         <th>{% translate 'Möchten Sie Ihr Profil Löschen?' %}</th>
-                        <td><a class="btn btn-secondary" href="{% url 'web:delete-user' %}">{% translate 'Profil löschen' %}</a></td>
+                        <td>
+                            <form method="post" action="{% url 'web:delete-user' %}" onsubmit="return confirm('{% translate 'Profil wirklich löschen?' %}');">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-secondary">{% translate 'Profil löschen' %}</button>
+                            </form>
+                        </td>
                 </tr>
         </tbody>
         </table>

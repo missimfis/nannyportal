@@ -8,7 +8,17 @@ mysite.sock
 mysite_uwsgi.ini
 
 .env
+.env.*
+!.env.example
 
 __pycache__
+*.py[cod]
+
+.pytest_cache/
+.mypy_cache/
+
+env/
+vpypy3/
+staticfiles/
 
 web/media/web/images/user*
