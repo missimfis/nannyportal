@@ -4,7 +4,13 @@ from django.conf import settings
 from django.conf.urls.static import static
 from web.views.views_general import AgbView, ContactView, DataProtectionView, HelpView, UeberUnsView, SettingsView
 
-from web.views.views_subscription import CancelView, CreateCheckoutSessionView, SuccessView, SubscriptionPageView
+from web.views.views_subscription import (
+    CancelView,
+    CreateCheckoutSessionView,
+    SuccessView,
+    SubscriptionPageView,
+    stripe_webhook,
+)
 
 from . import views
 
@@ -19,9 +25,10 @@ urlpatterns = [
     path('redirection', views.redirection, name='redirection'),
     path('schnuppern', views.schnuppern, name='schnuppern'),
     path('subscription', SubscriptionPageView.as_view(), name="subscription"),
-    path('create-checkout-session/<pk>/', CreateCheckoutSessionView.as_view(), name='create-checkout-session'),
+    path('create-checkout-session/<int:pk>/', CreateCheckoutSessionView.as_view(), name='create-checkout-session'),
     path('cancel', CancelView.as_view(), name="cancel"),
     path('success', SuccessView.as_view(), name="success"),
+    path('stripe/webhook', stripe_webhook, name="stripe-webhook"),
 
     # footer navigation
 

@@ -26,7 +26,8 @@
         </div>
         <div class="col-sm-9 hidden farbe">
             {% if empfaenger_id is not None and empfaenger_id > 0 %}
-            <div class="bild-meldung" id="messageBack"><img src="/media/{{bild.bild.url|slice:"7:"}}" alt="Profilbild">
+            <div class="bild-meldung" id="messageBack">
+                {% if bild %}<img src="/media/{{bild.bild.url|slice:"7:"}}" alt="Profilbild">{% endif %}
             </div>
             <div class="Name empfangername">
                 {% if group == "Eltern" %}
@@ -59,15 +60,12 @@
                                                 </svg></small></a>
 
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                            <li><a class="dropdown-item"
-                                                    href="{% url 'web:nachrichten' empfaenger_id=empfaenger_id %}?delete=True">{% translate 'Nachricht löschen' %}<svg
-                                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                        fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                                                        <path
-                                                            d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
-                                                        <path fill-rule="evenodd"
-                                                            d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
-                                                    </svg></a></li>
+                                            <li>
+                                                <form method="post" action="{% url 'web:nachrichten' empfaenger_id=empfaenger_id %}">
+                                                    {% csrf_token %}
+                                                    <button type="submit" name="delete" value="True" class="dropdown-item">{% translate 'Nachricht löschen' %}</button>
+                                                </form>
+                                            </li>
                                         </ul>
                                     </div>
             </div>
@@ -82,8 +80,9 @@
                     {% for interaction in list_of_interactions %}
                     <div class="row">
                         <a href="{% url 'web:nachrichten' empfaenger_id=interaction.user.id %}?message=true">
-                            <div class="col-sm bild-meldung"><img src="/media/{{interaction.bild.bild.url|slice:"7:"}}"
-                                    alt="Profilbild"></div>
+                            <div class="col-sm bild-meldung">
+                                {% if interaction.bild %}<img src="/media/{{interaction.bild.bild.url|slice:"7:"}}" alt="Profilbild">{% endif %}
+                            </div>
                             <div class="Name"><span>{{interaction.user.first_name}}
                                     {{interaction.user.last_name|slice:":1"}}.{% if interaction.new_messages > 0 %}<small
                                         class="badge bg-color">{{interaction.new_messages}}</small>{% endif %}</span>
@@ -110,13 +109,13 @@
 
                     {% if meldung.empfaenger.id == empfaenger_id %}
                     <div class="col-sm-12 message-main-sender">
-                        <img class="nachrichten-profilimage-sender" src="/media/{{pbMe.bild.url|slice:"7:"}}"
-                            alt="Profilbild">
+                        {% if pbMe %}<img class="nachrichten-profilimage-sender" src="/media/{{pbMe.bild.url|slice:"7:"}}"
+                            alt="Profilbild">{% endif %}
                         <div class="sender">
                             {% else %}
                             <div class="col-sm-12 message-main-receiver">
-                                <img class="nachrichten-profilimage-reciever" src="/media/{{bild.bild.url|slice:"7:"}}"
-                                    alt="Profilbild">
+                                {% if bild %}<img class="nachrichten-profilimage-reciever" src="/media/{{bild.bild.url|slice:"7:"}}"
+                                    alt="Profilbild">{% endif %}
 
                                 <div class="receiver">
                                     {% endif %}
@@ -132,12 +131,24 @@
                                     {% endif %}
                                     <span
                                         class="message-time pull-right">{{ meldung.created.hour }}:{{ meldung.created.minute }}
-                                        <small>{{interaction.last_message.created|date:"d.m.y"}}</small>
+                                        <small>{{ meldung.created|date:"d.m.y" }}</small>
                                     </span></div>
                             </div>
                         </div>
 
                         {% endfor %}
+
+                        {% if page_obj.has_other_pages %}
+                        <div class="d-flex justify-content-center align-items-center gap-2 my-3">
+                            {% if page_obj.has_previous %}
+                            <a class="btn btn-sm btn-secondary" href="?page={{ page_obj.previous_page_number }}">&laquo;</a>
+                            {% endif %}
+                            <span>{% blocktranslate with current=page_obj.number total=page_obj.paginator.num_pages %}Seite {{ current }} von {{ total }}{% endblocktranslate %}</span>
+                            {% if page_obj.has_next %}
+                            <a class="btn btn-sm btn-secondary" href="?page={{ page_obj.next_page_number }}">&raquo;</a>
+                            {% endif %}
+                        </div>
+                        {% endif %}
                         {% else %}
 
                         <div class="werbungnachrichten">
@@ -165,7 +176,7 @@
                                     {% for field in form.visible_fields %}
                                     {{ field.errors }} {{ field }}
                                     {% endfor %}
-                                    <button class="send2" ype="submit" id=""
+                                    <button class="send2" type="submit" id=""
                                         onclick="document.getElementById('nachrichtenForm').submit(); spinner('send');">
                                         send
 
