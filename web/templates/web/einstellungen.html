@@ -34,6 +34,10 @@
                         <td><a class="btn btn-secondary" href="{% if group == "Eltern" %}{% url 'web:bearbeitungelternprofil' %}{% elif group == "Nanny" %}{% url 'web:bearbeitungnanny' %}{% elif group == "Tier Inserat" %}{% url "web:bearbeitungtier" %}{% elif group == "Tier Jobsuchende" %}{% url "web:tiersitter_bearbeitung" %}{% elif group == "Senior Jobsuchende" %}{% url "web:bearbeitungseniorbetreuer" %}{% elif group == "Senior Inserat" %}{% url "web:bearbeitungsenior" %}{% endif %}">{% translate 'Profil bearbeiten' %}</a></td>
                 </tr>
                 <tr>
+                        <th>{% translate 'Passwort ändern?' %}</th>
+                        <td><a class="btn btn-secondary" href="{% url 'password_change' %}">{% translate 'Passwort ändern' %}</a></td>
+                </tr>
+                <tr>
                         <th>{% translate 'Möchten Sie Ihr Profil Löschen?' %}</th>
                         <td>
                             <form method="post" action="{% url 'web:delete-user' %}" onsubmit="return confirm('{% translate 'Profil wirklich löschen?' %}');">

@@ -1,5 +1,6 @@
 {% extends 'web/base.html' %}
 {% load static %}
+{% load profile_images %}
 {% load i18n %}
 {% block navigation %}
         {% include "web/Eltern.Profilseite/eltern_navigation.html" %}
@@ -13,7 +14,7 @@
             <div class="Fotohochaden edit">
                 <div class="form-input">
                     <div class="preview"> 
-                        <img id="file-ip-1-preview"  src="/media/{{bild.bild.url|slice:"7:"}}">
+                        <img id="file-ip-1-preview"  src="{{ bild|profile_image_url }}">
                     </div>
                         <label for="file-ip-1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
                     <path d="M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z"/>
@@ -29,6 +30,18 @@
 
 
 
+
+    <p>{% translate 'Kontodaten bearbeiten' %}</p>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="Personalien-box">
+            <div class="berarbeitugtext">
+            {% include "web/form_snippet.html" with form=userForm %}
+            </div>
+            <input class="input_bearbeiten" type="submit" name="userdata" value="{% translate 'Kontodaten speichern' %}" />
+        </div>
+    </form>
+    <br>
     <p>{% translate 'Angaben bearbeiten*' %}</p>
     <br>
     <form action="" method="POST">
@@ -40,15 +53,7 @@
             <input class="input_bearbeiten" type="submit" name="orteltern" value="{% translate 'Angabe speichern' %}"  />
     </form>
         <br>
-    <form action="" method="POST">
-        {% csrf_token %}
-        {% for field in angabeForm.visible_fields|slice:"4:" %}
-        <div class="form-group">
-            <label for="{{field.auto_id}}"  id="{{field.name}}" class="betreuungsart-button" onclick="changeCheckedClass('{{field.name}}')">{{field.label}}</label>
-            {{ field.errors }} {{ field }}
-        </div>
-        {% endfor %}
-    </form>
+
       
 
       
@@ -93,7 +98,7 @@
 
         <form action="" method="POST">
         {% csrf_token %}
-        <p{% translate 'Aufgaben bearbeiten' %}</p>
+        <p>{% translate 'Aufgaben bearbeiten' %}</p>
         {% for field in anforderungElternForm.visible_fields|slice:":5" %}
         <div class="form-group">
         <label for="{{field.auto_id}}"  id="{{field.name}}" class="betreuungsart-button" onclick="changeCheckedClass('{{field.name}}')">{{field.label}}</label>

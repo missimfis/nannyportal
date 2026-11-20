@@ -2,7 +2,15 @@ from django.conf.urls import include
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from web.views.views_general import AgbView, ContactView, DataProtectionView, HelpView, UeberUnsView, SettingsView
+from web.views.views_general import (
+    AgbView,
+    ContactView,
+    DataProtectionView,
+    HelpView,
+    SettingsView,
+    UeberUnsView,
+    serve_profile_image,
+)
 
 from web.views.views_subscription import (
     CancelView,
@@ -71,5 +79,12 @@ urlpatterns = [
     path('startseiteeltern', views.startseiteeltern, name='startseiteeltern'),
     path('premiumeltern', views.premiumeltern, name='premiumeltern'),
     path('einstellungen', SettingsView.as_view(), name='einstellungen'),
-    path('bearbeitungelternprofil',views.bearbeitungelternprofil,name='bearbeitungelternprofil')
-]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path('bearbeitungelternprofil',views.bearbeitungelternprofil,name='bearbeitungelternprofil'),
+    path('media/profile-image/<int:image_id>/', serve_profile_image, name='serve-profile-image'),
+]
+
+# Only serve user-uploaded media directly in DEBUG/dev. In production, serve via
+# a configured fronting server/storage with appropriate access controls.
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

@@ -1,5 +1,6 @@
 {% extends 'web/base.html' %}
 {% load static %}
+{% load profile_images %}
 {% load i18n %}
 {% block navigation %}
     {% include "web/index_navigation.html" %}
@@ -73,11 +74,11 @@
             <div class="ansicht">
                 <p class="ansichtarbeit">{% if item.angabejob.angabe_job_nanny%}{% translate 'Nanny' %}{% endif %}</p>
 
-                 <img class="nannyvorschau" src="/media/{{item.bild.bild.url|slice:"7:" }}" alt="Nanny" />  
+                 <img class="nannyvorschau" src="{{ item.bild|profile_image_url }}" alt="Nanny" />  
    
              </div>
              <div class="inhaltBoxKathrin">
-                <div class="ansichtname">  {{item.nanny.first_name}} <small> {% translate 'von' %} {{item.profil.ort}} </small></div>
+                <div class="ansichtname">  {{item.nanny.first_name}} <small> {% translate 'von' %} {{ item.display_ort }} </small></div>
                 <div class="ansichttext"> {{item.description.description|slice:":60"}}...</div>       
             </div>
         </div>

@@ -1,5 +1,6 @@
 {% extends 'web/base_without_footer.html' %}
 {% load static %}
+{% load profile_images %}
 {% load i18n %}
 {% block navigation %}
 {% if group == "Eltern" %}
@@ -27,7 +28,7 @@
         <div class="col-sm-9 hidden farbe">
             {% if empfaenger_id is not None and empfaenger_id > 0 %}
             <div class="bild-meldung" id="messageBack">
-                {% if bild %}<img src="/media/{{bild.bild.url|slice:"7:"}}" alt="Profilbild">{% endif %}
+                {% if bild %}<img src="{{ bild|profile_image_url }}" alt="Profilbild">{% endif %}
             </div>
             <div class="Name empfangername">
                 {% if group == "Eltern" %}
@@ -81,7 +82,7 @@
                     <div class="row">
                         <a href="{% url 'web:nachrichten' empfaenger_id=interaction.user.id %}?message=true">
                             <div class="col-sm bild-meldung">
-                                {% if interaction.bild %}<img src="/media/{{interaction.bild.bild.url|slice:"7:"}}" alt="Profilbild">{% endif %}
+                                {% if interaction.bild %}<img src="{{ interaction.bild|profile_image_url }}" alt="Profilbild">{% endif %}
                             </div>
                             <div class="Name"><span>{{interaction.user.first_name}}
                                     {{interaction.user.last_name|slice:":1"}}.{% if interaction.new_messages > 0 %}<small
@@ -109,12 +110,12 @@
 
                     {% if meldung.empfaenger.id == empfaenger_id %}
                     <div class="col-sm-12 message-main-sender">
-                        {% if pbMe %}<img class="nachrichten-profilimage-sender" src="/media/{{pbMe.bild.url|slice:"7:"}}"
+                        {% if pbMe %}<img class="nachrichten-profilimage-sender" src="{{ pbMe|profile_image_url }}"
                             alt="Profilbild">{% endif %}
                         <div class="sender">
                             {% else %}
                             <div class="col-sm-12 message-main-receiver">
-                                {% if bild %}<img class="nachrichten-profilimage-reciever" src="/media/{{bild.bild.url|slice:"7:"}}"
+                                {% if bild %}<img class="nachrichten-profilimage-reciever" src="{{ bild|profile_image_url }}"
                                     alt="Profilbild">{% endif %}
 
                                 <div class="receiver">

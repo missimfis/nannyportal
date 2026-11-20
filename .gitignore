@@ -22,3 +22,7 @@ vpypy3/
 staticfiles/
 
 web/media/web/images/user*
+
+# Runtime/private uploads and local media
+web/media/private/
+web/media/**/user_*/

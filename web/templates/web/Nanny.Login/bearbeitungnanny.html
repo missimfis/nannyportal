@@ -1,5 +1,6 @@
 {% extends 'web/base.html' %}
 {% load static %}
+{% load profile_images %}
 {% load i18n %}
 {% block navigation %}
         {% include "web/Nanny.Login/nanny_navigation.html" %}
@@ -12,7 +13,7 @@
             <div class="Fotohochaden edit">
                 <div class="form-input">
                     <div class="preview"> 
-                        <img id="file-ip-1-preview"  src="/media/{{bild.bild.url|slice:"7:"}}">
+                        <img id="file-ip-1-preview"  src="{{ bild|profile_image_url }}">
                     </div>
                     <div class="labelbox">
                         <label for="file-ip-1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
@@ -35,25 +36,27 @@
 
     <p>{% translate '' %}</p>
     <br>
+
+    <p>{% translate 'Kontodaten bearbeiten' %}</p>
     <form action="" method="POST">
         {% csrf_token %}
         <div class="Personalien-box">
             <div class="berarbeitugtext">
-
-            {% include "web/form_snippet.html" with form=profilForm %}
+            {% include "web/form_snippet.html" with form=userForm %}
+            </div>
+            <input class="input_bearbeiten" type="submit" name="userdata_save" value="{% translate 'Kontodaten speichern' %}" />
         </div>
     </form>
-        <br>
+    <br>
     <form action="" method="POST">
         {% csrf_token %}
-        {% for field in angabeForm.visible_fields|slice:"4:" %}
-        <div class="form-group">
-            <label for="{{field.auto_id}}"  id="{{field.name}}" class="betreuungsart-button" onclick="changeCheckedClass('{{field.name}}')">{{field.label}}</label>
-            {{ field.errors }} {{ field }}
+        <div class="Personalien-box">
+            <div class="berarbeitugtext">
+                {% include "web/form_snippet.html" with form=profilForm %}
+            </div>
+            <input class="input_bearbeiten" type="submit" name="place_save" value="{% translate 'Angaben speichern' %}" />
         </div>
-        {% endfor %}
-            <input class="input_bearbeiten" type="submit" name="profiltier" value="{% translate 'Angabe speichern' %}" />
-        </form>
+    </form>
     <br>
 
     <form action="" method="POST">

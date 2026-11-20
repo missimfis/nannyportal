@@ -1,8 +1,10 @@
 import os
+
 from django.utils import timezone
 from django.db import models
 from django.contrib.auth.models import User
 from django.dispatch import receiver
+
 
 class Nachrichten(models.Model):
     sender = models.ForeignKey(
@@ -13,9 +15,17 @@ class Nachrichten(models.Model):
     created = models.DateTimeField('created', default=timezone.now)
     gelesen = models.BooleanField(default=False)
 
+    class Meta:
+        indexes = [
+            models.Index(fields=['empfaenger', 'gelesen']),
+            models.Index(fields=['sender', 'empfaenger', 'created']),
+        ]
+
+
 def user_directory_path(instance, filename):
-    # file will be uploaded to MEDIA_ROOT / user_<id>/<filename>
-    return 'web/images/user_{0}/{1}'.format(instance.user.id, filename)
+    # Store user uploads in private media area (served via authenticated view, not static)
+    return 'private/profile_images/user_{0}/{1}'.format(instance.user.id, filename)
+
 
 class Profilbild(models.Model):
     user = models.OneToOneField(
@@ -23,31 +33,38 @@ class Profilbild(models.Model):
     bild = models.ImageField(
         upload_to=user_directory_path, default='web/images/mitarbeiter.png')
 
-# These two auto-delete files from filesystem when they are unneeded:
+    def is_default(self):
+        try:
+            default = self._meta.get_field('bild').get_default()
+            return not self.bild or self.bild.name == default
+        except Exception:
+            return False
+
+
 @receiver(models.signals.post_delete, sender=Profilbild)
 def auto_delete_file_on_delete(sender, instance, **kwargs):
-    """
-    Deletes file from filesystem
-    when corresponding `MediaFile` object is deleted.
-    """
-    if instance.bild and os.path.isfile(instance.bild.path):
-        os.remove(instance.bild.path)
+    try:
+        if instance.bild and instance.bild.name and not instance.is_default():
+            storage = instance.bild.storage
+            if storage.exists(instance.bild.name):
+                storage.delete(instance.bild.name)
+    except Exception:
+        pass
+
 
 @receiver(models.signals.pre_save, sender=Profilbild)
 def auto_delete_file_on_change(sender, instance, **kwargs):
-    """
-    Deletes old file from filesystem
-    when corresponding `MediaFile` object is updated
-    with new file.
-    """
     if not instance.pk:
-        return False
-
+        return
     try:
-        old_file = Profilbild.objects.get(pk=instance.pk).bild
+        old = Profilbild.objects.get(pk=instance.pk)
     except Profilbild.DoesNotExist:
-        return False
-
-    new_file = instance.bild
-    if  old_file != new_file and os.path.isfile(old_file.path) and not instance.bild.path.__contains__(old_file.default):
-        os.remove(old_file.path)
+        return
+    try:
+        old_file = old.bild
+        new_file = instance.bild
+        if old_file and old_file.name != new_file.name and not old.is_default():
+            if old_file.storage.exists(old_file.name):
+                old_file.storage.delete(old_file.name)
+    except Exception:
+        pass

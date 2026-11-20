@@ -1,47 +1,58 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-# ELTERNINSERAT
+
 class Profileltern(models.Model):
     user = models.OneToOneField(
         User, on_delete=models.CASCADE, null=True, blank=True)
-    plz = models.IntegerField()
-    ort = models.CharField(max_length=200)
+    plz = models.IntegerField(null=True, blank=True)
+    ort = models.CharField(max_length=200, blank=True, default='')
     lon = models.DecimalField(max_digits=9, decimal_places=6, default=0.0)
     lat = models.DecimalField(max_digits=9, decimal_places=6, default=0.0)
+    is_public = models.BooleanField(default=True)
+
+    class Meta:
+        indexes = [
+            models.Index(fields=['lat', 'lon']),
+            models.Index(fields=['is_public']),
+        ]
+
+    def approximate_ort(self):
+        if self.plz:
+            plz = str(self.plz)
+            return f"Region {plz[:2]}xx" if len(plz) >= 2 else "Region unbekannt"
+        return self.ort or ''
 
 
 class Jobangebot(models.Model):
     user = models.OneToOneField(
         User, on_delete=models.CASCADE, null=True, blank=True)
-    nanny = models.BooleanField("Nanny")
-    tagesmutter = models.BooleanField("Tagesmutter")
+    nanny = models.BooleanField("Nanny", default=False)
+    tagesmutter = models.BooleanField("Tagesmutter", default=False)
 
 
 class Anzahlkinder(models.Model):
     user = models.OneToOneField(
         User, on_delete=models.CASCADE, null=True, blank=True)
-    ein_kind = models.BooleanField("1 Kind")
-    zwei_kinder = models.BooleanField("2 Kinder")
-    drei_kinder = models.BooleanField("3 Kinder")
-    vier_plus_kinder = models.BooleanField("4+ Kinder")
-    neugeborenes_baby = models.BooleanField("Neugeborenes Baby")
-    kleinkind = models.BooleanField("kleinkind")
-    kindergartenalter = models.BooleanField("kindergartenalter")
-    schulalter = models.BooleanField("schulalter")
-    teenager = models.BooleanField("teenager")
+    ein_kind = models.BooleanField("1 Kind", default=False)
+    zwei_kinder = models.BooleanField("2 Kinder", default=False)
+    drei_kinder = models.BooleanField("3 Kinder", default=False)
+    vier_plus_kinder = models.BooleanField("4+ Kinder", default=False)
+    neugeborenes_baby = models.BooleanField("Neugeborenes Baby", default=False)
+    kleinkind = models.BooleanField("kleinkind", default=False)
+    kindergartenalter = models.BooleanField("kindergartenalter", default=False)
+    schulalter = models.BooleanField("schulalter", default=False)
+    teenager = models.BooleanField("teenager", default=False)
 
 
 class Anfoderungeltern(models.Model):
     user = models.OneToOneField(
         User, on_delete=models.CASCADE, null=True, blank=True)
-    essenzubereitung = models.BooleanField("Essenzubereitung")
-    unterstutzung_bei_hausaufgaben = models.BooleanField(
-        "Unterstützung bei Hausaufgaben")
-    bring_und_abholung = models.BooleanField("Bring- und Abholservice")
-    leichte_haushaltarbeiten = models.BooleanField("Haushaltarbeiten")
-    kind_fodern_beim_Sprechen = models.BooleanField(
-        "Kind födern beim Sprechen", default=False)
+    essenzubereitung = models.BooleanField("Essenzubereitung", default=False)
+    unterstutzung_bei_hausaufgaben = models.BooleanField("Unterstützung bei Hausaufgaben", default=False)
+    bring_und_abholung = models.BooleanField("Bring- und Abholservice", default=False)
+    leichte_haushaltarbeiten = models.BooleanField("Haushaltarbeiten", default=False)
+    kind_fodern_beim_Sprechen = models.BooleanField("Kind födern beim Sprechen", default=False)
 
 
 class BetreuungsZeitEltern(models.Model):

@@ -1,38 +1,40 @@
 # nanny webportal
-This project is focused to bring nannies and parents who need a nanny together
+Portal to connect nannies and parents.
 
-# Installation
-1. clone the repo
-2. copy `.env.example` to `.env` and fill in the required values
-3. provide an empty db.sqlite file and apply migrations
-4. run `python manage.py geocode_profiles` once to backfill search coordinates
-5. build the docker container and run it
-6. browse the host in browser
+## Setup
+1. Copy `.env.example` to `.env` and fill in required values (never commit `.env`).
+2. Install dependencies: `pip install -r requirements.txt`
+3. Apply migrations: `python manage.py migrate`
+4. (Optional, recommended for existing data) Backfill search coordinates off the request path: `python manage.py geocode_profiles`
+5. Run locally: `python manage.py runserver`
 
-# Configuration
-All secrets are read from the environment (or `.env`). Do not commit real
-credentials. `SECRET_KEY`, `ALLOWED_HOSTS`, the e-mail settings, and the Stripe
-settings must be supplied at deploy time.
+## Security & production configuration
+- **Secrets**: `SECRET_KEY`, DB credentials, SMTP credentials, and Stripe keys must come from environment/secret storage. Treat any credential ever committed to git history as exposed and rotate it.
+- **HTTPS/proxy/HSTS**: terminate TLS at a trusted reverse proxy/load balancer. Set `SECURE_SSL_REDIRECT=True`, `SESSION_COOKIE_SECURE=True`, `CSRF_COOKIE_SECURE=True`, configure `ALLOWED_HOSTS`/`CSRF_TRUSTED_ORIGINS`, and enable `SECURE_PROXY_SSL_HEADER_ENABLED=True` only if the proxy strips and sets `X-Forwarded-Proto` consistently. Roll out HSTS (`SECURE_HSTS_SECONDS`) in stages after HTTPS is verified end-to-end.
+- **Cookies/sessions**: sane defaults are provided (`HttpOnly` session cookies, `SameSite=Lax`, limited session age/rotation, password reset token timeout). Adjust to your policy.
+- **Database**: SQLite is for local development only. Use PostgreSQL (or another robust RDBMS) in production; do not run multiple Gunicorn workers against SQLite for real traffic. Configure via `DB_ENGINE`, `DB_NAME`, etc.
+- **Backups/DR**: implement automated database backups, encrypted/secured backup storage, restore testing, and migration testing. User-uploaded media and DB storage must be protected and backed up according to policy.
+- **Uploads/media**: profile images are validated, size-limited, EXIF-stripped, resized server-side, and stored under a private upload path. Public media serving via Django is disabled outside `DEBUG`; use object storage or a fronting server with access controls in production. User-uploaded photos should not be committed to the repository.
+- **Geocoding**: geocoding is off the profile-save request path by default (`GEOCODE_ON_SAVE=False`). Run `python manage.py geocode_profiles` periodically/background to backfill coordinates. Provider/domain and user-agent are configurable; document data sharing and avoid excess precision.
+- **Email**: configure SMTP/TLS/host in env. Current delivery uses best-effort background threads outside dev backends; for production durability/retries/monitoring use a real task queue (e.g. Celery/RQ) or a transactional email provider integration.
+- **Rate limiting**: in-app cache-backed throttling is included for login/reset/signup/contact/messaging as best-effort protection. Use a shared cache and/or edge/WAF rate limiting in multi-instance deployments.
 
-# Stripe payments
-Checkout sessions are created only for authenticated users via POST. A
-subscription is activated only by the signed Stripe webhook at
-`/stripe/webhook` after Stripe reports a paid Checkout Session. Configure the
-webhook endpoint in the Stripe Dashboard and set `STRIPE_WEBHOOK_SECRET` to the
-endpoint's signing secret. Subscribe to at least:
-
+## Stripe payments
+Checkout sessions are created only for authenticated users via POST. A subscription is activated only by the signed Stripe webhook at `/stripe/webhook` after Stripe reports a paid Checkout Session. Configure `STRIPE_WEBHOOK_SECRET` and subscribe to at least:
 - `checkout.session.completed`
 - `checkout.session.async_payment_succeeded`
 
-# Security note
-The repository previously contained hard-coded API keys in `web/utils.py`.
-They have been removed. If those keys were ever live, rotate them with the
-provider and audit their usage. Treat any key that was committed to git as
-exposed.
+## Docker (production)
+The Docker image runs Gunicorn (not `runserver`). Inject secrets/config via environment at runtime. For real traffic use PostgreSQL and appropriate worker/process architecture; do not rely on container-local filesystem for durable uploads.
 
-# Usage
-The Docker image runs the application with gunicorn (not Django's development
-server). For local development, use `python manage.py runserver`.
+## CI
+GitHub Actions workflow runs Django checks and tests in `.github/workflows/ci.yml`.
 
-# Contributions
-Pullrequests are welcome
+## Tests
+```bash
+DJANGO_ALLOW_INSECURE_DEFAULTS=1 DEBUG=1 python manage.py test web.tests
+```
+
+## Notes on committed media and history
+- Files under `web/media/web/images/` may include committed assets with embedded metadata; review consent/licensing for pictured persons and strip sensitive metadata before distribution. Treat this as an operational/content review item.
+- Scan git history/blobs for previously committed secrets (e.g. `git log -p --all -S 'SECRET_KEY'`, `gitleaks`/`trufflehog`) and rotate any values that may have been exposed.

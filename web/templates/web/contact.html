@@ -8,21 +8,36 @@
 {% endblock %}
 {% block content %}
     <h2>{% translate 'Kontakt' %}</h2>
-
-
     <p>{% translate 'Bitte nehmen Sie mit uns Kontakt auf bei Fragen oder Unklarheiten.' %}</p>
+    <p>info@nanny25.ch</p>
 
-info@nanny25.ch
-<br>
-<br>
-<br>
-    
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-sm Bild">
-            <img src="/media/web/images/IMG_contact1.png" alt="smiling lady writing on a laptop">
+    {% if sent %}
+      <div class="alert alert-success">{% translate 'Vielen Dank, Ihre Nachricht wurde übermittelt.' %}</div>
+    {% endif %}
+
+    <form method="post" action="{% url 'web:contact' %}">
+      {% csrf_token %}
+      {{ form.non_field_errors }}
+      <div class="mb-3">
+        <label for="id_email" class="form-label">{% translate 'E-Mail' %}</label>
+        {{ form.email }}
+        {{ form.email.errors }}
+      </div>
+      <div class="mb-3">
+        <label for="id_message" class="form-label">{% translate 'Nachricht' %}</label>
+        {{ form.message }}
+        {{ form.message.errors }}
+      </div>
+      <button type="submit" class="btn btn-secondary">{% translate 'Senden' %}</button>
+    </form>
+
+    <br><br>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm Bild">
+                <img src="/media/web/images/IMG_contact1.png" alt="smiling lady writing on a laptop">
+            </div>
         </div>
     </div>
-</div>
 
 {% endblock %}
